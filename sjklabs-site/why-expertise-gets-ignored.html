@@ -1,0 +1,226 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-8VR7WN1MJK"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-8VR7WN1MJK');
+  </script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Why Expertise Gets Ignored | SJK Labs</title>
+  <meta name="description" content="Why good people and good businesses get overlooked — and why being excellent at what you do is not enough to be chosen." />
+  <style>
+    :root{
+      --paper:#f4efe6;
+      --surface:#fbf7f0;
+      --ink:#0f1115;
+      --muted:rgba(15,17,21,.65);
+      --line:rgba(15,17,21,.12);
+      --accent:#1c3d2e;
+      --accent-mid:#2a5c44;
+      --accent-light:#e8f0eb;
+      --amber:#c4621d;
+      --amber-mid:#a8521a;
+      --amber-light:#f5e6dc;
+      --oxblood:#6b0f2a;
+      --max:1080px;
+      --r:14px;
+      --r2:20px;
+      --sans: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Inter, Roboto, Helvetica, Arial;
+    }
+    *{box-sizing:border-box; margin:0; padding:0;}
+    body{font-family:var(--sans); background:var(--paper); color:var(--ink); -webkit-font-smoothing:antialiased; overflow-x:hidden;}
+    body::before{content:""; position:fixed; inset:0; pointer-events:none; opacity:.04; background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='140' height='140' filter='url(%23n)' opacity='.22'/%3E%3C/svg%3E");}
+    .container{max-width:var(--max); margin:0 auto; padding:0 32px;}
+    .prose{max-width:720px; margin:0 auto;}
+    header{position:sticky; top:0; z-index:50; background:rgba(244,239,230,.95); backdrop-filter:blur(12px); border-bottom:1px solid var(--line);}
+    .nav{display:flex; align-items:center; justify-content:space-between; padding:20px 0; gap:24px;}
+    .brand{font-size:16px; font-weight:800; letter-spacing:-.04em; color:var(--ink); text-decoration:none; flex-shrink:0;}
+    .brand em{color:var(--accent); font-style:normal;}
+    nav{display:flex; gap:2px; align-items:center; flex-wrap:wrap;}
+    nav a{color:var(--muted); text-decoration:none; font-size:14px; padding:7px 11px; border-radius:8px; transition:all .15s; white-space:nowrap;}
+    nav a:hover{color:var(--ink); background:rgba(15,17,21,.05);}
+    .btn{display:inline-flex; align-items:center; border-radius:999px; padding:9px 18px; font-size:13px; font-weight:500; text-decoration:none; white-space:nowrap; transition:all .15s; cursor:pointer; border:none;}
+    .btn-green{background:var(--accent); color:#fff; border:1px solid var(--accent);}
+    .btn-green:hover{background:var(--accent-mid);}
+    .btn-amber{background:var(--amber); color:#fff;}
+    .btn-amber:hover{background:var(--amber-mid);}
+    /* Article layout */
+    .article-hero{padding:64px 0 48px; border-bottom:1px solid var(--line);}
+    .eyebrow{font-size:11px; letter-spacing:.2em; text-transform:uppercase; font-weight:600; color:var(--accent); margin-bottom:20px;}
+    .eyebrow-amber{color:var(--amber);}
+    .article-hero h1{font-size:clamp(32px,5vw,60px); font-weight:800; letter-spacing:-.05em; line-height:1.05; margin-bottom:24px;}
+    .article-hero h1 em{color:var(--accent); font-style:normal;}
+    .article-hero .lead{font-size:clamp(16px,1.8vw,20px); color:var(--muted); line-height:1.75; max-width:56ch;}
+    .article-body{padding:64px 0 96px;}
+    .article-body h2{font-size:clamp(22px,3vw,32px); font-weight:800; letter-spacing:-.04em; line-height:1.15; margin:48px 0 16px; color:var(--ink);}
+    .article-body h2 em{color:var(--accent); font-style:normal;}
+    .article-body h3{font-size:18px; font-weight:700; letter-spacing:-.02em; margin:32px 0 12px; color:var(--ink);}
+    .article-body p{font-size:17px; color:var(--muted); line-height:1.8; margin-bottom:20px;}
+    .article-body p strong{color:var(--ink); font-weight:600;}
+    .pull-quote{border-left:3px solid var(--accent); padding:20px 28px; margin:40px 0; background:var(--surface); border-radius:0 var(--r) var(--r) 0;}
+    .pull-quote p{font-size:20px; font-weight:700; letter-spacing:-.02em; color:var(--ink); line-height:1.4; margin:0; font-style:italic;}
+    .pull-quote p em{color:var(--accent); font-style:normal;}
+    .callout{background:var(--accent); color:#fff; border-radius:var(--r2); padding:40px; margin:40px 0; text-align:center;}
+    .callout h3{font-size:24px; font-weight:800; letter-spacing:-.03em; margin-bottom:12px; color:#fff;}
+    .callout p{font-size:16px; color:rgba(255,255,255,.85); line-height:1.7; margin-bottom:24px;}
+    .callout .btn{background:#fff; color:var(--accent); font-weight:700;}
+    .callout p, .article-body .callout p{color:rgba(255,255,255,.85) !important;}
+    .callout h3, .article-body .callout h3{color:#fff !important;}
+    .card-grid{display:flex; flex-direction:column; gap:0; margin:32px 0; border-top:1px solid var(--line);}
+    .card{padding:28px 0; border-bottom:1px solid var(--line);}
+    .card:hover{}
+    .card-num{font-size:11px; font-weight:700; letter-spacing:.2em; text-transform:uppercase; color:var(--accent); margin-bottom:10px; display:block;}
+    .card h3{font-size:16px; font-weight:700; letter-spacing:-.02em; margin-bottom:6px; color:var(--ink);}
+    .card p{font-size:15px; color:var(--muted); line-height:1.7; margin:0;}
+    .divider{border:none; border-top:1px solid var(--line); margin:48px 0;}
+    .related{background:var(--surface); border:1px solid var(--line); border-radius:var(--r2); padding:36px; margin:48px 0;}
+    .related-label{font-size:11px; letter-spacing:.2em; text-transform:uppercase; font-weight:600; color:var(--muted); margin-bottom:20px;}
+    .related-links{display:flex; flex-direction:column; gap:12px;}
+    .related-links a{color:var(--accent); text-decoration:none; font-size:15px; font-weight:500; display:flex; align-items:center; gap:8px;}
+    .related-links a:hover{text-decoration:underline; text-underline-offset:3px;}
+    footer{padding:32px 0 48px; border-top:1px solid var(--line);}
+    .foot{display:flex; justify-content:space-between; align-items:center; gap:16px; flex-wrap:wrap; font-size:13px; color:var(--muted);}
+    .foot a{color:var(--muted); text-decoration:none;}
+    .foot a:hover{color:var(--ink); text-decoration:underline; text-underline-offset:3px;}
+    .foot-links{display:flex; gap:20px; flex-wrap:wrap;}
+    @media(max-width:640px){
+      .container{padding:0 20px;}
+      .article-hero{padding:40px 0 32px;}
+      .article-body{padding:40px 0 64px;}
+      .card-grid{grid-template-columns:1fr;}
+    }
+
+    .nav-dropdown{position:relative;}
+    .nav-dropdown > a{display:flex; align-items:center; gap:4px;}
+    .nav-dropdown > a::after{content:""; width:0; height:0; border-left:4px solid transparent; border-right:4px solid transparent; border-top:4px solid currentColor; opacity:.5; flex-shrink:0;}
+    .dropdown-menu{display:none; position:absolute; top:calc(100% + 8px); left:0; background:var(--paper); border:1px solid var(--line); border-radius:var(--r); padding:6px; min-width:220px; box-shadow:0 8px 24px rgba(0,0,0,.1); z-index:100;}
+    .dropdown-menu a{display:block; color:var(--ink); font-size:13px; padding:8px 12px; border-radius:8px; white-space:nowrap; text-decoration:none;}
+    .dropdown-menu a:hover{background:rgba(15,17,21,.05);}
+    .nav-dropdown:hover .dropdown-menu{display:block;}
+  </style>
+</head>
+<body>
+<header>
+  <div class="container">
+    <div class="nav">
+      <a class="brand" href="/">SJK <em>Labs</em></a>
+      <nav>
+        <a href="/#about">About</a>
+        <a href="/coverage.html">Coverage</a>
+        <a href="/#individuals">Individuals</a>
+        <a href="/#businesses">Businesses</a>
+        <div class="nav-dropdown">
+          <a href="/authority.html">Authority</a>
+          <div class="dropdown-menu">
+            <a href="/authority.html">What is Authority?</a>
+            <a href="/why-expertise-gets-ignored.html">Why expertise gets ignored</a>
+            <a href="/visibility-vs-chosen.html">Visibility vs being chosen</a>
+            <a href="/scriptwriter-test.html">The Scriptwriter Test™</a>
+            <a href="/human-authority-ai.html">Human authority in the age of AI</a>
+            <a href="/narrative-authority.html">Narrative as authority</a>
+            <a href="/what-gets-people-chosen.html">What gets people chosen?</a>
+          </div>
+        </div>
+      </nav>
+      <a class="btn btn-green" href="https://calendly.com/sarah-sjklabs/fancy-a-chat" target="_blank" rel="noreferrer">Work with us →</a>
+    </div>
+  </div>
+</header>
+
+<main>
+  <section class="article-hero">
+    <div class="container prose">
+      <div class="eyebrow">SJK Labs — The authority gap</div>
+      <h1>Why Expertise <em>Gets Ignored</em></h1>
+      <p class="lead">The market does not reward capability. It rewards legibility. The experts who get chosen are not always the most qualified — they are the most clearly understood.</p>
+    </div>
+  </section>
+
+  <section class="article-body">
+    <div class="container prose">
+
+      <p>There is a gap between what you know and what the market believes you know. For most businesses and professionals, that gap is enormous — and it is costing them every day. Not in obvious ways. In the opportunities that go to someone less capable. In the pitches that do not convert. In the introductions that do not lead anywhere. In the feeling that the market has not caught up with you yet.</p>
+
+      <div class="pull-quote"><p>"The gap between <em>what you know</em> and what the market believes is where growth stalls."</p></div>
+
+      <h2>Being excellent is not enough</h2>
+      <p>This is the hardest thing to accept for people who have spent years developing genuine expertise: being excellent at what you do does not automatically make the market choose you. Excellence is necessary but not sufficient. The market cannot choose what it cannot see, understand, or trust.</p>
+      <p>The experts who get overlooked are often the most qualified in the room. They have the track record, the methodology, the results. What they lack is the layer of communication that makes expertise legible — that turns what they know into something the market can recognise, trust, and act on.</p>
+
+      <h2>Why the market overlooks good people</h2>
+
+      <h3>They assume expertise speaks for itself</h3>
+      <p>It does not. In a noisy market, the signal of genuine expertise is indistinguishable from the signal of well-performed expertise. The market cannot audit your knowledge directly. It makes inferences — from how you communicate, how you position yourself, and how clearly you demonstrate that you understand the problem your buyer has.</p>
+
+      <h3>They talk about themselves instead of the buyer</h3>
+      <p>Most experts describe what they know. The market wants to understand what that means for them. The shift from capability to relevance is the shift from being interesting to being chosen. <strong>The market does not choose the most capable option. It chooses the one that makes them feel most understood.</strong></p>
+
+      <h3>They have no distinctive point of view</h3>
+      <p>In a market full of competent people saying similar things, the ones who get remembered are the ones who say something specific, distinctive, and repeatable. A point of view is not an opinion for its own sake. It is a stake in the ground that tells the market exactly what you believe, why it matters, and why it is different from what everyone else is saying.</p>
+
+      <h3>They mistake activity for authority</h3>
+      <p>Posting on LinkedIn. Attending events. Sending newsletters. None of these build authority by themselves. Authority is built by the quality and clarity of the thinking you put into the world — not the volume of content you produce. More noise is not the answer to being overlooked.</p>
+
+      <div class="card-grid">
+        <div class="card">
+          <div class="card-num">01</div>
+          <h3>The capability trap</h3>
+          <p>Focusing on what you can do rather than what your buyer needs. Expertise described in your language, not theirs.</p>
+        </div>
+        <div class="card">
+          <div class="card-num">02</div>
+          <h3>The visibility trap</h3>
+          <p>Optimising for reach instead of weight. Being seen by many people who don't convert is not the same as being trusted by the right people who do.</p>
+        </div>
+        <div class="card">
+          <div class="card-num">03</div>
+          <h3>The consistency trap</h3>
+          <p>Producing content for the sake of it. Consistent noise is still noise. What matters is consistent proof — of thinking, of results, of point of view.</p>
+        </div>
+      </div>
+
+      <h2>The gap that actually matters</h2>
+      <p>The gap is not between your expertise and the market's expertise. It is between your expertise and the market's perception of your expertise. That gap is a communication problem, not a capability problem. And communication problems have communication solutions.</p>
+      <p>Closing the gap requires three things: clarity about what you actually know and have done, a distinctive point of view that makes your thinking recognisable, and the consistent expression of both in language the market understands.</p>
+
+      <div class="pull-quote"><p>"<em>Expertise without authority gets overlooked.</em> Every time."</p></div>
+
+      <h2>What changes when the gap closes</h2>
+      <p>When your expertise becomes legible — when the market understands clearly what you know, why it matters, and why they should trust you — something shifts. Conversations start differently. Pitches convert more readily. The right people start coming to you, rather than you going to them. The market catches up.</p>
+      <p>This is not magic. It is the result of making your expertise impossible to misread.</p>
+
+      <div class="callout">
+        <h3>Your expertise deserves to be seen.</h3>
+        <p>SJK Labs helps businesses and the people who build them close the gap between what they know and what the market believes. Start with The Scriptwriter Test™.</p>
+        <a class="btn" href="https://calendly.com/sarah-sjklabs/fancy-a-chat">Book a Scene-Setting Call →</a>
+      </div>
+
+      <div class="related">
+        <div class="related-label">Continue reading</div>
+        <div class="related-links">
+          <a href="/authority.html">→ What is authority?</a>
+          <a href="/visibility-vs-chosen.html">→ Why being seen is not the same as being chosen</a>
+          <a href="/scriptwriter-test.html">→ The Scriptwriter Test™</a>
+          <a href="/narrative-authority.html">→ Narrative as authority</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="container">
+    <div class="foot">
+      <span>© 2026 SJK Labs Ltd. All rights reserved.</span>
+      <div class="foot-links">
+        <a href="/authority.html">What is Authority?</a>
+        <a href="/privacy.html">Privacy</a>
+        <a href="/terms.html">Terms</a>
+        <a href="/cdn-cgi/l/email-protection#e4978596858ca4978e8f88858697ca878b"><span class="__cf_email__" data-cfemail="64170516050c24170e0f080506174a070b">[email&#160;protected]</span></a>
+        <a href=

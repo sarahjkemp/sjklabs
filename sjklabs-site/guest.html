@@ -1,0 +1,365 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-8VR7WN1MJK"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-8VR7WN1MJK');
+  </script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Apply to be a Guest — SJK Labs</title>
+  <meta name="description" content="Apply to be a guest on PRception or Not Built For This." />
+
+  <style>
+    :root{
+      --paper:#f4efe6;
+      --surface:#fbf7f0;
+      --ink:#0f1115;
+      --muted:rgba(15,17,21,.65);
+      --line:rgba(15,17,21,.12);
+      --accent:#1c3d2e;
+      --accent-mid:#2a5c44;
+      --amber:#c4621d;
+      --amber-mid:#a8521a;
+      --amber-light:#f5e6dc;
+      --oxblood:#6b0f2a;
+      --oxblood-mid:#580d23;
+      --oxblood-light:#f2e4e8;
+      --max:680px;
+      --r:14px;
+      --r2:20px;
+      --sans: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Inter, Roboto, Helvetica, Arial;
+    }
+
+    *{box-sizing:border-box; margin:0; padding:0;}
+    body{
+      font-family:var(--sans);
+      background:var(--paper);
+      color:var(--ink);
+      -webkit-font-smoothing:antialiased;
+      min-height:100vh;
+    }
+
+    body::before{
+      content:"";
+      position:fixed;
+      inset:0;
+      pointer-events:none;
+      opacity:.04;
+      background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='140' height='140' filter='url(%23n)' opacity='.22'/%3E%3C/svg%3E");
+    }
+
+    .container{max-width:var(--max); margin:0 auto; padding:0 32px;}
+
+    /* ── NAV ── */
+    header{
+      border-bottom:1px solid var(--line);
+      padding:20px 0;
+      background:rgba(244,239,230,.9);
+      backdrop-filter:blur(12px);
+      position:sticky;
+      top:0;
+      z-index:10;
+    }
+    .nav{display:flex; align-items:center; justify-content:space-between;}
+    .brand{font-size:16px; font-weight:800; letter-spacing:-.04em; color:var(--ink); text-decoration:none;}
+    .brand em{color:var(--accent); font-style:normal;}
+    .back{font-size:13px; color:var(--muted); text-decoration:none; display:flex; align-items:center; gap:6px;}
+    .back:hover{color:var(--ink);}
+
+    /* ── SHOW TOGGLE ── */
+    .show-toggle{
+      display:flex;
+      gap:2px;
+      background:var(--surface);
+      border:1px solid var(--line);
+      border-radius:999px;
+      padding:4px;
+      margin:48px auto 0;
+      width:fit-content;
+    }
+    .toggle-btn{
+      padding:10px 24px;
+      border-radius:999px;
+      font-size:14px;
+      font-weight:600;
+      cursor:pointer;
+      border:none;
+      background:transparent;
+      color:var(--muted);
+      transition:all .2s;
+      font-family:var(--sans);
+    }
+    .toggle-btn.active-oxblood{background:var(--oxblood); color:#fff;}
+    .toggle-btn.active-amber{background:var(--amber); color:#fff;}
+
+    /* ── FORM PANELS ── */
+    .form-panel{display:none; padding:40px 0 80px;}
+    .form-panel.visible{display:block;}
+
+    .form-header{margin-bottom:40px; text-align:center;}
+    .form-eyebrow{
+      font-size:11px;
+      letter-spacing:.2em;
+      text-transform:uppercase;
+      font-weight:700;
+      margin-bottom:12px;
+    }
+    .eyebrow-oxblood{color:var(--oxblood);}
+    .eyebrow-amber{color:var(--amber);}
+    .form-header h1{
+      font-size:clamp(28px,4vw,40px);
+      font-weight:800;
+      letter-spacing:-.04em;
+      line-height:1.1;
+      margin-bottom:16px;
+    }
+    .form-header p{
+      font-size:16px;
+      color:var(--muted);
+      line-height:1.7;
+      max-width:48ch;
+      margin:0 auto;
+    }
+
+    /* ── FORM ── */
+    form{display:flex; flex-direction:column; gap:20px;}
+
+    .field{display:flex; flex-direction:column; gap:8px;}
+    .field label{
+      font-size:13px;
+      font-weight:600;
+      color:var(--ink);
+      letter-spacing:-.01em;
+    }
+    .field label .req{color:var(--muted); font-weight:400; margin-left:2px;}
+
+    input[type=text],
+    input[type=email],
+    input[type=url],
+    textarea,
+    select{
+      width:100%;
+      padding:12px 16px;
+      border:1px solid var(--line);
+      border-radius:var(--r);
+      font-size:15px;
+      font-family:var(--sans);
+      background:var(--surface);
+      color:var(--ink);
+      transition:border-color .15s, box-shadow .15s;
+      -webkit-appearance:none;
+    }
+    input:focus, textarea:focus, select:focus{
+      outline:none;
+      border-color:var(--oxblood);
+      box-shadow:0 0 0 3px rgba(107,15,42,.08);
+    }
+    .panel-amber input:focus,
+    .panel-amber textarea:focus,
+    .panel-amber select:focus{
+      border-color:var(--amber);
+      box-shadow:0 0 0 3px rgba(196,98,29,.08);
+    }
+    textarea{resize:vertical; min-height:120px; line-height:1.6;}
+
+    .field-hint{font-size:12px; color:var(--muted); line-height:1.5;}
+
+    .form-divider{
+      border:none;
+      border-top:1px solid var(--line);
+      margin:4px 0;
+    }
+
+    .submit-btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      padding:14px 32px;
+      border-radius:999px;
+      font-size:15px;
+      font-weight:600;
+      font-family:var(--sans);
+      cursor:pointer;
+      border:none;
+      transition:all .15s;
+      margin-top:4px;
+    }
+    .submit-oxblood{background:var(--oxblood); color:#fff;}
+    .submit-oxblood:hover{background:var(--oxblood-mid);}
+    .submit-amber{background:var(--amber); color:#fff;}
+    .submit-amber:hover{background:var(--amber-mid);}
+
+    /* ── SUCCESS ── */
+    .success-msg{
+      display:none;
+      text-align:center;
+      padding:48px 32px;
+      background:var(--surface);
+      border:1px solid var(--line);
+      border-radius:var(--r2);
+    }
+    .success-msg h2{font-size:24px; font-weight:800; letter-spacing:-.03em; margin-bottom:12px;}
+    .success-msg p{font-size:15px; color:var(--muted); line-height:1.7;}
+
+    @media(max-width:600px){
+      .container{padding:0 20px;}
+      .toggle-btn{padding:9px 18px; font-size:13px;}
+      .form-panel{padding:32px 0 64px;}
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <div class="container">
+    <div class="nav">
+      <a class="brand" href="/">SJK <em>Labs</em></a>
+      <a class="back" href="/#podcasts">← Back to the shows</a>
+    </div>
+  </div>
+</header>
+
+<div class="container">
+
+  <div class="show-toggle">
+    <button class="toggle-btn active-oxblood" onclick="showPanel('prception')" id="btn-prception">PRception</button>
+    <button class="toggle-btn" onclick="showPanel('nbft')" id="btn-nbft">Not Built For This</button>
+  </div>
+
+  <!-- PRCEPTION FORM -->
+  <div class="form-panel visible panel-oxblood" id="panel-prception">
+    <div class="form-header">
+      <div class="form-eyebrow eyebrow-oxblood">Apply to be a guest</div>
+      <h1>PRception</h1>
+      <p>PRception explores how attention becomes authority — in markets, culture and real life. Tell us why you belong in the conversation.</p>
+    </div>
+
+    <form action="https://formspree.io/f/xgonjdny" method="POST" id="form-prception">
+      <div class="field">
+        <label>Your name <span class="req">*</span></label>
+        <input type="text" name="name" required placeholder="First and last name" />
+      </div>
+      <div class="field">
+        <label>Email address <span class="req">*</span></label>
+        <input type="email" name="email" required placeholder="you@example.com" />
+      </div>
+      <div class="field">
+        <label>What do you do? <span class="req">*</span></label>
+        <input type="text" name="role" required placeholder="e.g. Founder of X, CMO at Y, DJ / Creative Director" />
+      </div>
+      <div class="field">
+        <label>Website or LinkedIn <span class="req">*</span></label>
+        <input type="url" name="link" required placeholder="https://" />
+      </div>
+      <hr class="form-divider" />
+      <div class="field">
+        <label>What's the conversation you want to have? <span class="req">*</span></label>
+        <textarea name="pitch" required placeholder="What angle, idea or experience would you bring to PRception? The more specific, the better."></textarea>
+        <div class="field-hint">Think about: what have you observed about how authority, attention or perception works — in your field, your industry, your life?</div>
+      </div>
+      <div class="field">
+        <label>Have you been on podcasts or video shows before?</label>
+        <textarea name="experience" placeholder="Not essential — just helpful for us to know." style="min-height:80px;"></textarea>
+      </div>
+      <div class="field">
+        <label>Anything else you'd like to add?</label>
+        <textarea name="other" placeholder="Links to previous interviews, social handles, or anything else relevant." style="min-height:80px;"></textarea>
+      </div>
+      <input type="hidden" name="show" value="PRception" />
+      <input type="hidden" name="_next" value="https://sjklabs.co/guest.html?thanks=prception" />
+      <input type="hidden" name="_subject" value="New PRception guest application" />
+      <button type="submit" class="submit-btn submit-oxblood">Send my application →</button>
+    </form>
+    <div class="success-msg" id="success-prception">
+      <h2>Application received.</h2>
+      <p>Thanks for applying to PRception. Sarah will be in touch if there's a good fit.</p>
+    </div>
+  </div>
+
+  <!-- NBFT FORM -->
+  <div class="form-panel panel-amber" id="panel-nbft">
+    <div class="form-header">
+      <div class="form-eyebrow eyebrow-amber">Apply to be a guest</div>
+      <h1>Not Built For This</h1>
+      <p>Real conversations with women who did it differently. If that's you — or if you have expertise that matters to this audience — we want to hear from you.</p>
+    </div>
+
+    <form action="https://formspree.io/f/xvzwjlww" method="POST" id="form-nbft">
+      <div class="field">
+        <label>Your name <span class="req">*</span></label>
+        <input type="text" name="name" required placeholder="First and last name" />
+      </div>
+      <div class="field">
+        <label>Email address <span class="req">*</span></label>
+        <input type="email" name="email" required placeholder="you@example.com" />
+      </div>
+      <div class="field">
+        <label>What do you do? <span class="req">*</span></label>
+        <input type="text" name="role" required placeholder="e.g. Founder, coach, therapist, doctor, consultant..." />
+      </div>
+      <div class="field">
+        <label>Website or Instagram <span class="req">*</span></label>
+        <input type="url" name="link" required placeholder="https://" />
+      </div>
+      <hr class="form-divider" />
+      <div class="field">
+        <label>What's your story? <span class="req">*</span></label>
+        <textarea name="pitch" required placeholder="What did you leave behind, build, or figure out the hard way? What would you want women listening to take from your conversation?"></textarea>
+        <div class="field-hint">Not Built For This is for women who did it on their own terms. Tell us what that means for you.</div>
+      </div>
+      <div class="field">
+        <label>Is there anything specific you'd like to talk about?</label>
+        <textarea name="topics" placeholder="Neurodiversity, hormonal health, leaving corporate, building a business, something else entirely — tell us." style="min-height:80px;"></textarea>
+      </div>
+      <div class="field">
+        <label>Anything else you'd like to add?</label>
+        <textarea name="other" placeholder="Previous interviews, press, or anything else that helps us understand who you are." style="min-height:80px;"></textarea>
+      </div>
+      <input type="hidden" name="show" value="Not Built For This" />
+      <input type="hidden" name="_next" value="https://sjklabs.co/guest.html?thanks=nbft" />
+      <input type="hidden" name="_subject" value="New Not Built For This guest application" />
+      <button type="submit" class="submit-btn submit-amber">Send my application →</button>
+    </form>
+    <div class="success-msg" id="success-nbft">
+      <h2>Application received.</h2>
+      <p>Thanks for applying to Not Built For This. Sarah will be in touch if there's a good fit.</p>
+    </div>
+  </div>
+
+</div>
+
+<script>
+  function showPanel(id) {
+    document.querySelectorAll('.form-panel').forEach(p => p.classList.remove('visible'));
+    document.getElementById('panel-' + id).classList.add('visible');
+    document.getElementById('btn-prception').className = 'toggle-btn';
+    document.getElementById('btn-nbft').className = 'toggle-btn';
+    document.getElementById('btn-' + id).className = 'toggle-btn active-' + (id === 'prception' ? 'oxblood' : 'amber');
+    history.replaceState(null, '', '#' + id);
+  }
+
+  // Auto-select from hash on load
+  const hash = location.hash.replace('#','');
+  if (hash === 'nbft') showPanel('nbft');
+
+  // Show thank you message if redirected back after submission
+  const params = new URLSearchParams(location.search);
+  const thanks = params.get('thanks');
+  if (thanks) {
+    const show = thanks === 'nbft' ? 'nbft' : 'prception';
+    showPanel(show);
+    document.getElementById('form-' + show).style.display = 'none';
+    const msg = document.getElementById('success-' + show);
+    if (msg) { msg.style.display = 'block'; }
+  }
+</script>
+
+</body>
+</html>

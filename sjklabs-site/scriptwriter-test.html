@@ -1,0 +1,214 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-8VR7WN1MJK"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-8VR7WN1MJK');
+  </script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>The Scriptwriter Test™ | SJK Labs</title>
+  <meta name="description" content="The Scriptwriter Test™ is a three-part framework for diagnosing why your authority isn't landing — and what needs to change." />
+  <style>
+    :root{
+      --paper:#f4efe6;
+      --surface:#fbf7f0;
+      --ink:#0f1115;
+      --muted:rgba(15,17,21,.65);
+      --line:rgba(15,17,21,.12);
+      --accent:#1c3d2e;
+      --accent-mid:#2a5c44;
+      --accent-light:#e8f0eb;
+      --amber:#c4621d;
+      --amber-mid:#a8521a;
+      --amber-light:#f5e6dc;
+      --oxblood:#6b0f2a;
+      --max:1080px;
+      --r:14px;
+      --r2:20px;
+      --sans: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Inter, Roboto, Helvetica, Arial;
+    }
+    *{box-sizing:border-box; margin:0; padding:0;}
+    body{font-family:var(--sans); background:var(--paper); color:var(--ink); -webkit-font-smoothing:antialiased; overflow-x:hidden;}
+    body::before{content:""; position:fixed; inset:0; pointer-events:none; opacity:.04; background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='140' height='140' filter='url(%23n)' opacity='.22'/%3E%3C/svg%3E");}
+    .container{max-width:var(--max); margin:0 auto; padding:0 32px;}
+    .prose{max-width:720px; margin:0 auto;}
+    header{position:sticky; top:0; z-index:50; background:rgba(244,239,230,.95); backdrop-filter:blur(12px); border-bottom:1px solid var(--line);}
+    .nav{display:flex; align-items:center; justify-content:space-between; padding:20px 0; gap:24px;}
+    .brand{font-size:16px; font-weight:800; letter-spacing:-.04em; color:var(--ink); text-decoration:none; flex-shrink:0;}
+    .brand em{color:var(--accent); font-style:normal;}
+    nav{display:flex; gap:2px; align-items:center; flex-wrap:wrap;}
+    nav a{color:var(--muted); text-decoration:none; font-size:14px; padding:7px 11px; border-radius:8px; transition:all .15s; white-space:nowrap;}
+    nav a:hover{color:var(--ink); background:rgba(15,17,21,.05);}
+    .btn{display:inline-flex; align-items:center; border-radius:999px; padding:9px 18px; font-size:13px; font-weight:500; text-decoration:none; white-space:nowrap; transition:all .15s; cursor:pointer; border:none;}
+    .btn-green{background:var(--accent); color:#fff; border:1px solid var(--accent);}
+    .btn-green:hover{background:var(--accent-mid);}
+    .btn-amber{background:var(--amber); color:#fff;}
+    .btn-amber:hover{background:var(--amber-mid);}
+    /* Article layout */
+    .article-hero{padding:64px 0 48px; border-bottom:1px solid var(--line);}
+    .eyebrow{font-size:11px; letter-spacing:.2em; text-transform:uppercase; font-weight:600; color:var(--accent); margin-bottom:20px;}
+    .eyebrow-amber{color:var(--amber);}
+    .article-hero h1{font-size:clamp(32px,5vw,60px); font-weight:800; letter-spacing:-.05em; line-height:1.05; margin-bottom:24px;}
+    .article-hero h1 em{color:var(--accent); font-style:normal;}
+    .article-hero .lead{font-size:clamp(16px,1.8vw,20px); color:var(--muted); line-height:1.75; max-width:56ch;}
+    .article-body{padding:64px 0 96px;}
+    .article-body h2{font-size:clamp(22px,3vw,32px); font-weight:800; letter-spacing:-.04em; line-height:1.15; margin:48px 0 16px; color:var(--ink);}
+    .article-body h2 em{color:var(--accent); font-style:normal;}
+    .article-body h3{font-size:18px; font-weight:700; letter-spacing:-.02em; margin:32px 0 12px; color:var(--ink);}
+    .article-body p{font-size:17px; color:var(--muted); line-height:1.8; margin-bottom:20px;}
+    .article-body p strong{color:var(--ink); font-weight:600;}
+    .pull-quote{border-left:3px solid var(--accent); padding:20px 28px; margin:40px 0; background:var(--surface); border-radius:0 var(--r) var(--r) 0;}
+    .pull-quote p{font-size:20px; font-weight:700; letter-spacing:-.02em; color:var(--ink); line-height:1.4; margin:0; font-style:italic;}
+    .pull-quote p em{color:var(--accent); font-style:normal;}
+    .callout{background:var(--accent); color:#fff; border-radius:var(--r2); padding:40px; margin:40px 0; text-align:center;}
+    .callout h3{font-size:24px; font-weight:800; letter-spacing:-.03em; margin-bottom:12px; color:#fff;}
+    .callout p{font-size:16px; color:rgba(255,255,255,.85); line-height:1.7; margin-bottom:24px;}
+    .callout .btn{background:#fff; color:var(--accent); font-weight:700;}
+    .callout p, .article-body .callout p{color:rgba(255,255,255,.85) !important;}
+    .callout h3, .article-body .callout h3{color:#fff !important;}
+    .card-grid{display:flex; flex-direction:column; gap:0; margin:32px 0; border-top:1px solid var(--line);}
+    .card{padding:28px 0; border-bottom:1px solid var(--line);}
+    .card:hover{}
+    .card-num{font-size:11px; font-weight:700; letter-spacing:.2em; text-transform:uppercase; color:var(--accent); margin-bottom:10px; display:block;}
+    .card h3{font-size:16px; font-weight:700; letter-spacing:-.02em; margin-bottom:6px; color:var(--ink);}
+    .card p{font-size:15px; color:var(--muted); line-height:1.7; margin:0;}
+    .divider{border:none; border-top:1px solid var(--line); margin:48px 0;}
+    .related{background:var(--surface); border:1px solid var(--line); border-radius:var(--r2); padding:36px; margin:48px 0;}
+    .related-label{font-size:11px; letter-spacing:.2em; text-transform:uppercase; font-weight:600; color:var(--muted); margin-bottom:20px;}
+    .related-links{display:flex; flex-direction:column; gap:12px;}
+    .related-links a{color:var(--accent); text-decoration:none; font-size:15px; font-weight:500; display:flex; align-items:center; gap:8px;}
+    .related-links a:hover{text-decoration:underline; text-underline-offset:3px;}
+    footer{padding:32px 0 48px; border-top:1px solid var(--line);}
+    .foot{display:flex; justify-content:space-between; align-items:center; gap:16px; flex-wrap:wrap; font-size:13px; color:var(--muted);}
+    .foot a{color:var(--muted); text-decoration:none;}
+    .foot a:hover{color:var(--ink); text-decoration:underline; text-underline-offset:3px;}
+    .foot-links{display:flex; gap:20px; flex-wrap:wrap;}
+    @media(max-width:640px){
+      .container{padding:0 20px;}
+      .article-hero{padding:40px 0 32px;}
+      .article-body{padding:40px 0 64px;}
+      .card-grid{grid-template-columns:1fr;}
+    }
+
+    .nav-dropdown{position:relative;}
+    .nav-dropdown > a{display:flex; align-items:center; gap:4px;}
+    .nav-dropdown > a::after{content:""; width:0; height:0; border-left:4px solid transparent; border-right:4px solid transparent; border-top:4px solid currentColor; opacity:.5; flex-shrink:0;}
+    .dropdown-menu{display:none; position:absolute; top:calc(100% + 8px); left:0; background:var(--paper); border:1px solid var(--line); border-radius:var(--r); padding:6px; min-width:220px; box-shadow:0 8px 24px rgba(0,0,0,.1); z-index:100;}
+    .dropdown-menu a{display:block; color:var(--ink); font-size:13px; padding:8px 12px; border-radius:8px; white-space:nowrap; text-decoration:none;}
+    .dropdown-menu a:hover{background:rgba(15,17,21,.05);}
+    .nav-dropdown:hover .dropdown-menu{display:block;}
+  </style>
+</head>
+<body>
+<header>
+  <div class="container">
+    <div class="nav">
+      <a class="brand" href="/">SJK <em>Labs</em></a>
+      <nav>
+        <a href="/#about">About</a>
+        <a href="/coverage.html">Coverage</a>
+        <a href="/#individuals">Individuals</a>
+        <a href="/#businesses">Businesses</a>
+        <div class="nav-dropdown">
+          <a href="/authority.html">Authority</a>
+          <div class="dropdown-menu">
+            <a href="/authority.html">What is Authority?</a>
+            <a href="/why-expertise-gets-ignored.html">Why expertise gets ignored</a>
+            <a href="/visibility-vs-chosen.html">Visibility vs being chosen</a>
+            <a href="/scriptwriter-test.html">The Scriptwriter Test™</a>
+            <a href="/human-authority-ai.html">Human authority in the age of AI</a>
+            <a href="/narrative-authority.html">Narrative as authority</a>
+            <a href="/what-gets-people-chosen.html">What gets people chosen?</a>
+          </div>
+        </div>
+      </nav>
+      <a class="btn btn-green" href="https://calendly.com/sarah-sjklabs/fancy-a-chat" target="_blank" rel="noreferrer">Work with us →</a>
+    </div>
+  </div>
+</header>
+
+<main>
+  <section class="article-hero">
+    <div class="container prose">
+      <div class="eyebrow">SJK Labs — The framework</div>
+      <h1>The Scriptwriter <em>Test™</em></h1>
+      <p class="lead">Most businesses are failing it. The Scriptwriter Test™ is a three-part framework that diagnoses exactly why your authority is not landing — and what needs to change for the market to choose you.</p>
+    </div>
+  </section>
+
+  <section class="article-body">
+    <div class="container prose">
+
+      <p>Every compelling story has a protagonist, stakes, and dialogue. These are not decorative elements — they are the structural components that make an audience trust, care, and act. The same structure determines whether a business or professional earns authority in the market. Most fail on at least one. Many fail on all three.</p>
+
+      <div class="pull-quote"><p>"If your positioning sounds like it was written by a committee, <em>it probably was.</em> Real authority sounds like a person."</p></div>
+
+      <h2>The three parts</h2>
+
+      <div class="card-grid">
+        <div class="card">
+          <div class="card-num">01</div>
+          <h3>The Protagonist</h3>
+          <p><em style="color:var(--accent)">Are you the Hero or the Guide?</em><br><br>The most common positioning mistake: making yourself the hero of your own story. The market does not choose the most capable option. It chooses the one that makes the buyer feel most understood — the one that treats the buyer as the protagonist and positions itself as the guide that helps them win.</p>
+        </div>
+        <div class="card">
+          <div class="card-num">02</div>
+          <h3>The Stakes</h3>
+          <p><em style="color:var(--accent)">What happens if the movie ends now?</em><br><br>Vague risk does not move people. Actual consequence does. The businesses that earn trust make the cost of standing still impossible to ignore — not through fear, but through clarity about what inaction specifically costs the buyer.</p>
+        </div>
+        <div class="card">
+          <div class="card-num">03</div>
+          <h3>The Dialogue</h3>
+          <p><em style="color:var(--accent)">Do you sound like a human or a manual?</em><br><br>Corporate language is authority repellent. If your copy, your pitches, or your content sounds like it was written by a committee, the market will not trust it — because trust is built by people, not by institutions. Real authority sounds like a specific person with a specific point of view.</p>
+        </div>
+      </div>
+
+      <h2>Why most businesses fail it</h2>
+      <p>The Protagonist test fails when businesses talk about themselves instead of their buyer. The Stakes test fails when risk is described in vague, theoretical terms that do not connect to the buyer's specific situation. The Dialogue test fails when language is sanitised into corporate safety — where nothing is said clearly enough to be remembered or trusted.</p>
+      <p><strong>Failing any one of the three reduces your authority. Failing all three means the market cannot choose you — even if you are the most capable option available.</strong></p>
+
+      <h2>What changes when you pass it</h2>
+      <p>When a business or individual passes the Scriptwriter Test™, something shifts in how the market encounters them. The right people read the positioning and immediately think: this is for me. This person understands my problem. I trust this enough to act.</p>
+      <p>That shift — from generic credibility to specific trust — is the difference between being considered and being chosen. It is what converts visibility into authority, and authority into inbound.</p>
+
+      <h2>How to apply it</h2>
+      <p>Take your current homepage, your LinkedIn profile, or your pitch deck. Run it through the three tests. Ask: who is the protagonist here — me or my buyer? Are the stakes specific and consequential, or vague and theoretical? Does this sound like a specific person with a genuine point of view, or like committee-approved corporate language?</p>
+      <p>The answers will tell you exactly where your authority is breaking down — and what needs to change.</p>
+
+      <div class="pull-quote"><p>"The market does not choose the most capable option. It chooses the one that <em>makes them feel most understood.</em>"</p></div>
+
+      <div class="callout">
+        <h3>Is your story failing the test?</h3>
+        <p>Take the 2-minute Authority Diagnostic to find out exactly where your authority gap is — and why.</p>
+        <a class="btn" href="https://sjklabs.co/quiz#personal">Take the Authority Diagnostic →</a>
+      </div>
+
+      <div class="related">
+        <div class="related-label">Continue reading</div>
+        <div class="related-links">
+          <a href="/authority.html">→ What is authority?</a>
+          <a href="/why-expertise-gets-ignored.html">→ Why expertise gets ignored</a>
+          <a href="/narrative-authority.html">→ Narrative as authority</a>
+          <a href="/human-authority-ai.html">→ Human authority in the age of AI</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="container">
+    <div class="foot">
+      <span>© 2026 SJK Labs Ltd. All rights reserved.</span>
+      <div class="foot-links">
+        <a href="/authority.html">What is Authority?</a>
+        <a href="/privacy.html">Privacy</a>
+        <a href="/terms.html">Terms</a>
+        <a href="/cdn-cgi/l/email-protection#e99a889b8881a99a838285888b9ac78a86"><span class="__cf_email__" data-cfemail="35465447545d75465f5e595457461b565a">[email&#160;protected]</span></a>
+        <a href=

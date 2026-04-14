@@ -1,0 +1,225 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-8VR7WN1MJK"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-8VR7WN1MJK');
+  </script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>What is Authority? | SJK Labs</title>
+  <meta name="description" content="Authority is the layer between being seen and being chosen. A clear definition of what authority means in business, and why it matters more than visibility." />
+  <style>
+    :root{
+      --paper:#f4efe6;
+      --surface:#fbf7f0;
+      --ink:#0f1115;
+      --muted:rgba(15,17,21,.65);
+      --line:rgba(15,17,21,.12);
+      --accent:#1c3d2e;
+      --accent-mid:#2a5c44;
+      --accent-light:#e8f0eb;
+      --amber:#c4621d;
+      --amber-mid:#a8521a;
+      --amber-light:#f5e6dc;
+      --oxblood:#6b0f2a;
+      --max:1080px;
+      --r:14px;
+      --r2:20px;
+      --sans: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Inter, Roboto, Helvetica, Arial;
+    }
+    *{box-sizing:border-box; margin:0; padding:0;}
+    body{font-family:var(--sans); background:var(--paper); color:var(--ink); -webkit-font-smoothing:antialiased; overflow-x:hidden;}
+    body::before{content:""; position:fixed; inset:0; pointer-events:none; opacity:.04; background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='140' height='140' filter='url(%23n)' opacity='.22'/%3E%3C/svg%3E");}
+    .container{max-width:var(--max); margin:0 auto; padding:0 32px;}
+    .prose{max-width:720px; margin:0 auto;}
+    header{position:sticky; top:0; z-index:50; background:rgba(244,239,230,.95); backdrop-filter:blur(12px); border-bottom:1px solid var(--line);}
+    .nav{display:flex; align-items:center; justify-content:space-between; padding:20px 0; gap:24px;}
+    .brand{font-size:16px; font-weight:800; letter-spacing:-.04em; color:var(--ink); text-decoration:none; flex-shrink:0;}
+    .brand em{color:var(--accent); font-style:normal;}
+    nav{display:flex; gap:2px; align-items:center; flex-wrap:wrap;}
+    nav a{color:var(--muted); text-decoration:none; font-size:14px; padding:7px 11px; border-radius:8px; transition:all .15s; white-space:nowrap;}
+    nav a:hover{color:var(--ink); background:rgba(15,17,21,.05);}
+    .btn{display:inline-flex; align-items:center; border-radius:999px; padding:9px 18px; font-size:13px; font-weight:500; text-decoration:none; white-space:nowrap; transition:all .15s; cursor:pointer; border:none;}
+    .btn-green{background:var(--accent); color:#fff; border:1px solid var(--accent);}
+    .btn-green:hover{background:var(--accent-mid);}
+    .btn-amber{background:var(--amber); color:#fff;}
+    .btn-amber:hover{background:var(--amber-mid);}
+    /* Article layout */
+    .article-hero{padding:64px 0 48px; border-bottom:1px solid var(--line);}
+    .eyebrow{font-size:11px; letter-spacing:.2em; text-transform:uppercase; font-weight:600; color:var(--accent); margin-bottom:20px;}
+    .eyebrow-amber{color:var(--amber);}
+    .article-hero h1{font-size:clamp(32px,5vw,60px); font-weight:800; letter-spacing:-.05em; line-height:1.05; margin-bottom:24px;}
+    .article-hero h1 em{color:var(--accent); font-style:normal;}
+    .article-hero .lead{font-size:clamp(16px,1.8vw,20px); color:var(--muted); line-height:1.75; max-width:56ch;}
+    .article-body{padding:64px 0 96px;}
+    .article-body h2{font-size:clamp(22px,3vw,32px); font-weight:800; letter-spacing:-.04em; line-height:1.15; margin:48px 0 16px; color:var(--ink);}
+    .article-body h2 em{color:var(--accent); font-style:normal;}
+    .article-body h3{font-size:18px; font-weight:700; letter-spacing:-.02em; margin:32px 0 12px; color:var(--ink);}
+    .article-body p{font-size:17px; color:var(--muted); line-height:1.8; margin-bottom:20px;}
+    .article-body p strong{color:var(--ink); font-weight:600;}
+    .pull-quote{border-left:3px solid var(--accent); padding:20px 28px; margin:40px 0; background:var(--surface); border-radius:0 var(--r) var(--r) 0;}
+    .pull-quote p{font-size:20px; font-weight:700; letter-spacing:-.02em; color:var(--ink); line-height:1.4; margin:0; font-style:italic;}
+    .pull-quote p em{color:var(--accent); font-style:normal;}
+    .callout{background:var(--accent); color:#fff; border-radius:var(--r2); padding:40px; margin:40px 0; text-align:center;}
+    .callout h3{font-size:24px; font-weight:800; letter-spacing:-.03em; margin-bottom:12px; color:#fff;}
+    .callout p{font-size:16px; color:rgba(255,255,255,.85); line-height:1.7; margin-bottom:24px;}
+    .callout .btn{background:#fff; color:var(--accent); font-weight:700;}
+    .callout p, .article-body .callout p{color:rgba(255,255,255,.85) !important;}
+    .callout h3, .article-body .callout h3{color:#fff !important;}
+    .card-grid{display:flex; flex-direction:column; gap:0; margin:32px 0; border-top:1px solid var(--line);}
+    .card{padding:28px 0; border-bottom:1px solid var(--line);}
+    .card:hover{}
+    .card-num{font-size:11px; font-weight:700; letter-spacing:.2em; text-transform:uppercase; color:var(--accent); margin-bottom:10px; display:block;}
+    .card h3{font-size:16px; font-weight:700; letter-spacing:-.02em; margin-bottom:6px; color:var(--ink);}
+    .card p{font-size:15px; color:var(--muted); line-height:1.7; margin:0;}
+    .divider{border:none; border-top:1px solid var(--line); margin:48px 0;}
+    .related{background:var(--surface); border:1px solid var(--line); border-radius:var(--r2); padding:36px; margin:48px 0;}
+    .related-label{font-size:11px; letter-spacing:.2em; text-transform:uppercase; font-weight:600; color:var(--muted); margin-bottom:20px;}
+    .related-links{display:flex; flex-direction:column; gap:12px;}
+    .related-links a{color:var(--accent); text-decoration:none; font-size:15px; font-weight:500; display:flex; align-items:center; gap:8px;}
+    .related-links a:hover{text-decoration:underline; text-underline-offset:3px;}
+    footer{padding:32px 0 48px; border-top:1px solid var(--line);}
+    .foot{display:flex; justify-content:space-between; align-items:center; gap:16px; flex-wrap:wrap; font-size:13px; color:var(--muted);}
+    .foot a{color:var(--muted); text-decoration:none;}
+    .foot a:hover{color:var(--ink); text-decoration:underline; text-underline-offset:3px;}
+    .foot-links{display:flex; gap:20px; flex-wrap:wrap;}
+    @media(max-width:640px){
+      .container{padding:0 20px;}
+      .article-hero{padding:40px 0 32px;}
+      .article-body{padding:40px 0 64px;}
+      .card-grid{grid-template-columns:1fr;}
+    }
+
+    .nav-dropdown{position:relative;}
+    .nav-dropdown > a{display:flex; align-items:center; gap:4px;}
+    .nav-dropdown > a::after{content:""; width:0; height:0; border-left:4px solid transparent; border-right:4px solid transparent; border-top:4px solid currentColor; opacity:.5; flex-shrink:0;}
+    .dropdown-menu{display:none; position:absolute; top:calc(100% + 8px); left:0; background:var(--paper); border:1px solid var(--line); border-radius:var(--r); padding:6px; min-width:220px; box-shadow:0 8px 24px rgba(0,0,0,.1); z-index:100;}
+    .dropdown-menu a{display:block; color:var(--ink); font-size:13px; padding:8px 12px; border-radius:8px; white-space:nowrap; text-decoration:none;}
+    .dropdown-menu a:hover{background:rgba(15,17,21,.05);}
+    .nav-dropdown:hover .dropdown-menu{display:block;}
+  </style>
+</head>
+<body>
+<header>
+  <div class="container">
+    <div class="nav">
+      <a class="brand" href="/">SJK <em>Labs</em></a>
+      <nav>
+        <a href="/#about">About</a>
+        <a href="/coverage.html">Coverage</a>
+        <a href="/#individuals">Individuals</a>
+        <a href="/#businesses">Businesses</a>
+        <div class="nav-dropdown">
+          <a href="/authority.html">Authority</a>
+          <div class="dropdown-menu">
+            <a href="/authority.html">What is Authority?</a>
+            <a href="/why-expertise-gets-ignored.html">Why expertise gets ignored</a>
+            <a href="/visibility-vs-chosen.html">Visibility vs being chosen</a>
+            <a href="/scriptwriter-test.html">The Scriptwriter Test™</a>
+            <a href="/human-authority-ai.html">Human authority in the age of AI</a>
+            <a href="/narrative-authority.html">Narrative as authority</a>
+            <a href="/what-gets-people-chosen.html">What gets people chosen?</a>
+          </div>
+        </div>
+      </nav>
+      <a class="btn btn-green" href="https://calendly.com/sarah-sjklabs/fancy-a-chat" target="_blank" rel="noreferrer">Work with us →</a>
+    </div>
+  </div>
+</header>
+
+<main>
+  <section class="article-hero">
+    <div class="container prose">
+      <div class="eyebrow">SJK Labs — Defining the field</div>
+      <h1>What is <em>Authority?</em></h1>
+      <p class="lead">Authority is not fame. It is not follower count. It is not how many people have heard of you. Authority is what happens when the right people encounter you and immediately understand that you are the right choice.</p>
+    </div>
+  </section>
+
+  <section class="article-body">
+    <div class="container prose">
+
+      <p>Most businesses and professionals confuse visibility with authority. They are not the same thing. Visibility means being seen. Authority means being chosen. You can have enormous visibility and no authority. You can have limited visibility and deep authority. The goal is authority — because authority is what converts attention into action.</p>
+
+      <div class="pull-quote"><p>"<em>Visibility gets you noticed. Authority gets you chosen.</em>"</p></div>
+
+      <h2>The simple definition</h2>
+      <p>Authority is the quality that makes a market, an audience, or a buyer default to you when they need what you offer. It is the accumulated weight of trust, credibility, clarity, and proof that makes your name the one that comes to mind — and stays there.</p>
+      <p>It is not self-declared. You cannot announce yourself as an authority. Authority is conferred by the people who consume your thinking, experience your work, and reach the conclusion that you are the clearest, most credible source in your space.</p>
+
+      <h2>Why authority matters</h2>
+      <p>The market does not make rational decisions. It makes trust decisions. When a buyer, employer, investor, or audience member has to choose between two options that appear roughly equivalent, they will always choose the one they trust more. Not the most capable option. <strong>The one they understand most clearly and trust most completely.</strong></p>
+      <p>This is why people with less experience than you get the opportunities you want. It is not because they are more capable. It is because their authority — their perceived credibility and clarity — is stronger. The gap between your capability and your market's perception of your capability is where growth stalls.</p>
+
+      <div class="card-grid">
+        <div class="card">
+          <div class="card-num">01</div>
+          <h3>Authority creates inbound</h3>
+          <p>When you have authority, the right people come to you. You stop chasing and start being sought. Inbound is the commercial effect of authority done correctly.</p>
+        </div>
+        <div class="card">
+          <div class="card-num">02</div>
+          <h3>Authority reduces friction</h3>
+          <p>Every sales conversation, every pitch, every job application is easier when authority precedes you. The decision is half-made before you enter the room.</p>
+        </div>
+        <div class="card">
+          <div class="card-num">03</div>
+          <h3>Authority compounds</h3>
+          <p>Unlike advertising, authority accumulates. A credible interview from three years ago still signals authority today. Proof does not expire.</p>
+        </div>
+      </div>
+
+      <h2>The difference between visibility and authority</h2>
+      <p>Visibility is reach. Authority is weight. You can buy visibility — through advertising, through volume, through noise. You cannot buy authority. Authority is earned through proof, consistency, clarity, and the accumulated experience of people who have trusted you and been right to do so.</p>
+      <p>The confusion between the two is the most expensive mistake businesses make. They optimise for being seen, when what they need is to be believed. <strong>Being seen is not the same as being chosen.</strong></p>
+
+      <h2>How authority affects choice</h2>
+      <p>When someone needs to make a choice — who to hire, which agency to brief, which consultant to bring in, which product to buy — they are not running a rational analysis. They are running a trust analysis. They are asking: who do I already believe? Who feels credible before I have to check? Whose name comes to mind without effort?</p>
+      <p>That effortless recall is authority. And it is built before the buying decision happens — through the content someone has read, the conversations they have overheard, the recommendations they have received, and the clarity with which a business or person has positioned themselves in the market.</p>
+
+      <div class="pull-quote"><p>"Authority is built <em>before</em> the room. It is the reason you are in the room at all."</p></div>
+
+      <h2>What authority is not</h2>
+      <p>Authority is not confidence. It is not charisma. It is not the number of followers you have or the size of your email list. It is not being the loudest voice in the room. It is not thought leadership for its own sake, or content produced to fill a calendar.</p>
+      <p>Authority is specific. It exists in a particular domain, for a particular audience. The goal is not to be authoritative to everyone — it is to be the clearest, most trusted source for the people whose trust matters to your business.</p>
+
+      <h2>Human authority in the age of AI</h2>
+      <p>Artificial intelligence can generate content at scale. It can produce convincing prose, plausible arguments, and technically accurate information on almost any subject. What it cannot generate is proof. It cannot produce lived experience, earned credibility, or the specific weight of a person who has done the thing they are describing.</p>
+      <p><strong>In a world of AI-generated noise, human authority is the only thing that cannot be automated.</strong> The businesses and individuals who build genuine authority — rooted in real expertise, real proof, and real clarity of thinking — will be the ones the market turns to. Not because they are the loudest. Because they are the most credible.</p>
+
+      <div class="callout">
+        <h3>Is your authority gap costing you?</h3>
+        <p>The gap between what you know and what the market believes is where growth stalls. The Scriptwriter Test™ diagnoses exactly where your authority is breaking down — and what needs to change.</p>
+        <a class="btn" href="https://sjklabs.co/quiz#business">Take the Authority Diagnostic →</a>
+      </div>
+
+      <div class="related">
+        <div class="related-label">Continue reading</div>
+        <div class="related-links">
+          <a href="/why-expertise-gets-ignored.html">→ Why expertise gets ignored</a>
+          <a href="/visibility-vs-chosen.html">→ Why being seen is not the same as being chosen</a>
+          <a href="/scriptwriter-test.html">→ The Scriptwriter Test™</a>
+          <a href="/human-authority-ai.html">→ Human authority in the age of AI</a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="container">
+    <div class="foot">
+      <span>© 2026 SJK Labs Ltd. All rights reserved.</span>
+      <div class="foot-links">
+        <a href="/authority.html">What is Authority?</a>
+        <a href="/privacy.html">Privacy</a>
+        <a href="/terms.html">Terms</a>
+        <a href="/cdn-cgi/l/email-protection#186b796a7970586b727374797a6b367b77"><span class="__cf_email__" data-cfemail="83f0e2f1e2ebc3f0e9e8efe2e1f0ade0ec">[email&#160;protected]</span></a>
+        <a href=

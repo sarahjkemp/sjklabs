@@ -1,0 +1,598 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-8VR7WN1MJK"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-8VR7WN1MJK');
+  </script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Take the Quiz — SJK Labs</title>
+  <meta name="description" content="Find out which Personal Authority Package is right for you — or get your Business Charisma Score." />
+
+  <style>
+    :root{
+      --paper:#f4efe6;
+      --surface:#fbf7f0;
+      --ink:#0f1115;
+      --muted:rgba(15,17,21,.65);
+      --line:rgba(15,17,21,.12);
+      --accent:#1c3d2e;
+      --accent-mid:#2a5c44;
+      --accent-light:#e8f0eb;
+      --amber:#c4621d;
+      --amber-mid:#a8521a;
+      --amber-light:#f5e6dc;
+      --oxblood:#6b0f2a;
+      --sans: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Inter, Roboto, Helvetica, Arial;
+      --r:14px; --r2:20px; --max:680px;
+    }
+    *{box-sizing:border-box; margin:0; padding:0;}
+    body{font-family:var(--sans); background:var(--paper); color:var(--ink); -webkit-font-smoothing:antialiased; min-height:100vh;}
+    body::before{content:""; position:fixed; inset:0; pointer-events:none; opacity:.04; background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='140' height='140' filter='url(%23n)' opacity='.22'/%3E%3C/svg%3E");}
+    .container{max-width:var(--max); margin:0 auto; padding:0 32px;}
+
+    header{border-bottom:1px solid var(--line); padding:20px 0; background:rgba(244,239,230,.9); backdrop-filter:blur(12px); position:sticky; top:0; z-index:10;}
+    .nav{display:flex; align-items:center; justify-content:space-between;}
+    .brand{font-size:16px; font-weight:800; letter-spacing:-.04em; color:var(--ink); text-decoration:none;}
+    .brand em{color:var(--accent); font-style:normal;}
+    .back{font-size:13px; color:var(--muted); text-decoration:none;}
+    .back:hover{color:var(--ink);}
+
+    /* TOGGLE */
+    .show-toggle{display:flex; gap:2px; background:var(--surface); border:1px solid var(--line); border-radius:999px; padding:4px; margin:48px auto 0; width:fit-content;}
+    .toggle-btn{padding:10px 24px; border-radius:999px; font-size:14px; font-weight:600; cursor:pointer; border:none; background:transparent; color:var(--muted); transition:all .2s; font-family:var(--sans);}
+    .toggle-btn.active-amber{background:var(--amber); color:#fff;}
+    .toggle-btn.active-green{background:var(--accent); color:#fff;}
+
+    /* QUIZ PANELS */
+    .quiz-panel{display:none; padding:48px 0 80px;}
+    .quiz-panel.visible{display:block;}
+
+    .quiz-intro{text-align:center; margin-bottom:48px;}
+    .quiz-eyebrow{font-size:11px; letter-spacing:.2em; text-transform:uppercase; font-weight:700; margin-bottom:12px;}
+    .eyebrow-amber{color:var(--amber);}
+    .eyebrow-green{color:var(--accent);}
+    .quiz-intro h1{font-size:clamp(28px,4vw,40px); font-weight:800; letter-spacing:-.04em; line-height:1.1; margin-bottom:16px;}
+    .quiz-intro p{font-size:16px; color:var(--muted); line-height:1.7; max-width:46ch; margin:0 auto;}
+
+    /* PROGRESS */
+    .progress-wrap{margin-bottom:36px;}
+    .progress-label{display:flex; justify-content:space-between; font-size:12px; color:var(--muted); margin-bottom:8px;}
+    .progress-bar{height:4px; background:var(--line); border-radius:999px; overflow:hidden;}
+    .progress-fill{height:100%; border-radius:999px; transition:width .4s ease;}
+    .fill-amber{background:var(--amber);}
+    .fill-green{background:var(--accent);}
+
+    /* QUESTION */
+    .question-block{animation:fadeIn .3s ease;}
+    @keyframes fadeIn{from{opacity:0; transform:translateY(8px);}to{opacity:1; transform:translateY(0);}}
+    .question-num{font-size:11px; letter-spacing:.2em; text-transform:uppercase; font-weight:700; color:var(--muted); margin-bottom:12px;}
+    .question-text{font-size:clamp(20px,2.5vw,26px); font-weight:800; letter-spacing:-.03em; line-height:1.3; margin-bottom:28px;}
+
+    .options{display:flex; flex-direction:column; gap:10px;}
+    .option{
+      background:var(--surface);
+      border:1px solid var(--line);
+      border-radius:var(--r);
+      padding:18px 20px;
+      font-size:15px;
+      line-height:1.5;
+      cursor:pointer;
+      text-align:left;
+      font-family:var(--sans);
+      color:var(--ink);
+      transition:all .15s;
+      display:flex;
+      align-items:center;
+      gap:14px;
+    }
+    .option:hover{border-color:var(--amber); background:#fff; transform:translateX(2px);}
+    .option.selected-amber{border-color:var(--amber); background:var(--amber-light); font-weight:600;}
+    .option.selected-green{border-color:var(--accent); background:var(--accent-light); font-weight:600;}
+    .option-letter{
+      width:28px; height:28px; border-radius:50%;
+      background:rgba(15,17,21,.06);
+      display:flex; align-items:center; justify-content:center;
+      font-size:12px; font-weight:700; flex-shrink:0;
+      color:var(--muted);
+    }
+    .option.selected-amber .option-letter{background:var(--amber); color:#fff;}
+    .option.selected-green .option-letter{background:var(--accent); color:#fff;}
+
+    /* EMAIL GATE */
+    .email-gate{animation:fadeIn .3s ease;}
+    .email-gate h2{font-size:clamp(22px,3vw,30px); font-weight:800; letter-spacing:-.04em; margin-bottom:12px;}
+    .email-gate p{font-size:16px; color:var(--muted); line-height:1.7; margin-bottom:28px;}
+    .email-row{display:flex; gap:10px; flex-wrap:wrap;}
+    .email-row input{flex:1; min-width:200px; padding:12px 16px; border:1px solid var(--line); border-radius:var(--r); font-size:15px; font-family:var(--sans); background:var(--surface); color:var(--ink);}
+    .email-row input:focus{outline:none; border-color:var(--amber);}
+    .email-row input.focus-green:focus{border-color:var(--accent);}
+
+    /* BTN */
+    .btn-quiz{display:inline-flex; align-items:center; justify-content:center; padding:13px 28px; border-radius:999px; font-size:15px; font-weight:600; font-family:var(--sans); cursor:pointer; border:none; transition:all .15s;}
+    .btn-amber{background:var(--amber); color:#fff;}
+    .btn-amber:hover{background:var(--amber-mid);}
+    .btn-green{background:var(--accent); color:#fff;}
+    .btn-green:hover{background:var(--accent-mid);}
+    .btn-ghost{background:transparent; color:var(--muted); border:1px solid var(--line);}
+    .btn-ghost:hover{color:var(--ink);}
+    .btn-row{display:flex; gap:10px; margin-top:28px; align-items:center;}
+
+    /* RESULT */
+    .result-block{animation:fadeIn .4s ease; display:none;}
+    .result-badge{
+      display:inline-flex; align-items:center; gap:8px;
+      font-size:11px; font-weight:700; letter-spacing:.15em; text-transform:uppercase;
+      padding:6px 14px; border-radius:999px; margin-bottom:20px;
+    }
+    .badge-amber{background:var(--amber-light); color:var(--amber-mid); border:1px solid rgba(196,98,29,.2);}
+    .badge-green{background:var(--accent-light); color:var(--accent); border:1px solid rgba(28,61,46,.2);}
+    .result-block h2{font-size:clamp(26px,3.5vw,36px); font-weight:800; letter-spacing:-.04em; line-height:1.15; margin-bottom:16px;}
+    .result-block h2 em{font-style:normal;}
+    .result-amber h2 em{color:var(--amber);}
+    .result-green h2 em{color:var(--accent);}
+    .result-block > p{font-size:16px; color:var(--muted); line-height:1.75; margin-bottom:28px;}
+
+    .result-card{background:var(--surface); border:1px solid var(--line); border-radius:var(--r2); padding:28px; margin-bottom:24px;}
+    .result-card h3{font-size:18px; font-weight:800; letter-spacing:-.03em; margin-bottom:10px;}
+    .result-card p{font-size:14px; color:var(--muted); line-height:1.7;}
+
+    /* SCORE */
+    .score-display{
+      background:var(--ink); border-radius:var(--r2); padding:36px; text-align:center; margin-bottom:24px;
+      display:flex; flex-direction:column; align-items:center; gap:8px;
+    }
+    .score-label{font-size:12px; letter-spacing:.2em; text-transform:uppercase; font-weight:700; color:rgba(255,255,255,.5);}
+    .score-num{font-size:72px; font-weight:800; letter-spacing:-.06em; line-height:1; color:#fff;}
+    .score-denom{font-size:24px; color:rgba(255,255,255,.4); font-weight:400;}
+    .score-verdict{font-size:18px; font-weight:700; color:#fff; letter-spacing:-.02em;}
+
+    @media(max-width:600px){
+      .container{padding:0 20px;}
+      .toggle-btn{padding:9px 16px; font-size:13px;}
+      .quiz-panel{padding:32px 0 64px;}
+      .email-row{flex-direction:column;}
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="container">
+    <div class="nav">
+      <a class="brand" href="/">SJK <em>Labs</em></a>
+      <a class="back" href="/">← Back</a>
+    </div>
+  </div>
+</header>
+
+<div class="container">
+  <div class="show-toggle">
+    <button class="toggle-btn active-amber" onclick="showQuiz('personal')" id="btn-personal">Which package?</button>
+    <button class="toggle-btn" onclick="showQuiz('business')" id="btn-business">Business Charisma Score</button>
+  </div>
+
+  <!-- ═══════════════════════════════════════════
+       PERSONAL AUTHORITY QUIZ
+  ═══════════════════════════════════════════ -->
+  <div class="quiz-panel visible" id="quiz-personal">
+
+    <div class="quiz-intro" id="personal-intro">
+      <div class="quiz-eyebrow eyebrow-amber">Personal Authority</div>
+      <h1>Which package is right for you?</h1>
+      <p>Five questions. Two minutes. A clear recommendation for where to start.</p>
+      <div class="btn-row" style="justify-content:center; margin-top:28px;">
+        <button class="btn-quiz btn-amber" onclick="startQuiz('personal')">Let's go →</button>
+      </div>
+    </div>
+
+    <div id="personal-quiz" style="display:none;">
+      <div class="progress-wrap">
+        <div class="progress-label">
+          <span id="personal-progress-text">Question 1 of 5</span>
+          <span id="personal-progress-pct">20%</span>
+        </div>
+        <div class="progress-bar"><div class="progress-fill fill-amber" id="personal-bar" style="width:20%"></div></div>
+      </div>
+      <div id="personal-question-wrap"></div>
+      <div class="btn-row">
+        <button class="btn-quiz btn-ghost" id="personal-back-btn" onclick="prevQuestion('personal')" style="display:none;">← Back</button>
+        <button class="btn-quiz btn-amber" id="personal-next-btn" onclick="nextQuestion('personal')" disabled>Next →</button>
+      </div>
+    </div>
+
+    <div id="personal-email-gate" style="display:none;" class="email-gate">
+      <h2>Almost there.</h2>
+      <p>Where should we send your recommendation? We'll tell you which package fits and why.</p>
+      <div class="email-row">
+        <input type="text" id="personal-name-input" placeholder="Your first name" />
+        <input type="email" id="personal-email-input" placeholder="Your email address" />
+      </div>
+      <div class="btn-row">
+        <button class="btn-quiz btn-amber" onclick="submitPersonal()">Show my result →</button>
+      </div>
+    </div>
+
+    <div class="result-block result-amber" id="personal-result"></div>
+
+  </div>
+
+  <!-- ═══════════════════════════════════════════
+       BUSINESS CHARISMA SCORE
+  ═══════════════════════════════════════════ -->
+  <div class="quiz-panel" id="quiz-business">
+
+    <div class="quiz-intro" id="business-intro">
+      <div class="quiz-eyebrow eyebrow-green">For Businesses</div>
+      <h1>What's your Business Charisma Score?</h1>
+      <p>Six questions to find out how much authority your business actually has in the market — and where the gap is costing you.</p>
+      <div class="btn-row" style="justify-content:center; margin-top:28px;">
+        <button class="btn-quiz btn-green" onclick="startQuiz('business')">Find out →</button>
+      </div>
+    </div>
+
+    <div id="business-quiz" style="display:none;">
+      <div class="progress-wrap">
+        <div class="progress-label">
+          <span id="business-progress-text">Question 1 of 6</span>
+          <span id="business-progress-pct">17%</span>
+        </div>
+        <div class="progress-bar"><div class="progress-fill fill-green" id="business-bar" style="width:17%"></div></div>
+      </div>
+      <div id="business-question-wrap"></div>
+      <div class="btn-row">
+        <button class="btn-quiz btn-ghost" id="business-back-btn" onclick="prevQuestion('business')" style="display:none;">← Back</button>
+        <button class="btn-quiz btn-green" id="business-next-btn" onclick="nextQuestion('business')" disabled>Next →</button>
+      </div>
+    </div>
+
+    <div id="business-email-gate" style="display:none;" class="email-gate">
+      <h2>Almost there.</h2>
+      <p>Where should we send your score? We'll show you exactly where you are — and what to do about it.</p>
+      <div class="email-row">
+        <input type="text" id="business-name-input" placeholder="Your name" />
+        <input type="email" id="business-email-input" class="focus-green" placeholder="Work email" />
+      </div>
+      <div class="btn-row">
+        <button class="btn-quiz btn-green" onclick="submitBusiness()">Show my score →</button>
+      </div>
+    </div>
+
+    <div class="result-block result-green" id="business-result"></div>
+
+  </div>
+</div>
+
+<script>
+
+/* ═══════════ QUIZ DATA ═══════════ */
+
+const personalQuestions = [
+  {
+    text: "When you introduce yourself professionally, what feels most off?",
+    options: [
+      { text: "My LinkedIn doesn't do me justice", pkg: "LL" },
+      { text: "I'm not getting invited onto podcasts and shows", pkg: "PP" },
+      { text: "Nobody's booking me to speak", pkg: "SS" },
+      { text: "I'm not getting press coverage or bylines", pkg: "PR" }
+    ]
+  },
+  {
+    text: "Where do you most want to show up in the next 12 months?",
+    options: [
+      { text: "LinkedIn — as the obvious expert in my field", pkg: "LL" },
+      { text: "Podcasts and video interviews", pkg: "PP" },
+      { text: "Stages, panels and conferences", pkg: "SS" },
+      { text: "Publications, press and media", pkg: "PR" }
+    ]
+  },
+  {
+    text: "How does your ideal client or opportunity find you?",
+    options: [
+      { text: "They find me on LinkedIn and reach out", pkg: "LL" },
+      { text: "They heard me on a podcast and looked me up", pkg: "PP" },
+      { text: "They saw me speak and wanted to work with me", pkg: "SS" },
+      { text: "They read something about me and got in touch", pkg: "PR" }
+    ]
+  },
+  {
+    text: "What's the biggest thing holding you back right now?",
+    options: [
+      { text: "My profile doesn't match my actual ability", pkg: "LL" },
+      { text: "I have a story to tell but no platform to tell it", pkg: "PP" },
+      { text: "I have ideas worth sharing but no stage", pkg: "SS" },
+      { text: "I have expertise the world should know about but no media presence", pkg: "PR" }
+    ]
+  },
+  {
+    text: "Which of these would change things most for you?",
+    options: [
+      { text: "A LinkedIn profile that opens doors without me having to knock", pkg: "LL" },
+      { text: "Being the guest that podcast hosts can't wait to book", pkg: "PP" },
+      { text: "Being in the rooms where decisions get made", pkg: "SS" },
+      { text: "Having my name in the publications my clients actually read", pkg: "PR" }
+    ]
+  }
+];
+
+const personalPackages = {
+  LL: {
+    name: "The LinkedIn Luminary",
+    desc: "Your answers point to one thing: LinkedIn is where your authority gap is biggest — and where closing it will make the most immediate difference. You have the expertise. The profile just isn't showing it yet.",
+    includes: "Profile rewrite, About section, Experience reframing, 4-week content direction and positioning that makes the right people stop scrolling."
+  },
+  PP: {
+    name: "The Podcast Powerhouse",
+    desc: "You're ready to build authority through conversation — but you're not getting the invitations yet. Your ideas deserve a bigger platform, and podcast guesting is one of the fastest ways to get there.",
+    includes: "3 pitch emails ready to send, a guest one-sheet, 5 signature story frameworks and a target show shortlist with outreach strategy."
+  },
+  SS: {
+    name: "The Stage Strategist",
+    desc: "You have something to say and stages to say it on — you just need the tools to get there. Speaking builds authority fast because it puts you in front of the exact rooms you want to be in.",
+    includes: "Speaker bio, signature talk title and synopsis, pitch email template and a targeted event and conference list by sector."
+  },
+  PR: {
+    name: "The Press Pioneer",
+    desc: "Media authority changes everything — but it requires knowing how to pitch, what journalists actually want, and how to position yourself as the right voice. That's exactly what this pack builds.",
+    includes: "3 story angles with data hooks, a media one-pager, journalist outreach template and a publication target list by tier."
+  }
+};
+
+const businessQuestions = [
+  {
+    text: "When a potential client searches your category online or asks an AI tool, do you come up?",
+    options: [
+      { text: "Yes — we rank well and appear in AI responses", score: 2 },
+      { text: "Sometimes, but inconsistently", score: 1 },
+      { text: "Rarely or never", score: 0 }
+    ]
+  },
+  {
+    text: "When journalists or analysts cover your sector, do they call you?",
+    options: [
+      { text: "Yes — we're regularly quoted and referenced", score: 2 },
+      { text: "Occasionally, but it's not consistent", score: 1 },
+      { text: "No — they call our competitors instead", score: 0 }
+    ]
+  },
+  {
+    text: "How do most new clients find you?",
+    options: [
+      { text: "Inbound — they come to us already warm", score: 2 },
+      { text: "Mix of inbound and outreach", score: 1 },
+      { text: "Mostly outbound — we have to chase", score: 0 }
+    ]
+  },
+  {
+    text: "Can you articulate what makes you different in one clear sentence — and does it actually land?",
+    options: [
+      { text: "Yes — clients repeat our positioning back to us", score: 2 },
+      { text: "We have messaging but it's not quite landing yet", score: 1 },
+      { text: "Not really — it's something we're still working on", score: 0 }
+    ]
+  },
+  {
+    text: "How visible are your senior leaders externally?",
+    options: [
+      { text: "They're recognised voices in the sector", score: 2 },
+      { text: "They have profiles but aren't very active", score: 1 },
+      { text: "They're largely invisible outside the business", score: 0 }
+    ]
+  },
+  {
+    text: "When a prospect is deciding between you and a competitor, what tips it?",
+    options: [
+      { text: "Our reputation and market position — they already trust us", score: 2 },
+      { text: "Referrals and case studies — third-party proof", score: 1 },
+      { text: "Price or availability — we haven't built enough trust yet", score: 0 }
+    ]
+  }
+];
+
+/* ═══════════ STATE ═══════════ */
+
+const state = {
+  personal: { current: 0, answers: [] },
+  business: { current: 0, answers: [] }
+};
+
+/* ═══════════ PANEL TOGGLE ═══════════ */
+
+function showQuiz(id) {
+  document.querySelectorAll('.quiz-panel').forEach(p => p.classList.remove('visible'));
+  document.getElementById('quiz-' + id).classList.add('visible');
+  document.getElementById('btn-personal').className = 'toggle-btn';
+  document.getElementById('btn-business').className = 'toggle-btn';
+  const colour = id === 'personal' ? 'amber' : 'green';
+  document.getElementById('btn-' + id).className = 'toggle-btn active-' + colour;
+  history.replaceState(null, '', '#' + id);
+}
+
+const hash = location.hash.replace('#','');
+if (hash === 'business') showQuiz('business');
+
+/* ═══════════ QUIZ LOGIC ═══════════ */
+
+function startQuiz(quiz) {
+  document.getElementById(quiz + '-intro').style.display = 'none';
+  document.getElementById(quiz + '-quiz').style.display = 'block';
+  renderQuestion(quiz);
+}
+
+function renderQuestion(quiz) {
+  const q = quiz === 'personal' ? personalQuestions : businessQuestions;
+  const s = state[quiz];
+  const total = q.length;
+  const idx = s.current;
+  const pct = Math.round(((idx + 1) / total) * 100);
+  const letters = ['A','B','C','D'];
+
+  document.getElementById(quiz + '-progress-text').textContent = `Question ${idx + 1} of ${total}`;
+  document.getElementById(quiz + '-progress-pct').textContent = pct + '%';
+  document.getElementById(quiz + '-bar').style.width = pct + '%';
+
+  const selected = s.answers[idx] !== undefined ? s.answers[idx] : -1;
+  const colour = quiz === 'personal' ? 'amber' : 'green';
+
+  let html = `<div class="question-block">
+    <div class="question-num">Question ${idx + 1}</div>
+    <div class="question-text">${q[idx].text}</div>
+    <div class="options">`;
+
+  q[idx].options.forEach((opt, i) => {
+    const sel = selected === i ? ` selected-${colour}` : '';
+    html += `<button class="option${sel}" onclick="selectAnswer('${quiz}', ${i})">
+      <span class="option-letter">${letters[i]}</span>${opt.text}
+    </button>`;
+  });
+
+  html += `</div></div>`;
+  document.getElementById(quiz + '-question-wrap').innerHTML = html;
+
+  const nextBtn = document.getElementById(quiz + '-next-btn');
+  nextBtn.disabled = selected === -1;
+  nextBtn.textContent = idx === total - 1 ? 'See my result →' : 'Next →';
+
+  const backBtn = document.getElementById(quiz + '-back-btn');
+  backBtn.style.display = idx > 0 ? 'inline-flex' : 'none';
+}
+
+function selectAnswer(quiz, idx) {
+  const colour = quiz === 'personal' ? 'amber' : 'green';
+  state[quiz].answers[state[quiz].current] = idx;
+  document.querySelectorAll(`#${quiz}-question-wrap .option`).forEach((btn, i) => {
+    btn.className = 'option' + (i === idx ? ` selected-${colour}` : '');
+    if (i === idx) btn.querySelector('.option-letter').style.background = '';
+  });
+  document.getElementById(quiz + '-next-btn').disabled = false;
+}
+
+function nextQuestion(quiz) {
+  const q = quiz === 'personal' ? personalQuestions : businessQuestions;
+  if (state[quiz].current < q.length - 1) {
+    state[quiz].current++;
+    renderQuestion(quiz);
+  } else {
+    showEmailGate(quiz);
+  }
+}
+
+function prevQuestion(quiz) {
+  if (state[quiz].current > 0) {
+    state[quiz].current--;
+    renderQuestion(quiz);
+  }
+}
+
+function showEmailGate(quiz) {
+  document.getElementById(quiz + '-quiz').style.display = 'none';
+  document.getElementById(quiz + '-email-gate').style.display = 'block';
+}
+
+/* ═══════════ RESULTS ═══════════ */
+
+function submitPersonal() {
+  const name = document.getElementById('personal-name-input').value.trim();
+  const email = document.getElementById('personal-email-input').value.trim();
+  if (!email) { document.getElementById('personal-email-input').focus(); return; }
+
+  // Tally scores
+  const tally = { LL: 0, PP: 0, SS: 0, PR: 0 };
+  state.personal.answers.forEach((ansIdx, qIdx) => {
+    tally[personalQuestions[qIdx].options[ansIdx].pkg]++;
+  });
+  const winner = Object.keys(tally).reduce((a, b) => tally[a] >= tally[b] ? a : b);
+  const pkg = personalPackages[winner];
+
+  // Submit to Formspree
+  const form = new FormData();
+  form.append('name', name);
+  form.append('email', email);
+  form.append('result', pkg.name);
+  form.append('answers', JSON.stringify(state.personal.answers.map((a, q) => personalQuestions[q].options[a].text)));
+  fetch('https://formspree.io/f/mojkorbj', { method:'POST', body:form, headers:{'Accept':'application/json'} });
+
+  // Show result
+  document.getElementById('personal-email-gate').style.display = 'none';
+  const el = document.getElementById('personal-result');
+  el.innerHTML = `
+    <div class="result-badge badge-amber">Your result</div>
+    <h2>Your package is <em>${pkg.name}</em></h2>
+    <p>${pkg.desc}</p>
+    <div class="result-card">
+      <h3>What's included</h3>
+      <p>Every package starts with a 30-minute journalist-led interview, full visibility review, authority diagnosis, core narrative, content pillars and quick wins. Then ${pkg.name} adds: ${pkg.includes}</p>
+    </div>
+    <p style="font-size:15px; color:var(--muted); line-height:1.7; margin-bottom:24px;">Ready to get started? Book a quick conversation and we'll take it from there.</p>
+    <div class="btn-row">
+      <a class="btn-quiz btn-amber" href="https://calendly.com/sarah-sjklabs/fancy-a-chat" target="_blank">Book a conversation →</a>
+      <a class="btn-quiz btn-ghost" href="index.html#individuals">See all packages</a>
+    </div>`;
+  el.style.display = 'block';
+}
+
+function submitBusiness() {
+  const name = document.getElementById('business-name-input').value.trim();
+  const email = document.getElementById('business-email-input').value.trim();
+  if (!email) { document.getElementById('business-email-input').focus(); return; }
+
+  // Calculate score
+  const score = state.business.answers.reduce((sum, ansIdx, qIdx) => {
+    return sum + businessQuestions[qIdx].options[ansIdx].score;
+  }, 0);
+  const max = businessQuestions.length * 2;
+
+  let verdict, detail;
+  if (score <= 4) {
+    verdict = "The market doesn't know what you know.";
+    detail = "There's a significant gap between your expertise and how the market perceives you. The good news: this is entirely fixable — and closing it is exactly what SJK Labs is built to do.";
+  } else if (score <= 8) {
+    verdict = "You're known — but not trusted at scale.";
+    detail = "You've built some authority but it's inconsistent. Your positioning isn't landing clearly enough, and your visibility has a ceiling. With the right narrative and strategy, that changes fast.";
+  } else {
+    verdict = "Strong foundations. Time to amplify.";
+    detail = "You have more authority than most — now the opportunity is to systematise it, compound it, and make sure it's working as hard as you are.";
+  }
+
+  // Submit to Formspree
+  const form = new FormData();
+  form.append('name', name);
+  form.append('email', email);
+  form.append('score', score + '/' + max);
+  form.append('verdict', verdict);
+  form.append('answers', JSON.stringify(state.business.answers.map((a, q) => businessQuestions[q].options[a].text)));
+  fetch('https://formspree.io/f/xkoqlyeb', { method:'POST', body:form, headers:{'Accept':'application/json'} });
+
+  // Show result
+  document.getElementById('business-email-gate').style.display = 'none';
+  const el = document.getElementById('business-result');
+  el.innerHTML = `
+    <div class="result-badge badge-green">Your Business Charisma Score</div>
+    <div class="score-display">
+      <div class="score-label">Your score</div>
+      <div><span class="score-num">${score}</span><span class="score-denom"> /${max}</span></div>
+      <div class="score-verdict">${verdict}</div>
+    </div>
+    <h2>${verdict}</h2>
+    <p>${detail}</p>
+    <div class="result-card">
+      <h3>What this means</h3>
+      <p>Your score of ${score}/${max} tells us where the authority gap is — and what's most likely costing you pipeline, trust and market position right now. The next step is a conversation to diagnose exactly where to focus first.</p>
+    </div>
+    <p style="font-size:15px; color:var(--muted); line-height:1.7; margin-bottom:24px;">Book a free 30-minute conversation and we'll walk through your score together.</p>
+    <div class="btn-row">
+      <a class="btn-quiz btn-green" href="https://calendly.com/sarah-sjklabs/fancy-a-chat" target="_blank">Book a conversation →</a>
+      <a class="btn-quiz btn-ghost" href="/#businesses">See how we work</a>
+    </div>`;
+  el.style.display = 'block';
+}
+
+</script>
+</body>
+</html>

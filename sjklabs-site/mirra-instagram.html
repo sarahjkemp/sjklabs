@@ -1,0 +1,1122 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-8VR7WN1MJK"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-8VR7WN1MJK');
+  </script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Mirra — Instagram Grid</title>
+  <style>
+    :root {
+      --cream: #f6f1e9;
+      --ink: #1c1714;
+      --muted: rgba(28,23,20,.55);
+      --terra: #b85c38;
+      --terra-mid: #9e4f30;
+      --terra-light: #f5e8e2;
+      --dark: #1c1714;
+      --sans: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Inter, Roboto, Helvetica, Arial;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: var(--sans);
+      background: #e8e3db;
+      padding: 40px 32px;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .instructions {
+      max-width: 640px;
+      margin: 0 auto 40px;
+      background: #fff;
+      border-radius: 12px;
+      padding: 24px 28px;
+      font-size: 14px;
+      color: var(--muted);
+      line-height: 1.65;
+    }
+    .instructions strong { color: var(--ink); }
+    .instructions h2 { font-size: 16px; font-weight: 700; color: var(--ink); margin-bottom: 8px; }
+
+    .grid {
+      display: grid;
+      grid-template-columns: 1080px;
+      gap: 40px;
+      width: fit-content;
+      margin: 0 auto;
+    }
+
+    /* BASE POST */
+    .post {
+      width: 540px;
+      height: 540px;
+      overflow: hidden;
+      position: relative;
+      flex-shrink: 0;
+      zoom: 2;
+    }
+
+    /* ── POST 1 — BRAND INTRO ── */
+    .p1 {
+      background: var(--terra);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 0;
+      padding: 48px;
+    }
+    .p1-wordmark {
+      font-size: 96px;
+      font-weight: 800;
+      letter-spacing: -.05em;
+      color: #fff;
+      line-height: 1;
+    }
+    .p1-by {
+      font-size: 14px;
+      font-weight: 400;
+      letter-spacing: .15em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,.55);
+      margin-top: 6px;
+      margin-bottom: 40px;
+    }
+    .p1-rule {
+      width: 48px;
+      height: 2px;
+      background: rgba(255,255,255,.3);
+      margin-bottom: 28px;
+    }
+    .p1-tagline {
+      font-size: 22px;
+      font-weight: 300;
+      color: rgba(255,255,255,.9);
+      letter-spacing: .02em;
+      font-style: italic;
+      text-align: center;
+    }
+
+    /* ── POST 2 — THE GAP ── */
+    .p2 {
+      background: var(--cream);
+      padding: 52px 48px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .p2-eyebrow {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: .2em;
+      text-transform: uppercase;
+      color: var(--terra);
+      opacity: .8;
+    }
+    .p2-body {
+      font-size: 34px;
+      font-weight: 800;
+      color: var(--ink);
+      letter-spacing: -.03em;
+      line-height: 1.15;
+    }
+    .p2-body em { color: var(--terra); font-style: normal; }
+    .p2-footer {
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      color: var(--terra);
+      opacity: .7;
+    }
+
+    /* ── POST 3 — SOUND FAMILIAR ── */
+    .p3 {
+      background: var(--cream);
+      padding: 48px;
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+    .p3-header {
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      color: var(--terra);
+      opacity: .8;
+      margin-bottom: 24px;
+    }
+    .p3-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+      flex: 1;
+    }
+    .p3-list li {
+      font-size: 19px;
+      font-weight: 600;
+      color: var(--ink);
+      letter-spacing: -.02em;
+      line-height: 1.3;
+      padding-left: 20px;
+      position: relative;
+    }
+    .p3-list li::before {
+      content: "→";
+      position: absolute;
+      left: 0;
+      color: var(--terra);
+      font-size: 14px;
+      top: 3px;
+    }
+    .p3-brand {
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--terra);
+      opacity: .6;
+      margin-top: 24px;
+      letter-spacing: .05em;
+    }
+
+    /* ── POST 4 — AI ANGLE ── */
+    .p4 {
+      background: var(--dark);
+      padding: 52px 48px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .p4-eyebrow {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: .2em;
+      text-transform: uppercase;
+      color: var(--terra);
+    }
+    .p4-headline {
+      font-size: 30px;
+      font-weight: 800;
+      color: #fff;
+      letter-spacing: -.03em;
+      line-height: 1.2;
+    }
+    .p4-headline em { color: var(--terra); font-style: normal; }
+    .p4-sub {
+      font-size: 15px;
+      font-weight: 300;
+      color: rgba(255,255,255,.6);
+      line-height: 1.65;
+    }
+    .p4-brand {
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,.25);
+    }
+
+    /* ── POST 5 — THE JOURNALIST ── */
+    .p5 {
+      display: flex;
+    }
+    .p5-left {
+      width: 50%;
+      background: var(--terra);
+      padding: 44px 32px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .p5-left-label {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: .2em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,.5);
+    }
+    .p5-left-headline {
+      font-size: 26px;
+      font-weight: 800;
+      color: #fff;
+      letter-spacing: -.03em;
+      line-height: 1.2;
+    }
+    .p5-left-names {
+      font-size: 13px;
+      color: rgba(255,255,255,.7);
+      line-height: 1.7;
+      font-style: italic;
+    }
+    .p5-right {
+      width: 50%;
+      background: var(--cream);
+      padding: 44px 32px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 16px;
+    }
+    .p5-right-text {
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--ink);
+      letter-spacing: -.02em;
+      line-height: 1.35;
+    }
+    .p5-right-text em { color: var(--terra); font-style: normal; }
+    .p5-right-brand {
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      color: var(--terra);
+      opacity: .6;
+    }
+
+    /* ── POST 6 — PULL QUOTE ── */
+    .p6 {
+      background: var(--terra-light);
+      border: 4px solid var(--terra);
+      padding: 52px 48px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 20px;
+    }
+    .p6-mark {
+      font-size: 96px;
+      font-weight: 800;
+      color: var(--terra);
+      line-height: .7;
+      opacity: .3;
+    }
+    .p6-quote {
+      font-size: 28px;
+      font-weight: 800;
+      color: var(--ink);
+      letter-spacing: -.03em;
+      line-height: 1.25;
+    }
+    .p6-quote em { color: var(--terra); font-style: normal; }
+    .p6-attr {
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      color: var(--terra);
+      opacity: .7;
+    }
+
+    /* ── POST 7 — STORY SESSION ── */
+    .p7 {
+      background: #fff;
+      border: 3px solid var(--terra);
+      padding: 44px 44px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .p7-num {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: .2em;
+      text-transform: uppercase;
+      color: var(--terra);
+      opacity: .7;
+    }
+    .p7-name {
+      font-size: 32px;
+      font-weight: 800;
+      color: var(--ink);
+      letter-spacing: -.03em;
+      line-height: 1.1;
+      margin-top: 8px;
+    }
+    .p7-price {
+      font-size: 40px;
+      font-weight: 800;
+      color: var(--terra);
+      letter-spacing: -.04em;
+      margin-top: 8px;
+    }
+    .p7-includes {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-top: 20px;
+    }
+    .p7-includes li {
+      font-size: 14px;
+      color: rgba(28,23,20,.65);
+      line-height: 1.4;
+      display: flex;
+      gap: 8px;
+    }
+    .p7-includes li span:first-child { color: var(--terra); flex-shrink: 0; }
+    .p7-brand {
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      color: var(--terra);
+      opacity: .5;
+    }
+
+    /* ── POST 8 — THE FOUR PACKAGES ── */
+    .p8 {
+      background: var(--dark);
+      padding: 48px 44px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .p8-eyebrow {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: .2em;
+      text-transform: uppercase;
+      color: var(--terra);
+    }
+    .p8-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      flex: 1;
+      justify-content: center;
+    }
+    .p8-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      padding: 14px 0;
+      border-bottom: 1px solid rgba(255,255,255,.08);
+    }
+    .p8-item:last-child { border-bottom: none; }
+    .p8-item-name { font-size: 18px; font-weight: 700; color: #fff; letter-spacing: -.02em; }
+    .p8-item-price { font-size: 18px; font-weight: 700; color: var(--terra); letter-spacing: -.02em; }
+    .p8-brand {
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,.2);
+    }
+
+    /* ── POST 9 — WHAT CHANGES ── */
+    .p9 {
+      background: var(--cream);
+      padding: 52px 48px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 0;
+    }
+    .p9-intro {
+      font-size: 16px;
+      font-weight: 300;
+      color: var(--muted);
+      margin-bottom: 20px;
+      font-style: italic;
+    }
+    .p9-line {
+      font-size: 36px;
+      font-weight: 800;
+      color: var(--ink);
+      letter-spacing: -.03em;
+      line-height: 1.1;
+      margin-bottom: 10px;
+    }
+    .p9-line.terra { color: var(--terra); }
+    .p9-rule {
+      width: 40px;
+      height: 3px;
+      background: var(--terra);
+      margin: 24px 0;
+    }
+    .p9-brand {
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      color: var(--terra);
+      opacity: .6;
+    }
+
+    /* ── POST 10 — CTA ── */
+    .p10 {
+      background: var(--terra);
+      padding: 52px 48px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: flex-start;
+    }
+    .p10-wordmark {
+      font-size: 20px;
+      font-weight: 800;
+      letter-spacing: -.03em;
+      color: rgba(255,255,255,.5);
+    }
+    .p10-headline {
+      font-size: 40px;
+      font-weight: 800;
+      color: #fff;
+      letter-spacing: -.03em;
+      line-height: 1.1;
+    }
+    .p10-sub {
+      font-size: 18px;
+      font-weight: 300;
+      font-style: italic;
+      color: rgba(255,255,255,.8);
+    }
+    .p10-url {
+      font-size: 14px;
+      font-weight: 700;
+      letter-spacing: .08em;
+      text-transform: lowercase;
+      color: rgba(255,255,255,.6);
+      background: rgba(255,255,255,.15);
+      padding: 10px 20px;
+      border-radius: 999px;
+    }
+
+    /* ── PHOTO POSTS ── */
+    .photo-post {
+      position: relative;
+      overflow: hidden;
+    }
+    .photo-post img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center top;
+      display: block;
+    }
+    .photo-overlay {
+      position: absolute;
+      inset: 0;
+    }
+    .photo-content {
+      position: absolute;
+      inset: 0;
+      padding: 44px 40px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    /* shared text shadow for all photo posts */
+    .photo-content * { text-shadow: 0 1px 12px rgba(0,0,0,.9), 0 2px 24px rgba(0,0,0,.7); }
+
+    /* POST 11 — studio, cinematic bottom text */
+    .p11 .photo-overlay {
+      background: linear-gradient(to top, rgba(28,23,20,.75) 0%, rgba(28,23,20,.1) 55%, transparent 100%);
+    }
+    .p11-top { font-size: 11px; font-weight: 700; letter-spacing: .2em; text-transform: uppercase; color: rgba(255,255,255,.7); }
+    .p11-headline { font-size: 30px; font-weight: 800; color: #fff; letter-spacing: -.03em; line-height: 1.2; margin-bottom: 10px; }
+    .p11-headline em { color: var(--terra); font-style: normal; }
+    .p11-brand { font-size: 11px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: rgba(255,255,255,.5); }
+
+    /* POST 12 — event/audience, bottom text */
+    .p12 .photo-overlay { background: linear-gradient(to top, rgba(28,23,20,.85) 0%, rgba(28,23,20,.2) 50%, transparent 100%); }
+    .p12-content { justify-content: space-between; gap: 20px; }
+    .p12-eyebrow { font-size: 13px; font-weight: 800; letter-spacing: .2em; text-transform: uppercase; color: #fff; }
+    .p12-headline { font-size: 26px; font-weight: 800; color: #fff; letter-spacing: -.03em; line-height: 1.25; }
+    .p12-headline em { color: var(--terra); font-style: normal; }
+    .p12-brand { font-size: 11px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: rgba(255,255,255,.45); margin-top: 20px; }
+
+    /* POST 13 — comedy stage */
+    .p13 .photo-overlay {
+      background: linear-gradient(to top, rgba(184,92,56,.85) 0%, rgba(184,92,56,.1) 50%, transparent 100%);
+    }
+    .p13-top { font-size: 11px; font-weight: 700; letter-spacing: .2em; text-transform: uppercase; color: rgba(255,255,255,.7); }
+    .p13-headline { font-size: 28px; font-weight: 800; color: #fff; letter-spacing: -.03em; line-height: 1.2; margin-bottom: 8px; }
+    .p13-sub { font-size: 14px; font-weight: 400; color: #fff; font-style: italic; line-height: 1.5; margin-bottom: 10px; }
+    .p13-brand { font-size: 11px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: rgba(255,255,255,.55); }
+
+    /* POST 14 — podcast recording */
+    .p14 .photo-overlay {
+      background: linear-gradient(135deg, rgba(184,92,56,.7) 0%, rgba(28,23,20,.55) 100%);
+    }
+    .p14-content { justify-content: space-between; }
+    .p14-top { font-size: 11px; font-weight: 700; letter-spacing: .2em; text-transform: uppercase; color: rgba(255,255,255,.7); }
+    .p14-headline { font-size: 32px; font-weight: 800; color: #fff; letter-spacing: -.03em; line-height: 1.15; margin-bottom: 10px; }
+    .p14-headline em { color: rgba(255,255,255,.75); font-style: italic; font-weight: 300; }
+    .p14-brand { font-size: 11px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: rgba(255,255,255,.5); }
+
+    /* POST 15 — stage performance */
+    .p15 .photo-overlay {
+      background: linear-gradient(to bottom, transparent 0%, rgba(28,23,20,.8) 70%);
+    }
+    .p15-top { font-size: 11px; font-weight: 700; letter-spacing: .2em; text-transform: uppercase; color: rgba(255,255,255,.7); }
+    .p15-headline { font-size: 26px; font-weight: 800; color: #fff; letter-spacing: -.03em; line-height: 1.25; margin-bottom: 8px; }
+    .p15-sub { font-size: 15px; font-weight: 400; color: #fff; font-style: italic; margin-bottom: 10px; }
+    .p15-brand { font-size: 11px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: rgba(255,255,255,.45); }
+
+    /* POST 22 — The question */
+    .p22 {
+      background: var(--cream);
+      padding: 52px 48px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .p22-eyebrow {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: .2em;
+      text-transform: uppercase;
+      color: var(--terra);
+      opacity: .7;
+    }
+    .p22-question {
+      font-size: 26px;
+      font-weight: 800;
+      color: var(--ink);
+      letter-spacing: -.02em;
+      line-height: 1.3;
+    }
+    .p22-question em {
+      color: var(--terra);
+      font-style: normal;
+    }
+    .p22-nudge {
+      font-size: 14px;
+      color: var(--muted);
+      font-style: italic;
+      line-height: 1.6;
+    }
+    .p22-brand {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      color: var(--terra);
+      opacity: .5;
+    }
+
+    /* POST 23 — So much shame / no shame */
+    .p23 {
+      background: var(--ink);
+      padding: 52px 48px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .p23-eyebrow {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: .2em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,.25);
+    }
+    .p23-headline {
+      font-size: 40px;
+      font-weight: 800;
+      color: #fff;
+      letter-spacing: -.03em;
+      line-height: 1.15;
+    }
+    .p23-headline em {
+      color: var(--terra);
+      font-style: normal;
+    }
+    .p23-brand {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,.2);
+    }
+
+    /* POST 21 — Pete Doherty */
+    .p21 {
+      background: #0e0c0b;
+      padding: 52px 48px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .p21-eyebrow {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: .2em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,.3);
+    }
+    .p21-headline {
+      font-size: 36px;
+      font-weight: 800;
+      color: #fff;
+      letter-spacing: -.03em;
+      line-height: 1.2;
+    }
+    .p21-headline em {
+      color: var(--terra);
+      font-style: normal;
+    }
+    .p21-detail {
+      font-size: 14px;
+      color: rgba(255,255,255,.45);
+      font-style: italic;
+      line-height: 1.7;
+    }
+    .p21-brand {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,.2);
+    }
+
+    /* POST 20 — Comparison trap */
+    .p20 {
+      background: var(--ink);
+      padding: 52px 48px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .p20-eyebrow {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: .2em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,.3);
+    }
+    .p20-headline {
+      font-size: 32px;
+      font-weight: 800;
+      color: #fff;
+      letter-spacing: -.03em;
+      line-height: 1.2;
+    }
+    .p20-headline em {
+      color: var(--terra);
+      font-style: normal;
+    }
+    .p20-divider {
+      width: 40px;
+      height: 3px;
+      background: var(--terra);
+      opacity: .5;
+    }
+    .p20-sub {
+      font-size: 28px;
+      font-weight: 800;
+      color: var(--terra);
+      letter-spacing: -.03em;
+      line-height: 1.2;
+    }
+    .p20-brand {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,.2);
+    }
+
+    /* POST 19 — Make yourself known */
+    .p19 {
+      background: var(--cream);
+      padding: 52px 48px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .p19-eyebrow {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: .2em;
+      text-transform: uppercase;
+      color: var(--terra);
+      opacity: .7;
+    }
+    .p19-headline {
+      font-size: 38px;
+      font-weight: 800;
+      color: var(--ink);
+      letter-spacing: -.03em;
+      line-height: 1.15;
+    }
+    .p19-headline em {
+      color: var(--terra);
+      font-style: normal;
+    }
+    .p19-sub {
+      font-size: 15px;
+      font-weight: 400;
+      color: var(--muted);
+      font-style: italic;
+      line-height: 1.6;
+    }
+    .p19-brand {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      color: var(--terra);
+      opacity: .5;
+    }
+
+    /* POST 18 — Advice to younger self */
+    .p18 {
+      background: var(--ink);
+      padding: 52px 48px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .p18-eyebrow {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: .2em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,.35);
+    }
+    .p18-headline {
+      font-size: 72px;
+      font-weight: 800;
+      color: var(--terra);
+      letter-spacing: -.04em;
+      line-height: 1;
+    }
+    .p18-body {
+      font-size: 17px;
+      font-weight: 400;
+      color: rgba(255,255,255,.75);
+      line-height: 1.6;
+      font-style: italic;
+    }
+    .p18-brand {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,.2);
+    }
+
+    /* POST 17 — Independent press clip */
+    .p17 {
+      background: #fff;
+      padding: 44px 44px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .p17-logo img { height: 28px; width: auto; }
+    .p17-headline {
+      font-size: 28px;
+      font-weight: 800;
+      color: var(--ink);
+      letter-spacing: -.03em;
+      line-height: 1.25;
+      border-left: 4px solid var(--terra);
+      padding-left: 20px;
+    }
+    .p17-context {
+      font-size: 13px;
+      font-weight: 400;
+      color: rgba(28,23,20,.55);
+      font-style: italic;
+      line-height: 1.6;
+    }
+    .p17-brand {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      color: var(--terra);
+      opacity: .6;
+    }
+
+    /* POST 16 — editorial workspace (light/airy image, dark ink text) */
+    .p16 .photo-overlay {
+      background: linear-gradient(to top, rgba(246,241,233,.92) 0%, rgba(246,241,233,.45) 45%, transparent 80%);
+    }
+    /* override shared text-shadow for light-bg post */
+    .p16 .photo-content * { text-shadow: none; }
+    .p16-top { font-size: 11px; font-weight: 700; letter-spacing: .2em; text-transform: uppercase; color: rgba(28,23,20,.45); }
+    .p16-headline { font-size: 30px; font-weight: 800; color: var(--ink); letter-spacing: -.03em; line-height: 1.2; margin-bottom: 8px; }
+    .p16-headline em { color: var(--terra); font-style: normal; }
+    .p16-sub { font-size: 15px; font-weight: 400; font-style: italic; color: rgba(28,23,20,.65); line-height: 1.5; margin-bottom: 12px; }
+    .p16-brand { font-size: 11px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--terra); opacity: .7; }
+  </style>
+</head>
+<body>
+
+<div class="instructions">
+  <h2>How to use these</h2>
+  On a Mac, hold <strong>⌘ + Shift + 4</strong>, then drag to screenshot each square individually. Each post is 540×540px — screenshot at full size for best quality. The grid below mirrors how they'll look on your Instagram profile.
+</div>
+
+<div class="grid">
+
+  <!-- POST 1 — BRAND INTRO -->
+  <div class="post p1">
+    <div class="p1-wordmark">mirra</div>
+    <div class="p1-by">by SJK Labs</div>
+    <div class="p1-rule"></div>
+    <div class="p1-tagline">Find your story.</div>
+  </div>
+
+  <!-- POST 2 — THE GAP -->
+  <div class="post p2">
+    <div class="p2-eyebrow">The truth</div>
+    <div class="p2-body">The gap isn't your experience.<br/>It's your <em>story.</em></div>
+    <div class="p2-footer">mirra · sjklabs.co/mirra</div>
+  </div>
+
+  <!-- POST 3 — SOUND FAMILIAR -->
+  <div class="post p3">
+    <div class="p3-header">Sound familiar?</div>
+    <ul class="p3-list">
+      <li>You know what you're capable of — but it never quite comes out right</li>
+      <li>You get overlooked for things you should have been chosen for</li>
+      <li>People don't quite get what you do</li>
+    </ul>
+    <div class="p3-brand">mirra · sjklabs.co/mirra</div>
+  </div>
+
+  <!-- POST 4 — AI ANGLE -->
+  <div class="post p4">
+    <div class="p4-eyebrow">The new reality</div>
+    <div class="p4-headline">Before anyone meets you, they've already <em>made up their mind.</em></div>
+    <div class="p4-sub">AI is now forming opinions about you before you've said a word. If your story isn't clear, it'll fill in the gaps for you.</div>
+    <div class="p4-brand">mirra · sjklabs.co/mirra</div>
+  </div>
+
+  <!-- POST 5 — THE JOURNALIST -->
+  <div class="post p5">
+    <div class="p5-left">
+      <div class="p5-left-label">Who you're working with</div>
+      <div class="p5-left-headline">A trained journalist.</div>
+      <div class="p5-left-names">Blur · Erol Alkan<br/>Tim Minchin<br/>Apple Podcasts Top 10</div>
+    </div>
+    <div class="p5-right">
+      <div class="p5-right-text">Now I want to help you find <em>your</em> story.</div>
+      <div class="p5-right-brand">mirra · sjklabs.co/mirra</div>
+    </div>
+  </div>
+
+  <!-- POST 6 — PULL QUOTE -->
+  <div class="post p6">
+    <div class="p6-mark">&ldquo;</div>
+    <div class="p6-quote">The coverage came because the <em>story was right.</em></div>
+    <div class="p6-attr">mirra · sjklabs.co/mirra</div>
+  </div>
+
+  <!-- POST 7 — THE STORY SESSION -->
+  <div class="post p7">
+    <div>
+      <div class="p7-num">01 · The offering</div>
+      <div class="p7-name">The Story<br/>Session</div>
+      <div class="p7-price">£597</div>
+    </div>
+    <ul class="p7-includes">
+      <li><span>→</span><span>90 mins with a trained journalist</span></li>
+      <li><span>→</span><span>Your core narrative, clearly defined</span></li>
+      <li><span>→</span><span>A bio that sounds like you</span></li>
+      <li><span>→</span><span>The words for every room you walk into</span></li>
+    </ul>
+    <div class="p7-brand">mirra · sjklabs.co/mirra</div>
+  </div>
+
+  <!-- POST 8 — THE FOUR PACKAGES -->
+  <div class="post p8">
+    <div class="p8-eyebrow">Four ways to find your story</div>
+    <ul class="p8-list">
+      <li class="p8-item">
+        <span class="p8-item-name">The Story Session</span>
+        <span class="p8-item-price">£597</span>
+      </li>
+      <li class="p8-item">
+        <span class="p8-item-name">The Story Screen</span>
+        <span class="p8-item-price">£1,197</span>
+      </li>
+      <li class="p8-item">
+        <span class="p8-item-name">The Story Stage</span>
+        <span class="p8-item-price">£1,797</span>
+      </li>
+      <li class="p8-item">
+        <span class="p8-item-name">The Story Suite</span>
+        <span class="p8-item-price">£2,397</span>
+      </li>
+    </ul>
+    <div class="p8-brand">mirra · sjklabs.co/mirra</div>
+  </div>
+
+  <!-- POST 9 — WHAT CHANGES -->
+  <div class="post p9">
+    <div class="p9-intro">When your story is right —</div>
+    <div class="p9-line">The right people<br/>find you.</div>
+    <div class="p9-line">They understand<br/>you.</div>
+    <div class="p9-line terra">They choose<br/>you.</div>
+    <div class="p9-rule"></div>
+    <div class="p9-brand">mirra · sjklabs.co/mirra</div>
+  </div>
+
+  <!-- POST 10 — CTA -->
+  <div class="post p10">
+    <div class="p10-wordmark">mirra</div>
+    <div>
+      <div class="p10-headline">Your story<br/>is already<br/>there.</div>
+      <div class="p10-sub" style="margin-top:12px;">Let's find it.</div>
+    </div>
+    <div class="p10-url">sjklabs.co/mirra</div>
+  </div>
+
+
+  <!-- POST 11 — STUDIO SHOT -->
+  <div class="post photo-post p11">
+    <img src="IMG_5BA662690E81-1.jpeg" alt="" />
+    <div class="photo-overlay"></div>
+    <div class="photo-content">
+      <div class="p11-top">mirra · by SJK Labs</div>
+      <div class="p11-bottom">
+        <div class="p11-headline">This is where<br/>stories get <em>found.</em></div>
+        <div class="p11-brand">sjklabs.co/mirra</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- POST 12 — EVENT / AUDIENCE -->
+  <div class="post photo-post p12">
+    <img src="IMG_07E03E4CA1F5-1.jpeg" alt="" style="object-position: center center;" />
+    <div class="photo-overlay"></div>
+    <div class="photo-content p12-content">
+      <div class="p12-brand">mirra · by SJK Labs</div>
+      <div>
+        <div class="p12-eyebrow">That's me interviewing Tim Minchin</div>
+        <div class="p12-headline">20 years learning what makes<br/>someone the person <em>everyone remembers.</em></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- POST 13 — COMEDY STAGE -->
+  <div class="post photo-post p13">
+    <img src="IMG_5327.jpg" alt="" />
+    <div class="photo-overlay"></div>
+    <div class="photo-content">
+      <div class="p13-top">mirra · by SJK Labs</div>
+      <div>
+        <div class="p13-headline">Your story doesn't<br/>need a stage.</div>
+        <div class="p13-sub">It just needs to be clear enough<br/>that people remember it.</div>
+        <div class="p13-brand">sjklabs.co/mirra</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- POST 14 — PODCAST STUDIO -->
+  <div class="post photo-post p14">
+    <img src="IMG_FD993C5BE305-1.jpeg" alt="" />
+    <div class="photo-overlay"></div>
+    <div class="photo-content p14-content">
+      <div class="p14-top">mirra · by SJK Labs</div>
+      <div>
+        <div class="p14-headline">90 minutes.<br/><em>One conversation.</em><br/>Your story, clearly.</div>
+        <div class="p14-brand">sjklabs.co/mirra</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- POST 15 — STAGE PERFORMANCE -->
+  <div class="post photo-post p15">
+    <img src="IMG_5325.jpg" alt="" />
+    <div class="photo-overlay"></div>
+    <div class="photo-content">
+      <div class="p15-top">mirra · by SJK Labs</div>
+      <div>
+        <div class="p15-headline">Being capable isn't<br/>the same as being chosen.</div>
+        <div class="p15-sub">Your story is the difference.</div>
+        <div class="p15-brand">sjklabs.co/mirra</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- POST 16 — EDITORIAL WORKSPACE -->
+  <div class="post photo-post p16">
+    <img src="IMG_0640.jpg" alt="" style="object-position: center center;" />
+    <div class="photo-overlay"></div>
+    <div class="photo-content">
+      <div class="p16-top">mirra · by SJK Labs</div>
+      <div>
+        <div class="p16-headline">The story was<br/>always <em>there.</em></div>
+        <div class="p16-sub">Sometimes it just needs<br/>the right room.</div>
+        <div class="p16-brand">sjklabs.co/mirra</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- POST 23 — SO MUCH SHAME / NO SHAME -->
+  <div class="post p23">
+    <div class="p23-eyebrow">My one liner</div>
+    <div class="p23-headline">So much shame<br/>and <em>absolutely no shame</em><br/>at the same time.</div>
+    <div class="p23-brand">mirra · sjklabs.co/mirra</div>
+  </div>
+
+  <!-- POST 22 — THE QUESTION -->
+  <div class="post p22">
+    <div class="p22-eyebrow">Find your story — free</div>
+    <div class="p22-question">What's something you've done that feels <em>completely normal</em> to you — but other people are always surprised by?</div>
+    <div class="p22-nudge">Answer in the comments. That gap is almost always where your story lives.</div>
+    <div class="p22-brand">mirra · sjklabs.co/mirra</div>
+  </div>
+
+  <!-- POST 21 — PETE DOHERTY -->
+  <div class="post p21">
+    <div class="p21-eyebrow">My actual first interview</div>
+    <div class="p21-headline">No pen.<br/>No paper.<br/><em>No memory.</em></div>
+    <div class="p21-detail">Rock City, Nottingham. A pile of magazines, a backstage door, and Pete Doherty signing the one I'd written my illegible notes over.</div>
+    <div class="p21-brand">mirra · sjklabs.co/mirra</div>
+  </div>
+
+  <!-- POST 20 — COMPARISON TRAP -->
+  <div class="post p20">
+    <div class="p20-eyebrow">The comparison trap</div>
+    <div class="p20-headline">Of course you're not as good<br/>at the thing that makes<br/><em>them</em> them.</div>
+    <div class="p20-divider"></div>
+    <div class="p20-sub">But nobody's better at<br/>what makes you <em style="color:#fff;">you.</em></div>
+    <div class="p20-brand">mirra · sjklabs.co/mirra</div>
+  </div>
+
+  <!-- POST 19 — MAKE YOURSELF KNOWN -->
+  <div class="post p19">
+    <div class="p19-eyebrow">Advice to my younger self</div>
+    <div class="p19-headline">If the person is<br/>in front of you —<br/><em>make yourself known.</em></div>
+    <div class="p19-sub">The email can wait. The moment can't.</div>
+    <div class="p19-brand">mirra · sjklabs.co/mirra</div>
+  </div>
+
+  <!-- POST 18 — ADVICE TO YOUNGER SELF -->
+  <div class="post p18">
+    <div class="p18-eyebrow">Advice to my younger self</div>
+    <div class="p18-headline">Prepare.</div>
+    <div class="p18-body">You can do almost anything if you feel prepared enough to do it.</div>
+    <div class="p18-brand">mirra · sjklabs.co/mirra</div>
+  </div>
+
+  <!-- POST 17 — INDEPENDENT PRESS CLIP -->
+  <div class="post p17">
+    <div class="p17-logo"><img src="logos/logo-independent-red.png" alt="The Independent" /></div>
+    <div class="p17-headline">On your marks, get set, cook: One couple have set themselves an Olympic cooking challenge</div>
+    <div class="p17-context">London 2012. A project so good The Independent covered it. The idea was good — but the story is what got us in the paper.</div>
+    <div class="p17-brand">mirra · sjklabs.co/mirra</div>
+  </div>
+
+</div>
+</body>
+</html>

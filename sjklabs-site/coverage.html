@@ -1,0 +1,512 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-8VR7WN1MJK"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-8VR7WN1MJK');
+  </script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Coverage — SJK Labs</title>
+  <meta name="description" content="Sarah Kemp is an executive communications consultant and authority strategist who builds CEO thought leadership and earns media coverage in Tier 1 titles. Track record includes The Times, Financial Times, Bloomberg, Forbes, CNBC and BBC." />
+
+  <style>
+    :root{
+      --paper:#f4efe6;
+      --surface:#fbf7f0;
+      --ink:#0f1115;
+      --muted:rgba(15,17,21,.65);
+      --line:rgba(15,17,21,.12);
+      --accent:#1c3d2e;
+      --accent-mid:#2a5c44;
+      --accent-light:#e8f0eb;
+      --amber:#c4621d;
+      --amber-mid:#a8521a;
+      --amber-light:#f5e6dc;
+      --oxblood:#6b0f2a;
+      --oxblood-light:#f2e4e8;
+      --max:1080px;
+      --r:14px;
+      --r2:20px;
+      --sans: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Inter, Roboto, Helvetica, Arial;
+    }
+
+    *{box-sizing:border-box; margin:0; padding:0;}
+    html,body{height:100%;}
+    body{
+      font-family:var(--sans);
+      background:var(--paper);
+      color:var(--ink);
+      -webkit-font-smoothing:antialiased;
+      text-rendering:optimizeLegibility;
+      overflow-x:hidden;
+    }
+
+    body::before{
+      content:"";
+      position:fixed;
+      inset:0;
+      pointer-events:none;
+      opacity:.04;
+      background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='140' height='140' filter='url(%23n)' opacity='.22'/%3E%3C/svg%3E");
+    }
+
+    .container{max-width:var(--max); margin:0 auto; padding:0 32px;}
+
+    /* NAV */
+    header{
+      position:sticky; top:0; z-index:50;
+      background:rgba(244,239,230,.95);
+      backdrop-filter:blur(12px);
+      border-bottom:1px solid var(--line);
+    }
+    .nav{
+      display:flex; align-items:center; justify-content:space-between;
+      padding:20px 0;
+      gap:24px;
+    }
+    .brand{
+      font-size:16px;
+      font-weight:800;
+      letter-spacing:-.04em;
+      color:var(--ink);
+      text-decoration:none;
+      flex-shrink:0;
+    }
+    .brand em{color:var(--accent); font-style:normal;}
+
+    nav{display:flex; gap:2px; align-items:center;}
+    nav a{
+      color:var(--muted);
+      text-decoration:none;
+      font-size:14px;
+      padding:7px 11px;
+      border-radius:8px;
+      transition:all .15s;
+      white-space:nowrap;
+    }
+    nav a:hover{color:var(--ink); background:rgba(15,17,21,.05);}
+
+    /* HERO */
+    .hero{
+      padding:72px 0 56px;
+      border-bottom:1px solid var(--line);
+    }
+    .hero-eyebrow{
+      font-size:13px;
+      font-weight:700;
+      letter-spacing:.18em;
+      text-transform:uppercase;
+      color:var(--oxblood);
+      margin-bottom:14px;
+      opacity:.7;
+    }
+    .hero h1{
+      font-size:clamp(32px,4.5vw,56px);
+      font-weight:800;
+      color:var(--ink);
+      letter-spacing:-.03em;
+      line-height:1.05;
+      margin-bottom:18px;
+    }
+    .hero h1 em{color:var(--oxblood); font-style:normal;}
+    .hero-lead{
+      font-size:17px;
+      font-weight:300;
+      color:var(--muted);
+      line-height:1.7;
+      max-width:600px;
+    }
+
+    /* HERO LAYOUT */
+    .hero-inner{
+      display:flex;
+      gap:64px;
+      align-items:center;
+    }
+    .hero-copy{flex:1;}
+
+    .hero-panel{
+      flex-shrink:0;
+      width:280px;
+      border-left:4px solid rgba(107,15,42,.35);
+      padding-left:24px;
+    }
+    .hero-panel-quote{
+      font-size:26px;
+      font-weight:700;
+      color:var(--ink);
+      letter-spacing:-.02em;
+      line-height:1.35;
+    }
+    .hero-panel-quote em{
+      color:var(--oxblood);
+      font-style:normal;
+    }
+    .hero-panel-attr{
+      font-size:12px;
+      font-weight:400;
+      font-style:italic;
+      color:var(--oxblood);
+      opacity:.5;
+      margin-top:10px;
+    }
+
+    /* SECTION */
+    .section{
+      padding:64px 0 0;
+    }
+    .section:last-of-type{padding-bottom:80px;}
+
+    .section-eyebrow{
+      font-size:13px;
+      font-weight:700;
+      letter-spacing:.18em;
+      text-transform:uppercase;
+      color:var(--oxblood);
+      margin-bottom:8px;
+      opacity:.7;
+    }
+    .section-title{
+      font-size:26px;
+      font-weight:800;
+      color:var(--ink);
+      letter-spacing:-.02em;
+      line-height:1.2;
+      margin-bottom:8px;
+    }
+    .section-desc{
+      font-size:15px;
+      color:var(--muted);
+      line-height:1.65;
+      max-width:600px;
+      margin-bottom:32px;
+    }
+
+    /* GRID */
+    .coverage-grid{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:14px;
+    }
+
+    /* CARD */
+    .card{
+      background:var(--surface);
+      border:1px solid var(--line);
+      border-radius:var(--r);
+      padding:24px;
+      text-decoration:none;
+      display:flex;
+      flex-direction:column;
+      gap:10px;
+      transition:border-color .15s, box-shadow .15s, transform .15s;
+    }
+    .card:hover{
+      border-color:var(--oxblood);
+      box-shadow:0 4px 20px rgba(107,15,42,.08);
+      transform:translateY(-2px);
+    }
+
+    .card-logo{
+      height:22px;
+      width:auto;
+      max-width:120px;
+      object-fit:contain;
+      object-position:left center;
+      filter:grayscale(1) opacity(.6);
+    }
+    .card:hover .card-logo{
+      filter:grayscale(1) opacity(.85);
+    }
+
+    .card-pub-text{
+      font-size:13px;
+      font-weight:800;
+      letter-spacing:-.01em;
+      color:var(--ink);
+      opacity:.5;
+    }
+
+    .card-headline{
+      font-size:14px;
+      font-weight:600;
+      color:var(--ink);
+      line-height:1.45;
+      letter-spacing:-.01em;
+      flex:1;
+    }
+
+    .card-desc{
+      font-size:12px;
+      color:var(--muted);
+      line-height:1.55;
+    }
+
+    .card-cta{
+      font-size:12px;
+      font-weight:600;
+      color:var(--oxblood);
+      display:flex;
+      align-items:center;
+      gap:4px;
+      margin-top:4px;
+    }
+
+    /* DIVIDER */
+    .divider{
+      border:none;
+      border-top:1px solid var(--line);
+      margin-top:56px;
+    }
+
+    /* FOOTER */
+    footer{
+      background:#162e22;
+      padding:24px 32px;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      font-size:12px;
+      color:rgba(247,242,234,.4);
+    }
+    footer strong{color:rgba(247,242,234,.75);}
+    footer a{color:rgba(247,242,234,.4); text-decoration:none;}
+    footer a:hover{color:rgba(247,242,234,.8);}
+
+    @media(max-width:860px){
+      .hero-inner{flex-direction:column; gap:32px;}
+      .hero-panel{width:100%;}
+    }
+    @media(max-width:700px){
+      .coverage-grid{grid-template-columns:1fr;}
+      .container{padding:0 20px;}
+      footer{flex-direction:column; gap:8px; text-align:center; padding:20px;}
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="container">
+    <div class="nav">
+      <a class="brand" href="index.html">SJK <em>Labs</em></a>
+      <nav>
+        <a href="index.html#about">About</a>
+        <a href="coverage.html" style="color:var(--oxblood); font-weight:600;">Coverage</a>
+        <a href="index.html#individuals">Individuals</a>
+        <a href="index.html#businesses">Businesses</a>
+        <a href="index.html#podcasts">Podcasts</a>
+      </nav>
+    </div>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="container">
+    <div class="hero-inner">
+      <div class="hero-copy">
+        <div class="hero-eyebrow">Track record</div>
+        <h1>Authority building.<br/><em>In practice.</em></h1>
+        <p class="hero-lead">This is what happens when executive communications is treated as a strategic asset. Working in-house at Moove and PageGroup, I partnered with their leadership to define what they stood for, shape a narrative that was genuinely worth writing about, and build the media strategy that got it heard. The coverage came because the story was right. Whether it was a unicorn's global growth play or a FTSE 250 CEO's disability inclusion agenda — the methodology is the same: authority strategy that shapes narrative and earns coverage.</p>
+      </div>
+      <div class="hero-panel">
+        <div class="hero-panel-quote">The coverage came because the <em>story was right.</em></div>
+        <div class="hero-panel-attr">The approach behind every piece on this page</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<main>
+  <div class="container">
+
+    <!-- MOOVE -->
+    <div class="section">
+      <div class="section-eyebrow">In-house at Moove</div>
+      <div class="section-title">Uber-backed mobility unicorn</div>
+      <div class="section-desc">Working in-house, I partnered with Moove's leadership to shape the narrative around the company's global growth — building their credibility in the autonomous mobility market and developing the stories that earned coverage in the world's leading technology, financial and business press.</div>
+
+      <div class="coverage-grid">
+
+        <a class="card" href="https://techcrunch.com/2025/01/29/uber-backed-mobility-fintech-moove-acquires-brazils-kovi-takes-arr-to-275m/" target="_blank" rel="noreferrer">
+          <img class="card-logo" src="logos/logo-techcrunch.png" alt="TechCrunch" />
+          <div class="card-pub-text">TechCrunch</div>
+          <div class="card-headline">Uber-backed mobility fintech Moove acquires Brazil's Kovi, takes ARR to $275M</div>
+          <div class="card-desc">Global tech press coverage of Moove's strategic acquisition and revenue milestone.</div>
+          <div class="card-cta">Read article →</div>
+        </a>
+
+        <a class="card" href="https://www.bloomberg.com/news/articles/2025-01-29/uber-backed-startup-moove-buys-brazil-s-kovi-in-share-deal" target="_blank" rel="noreferrer">
+          <img class="card-logo" src="logos/logo-bloomberg.png" alt="Bloomberg" />
+          <div class="card-pub-text">Bloomberg</div>
+          <div class="card-headline">Uber-backed Startup Moove Buys Brazil's Kovi in Share Deal</div>
+          <div class="card-desc">Bloomberg financial coverage of the Kovi acquisition.</div>
+          <div class="card-cta">Read article →</div>
+        </a>
+
+        <a class="card" href="https://www.theinformation.com/articles/nine-self-driving-startups-chasing-waymos-lead" target="_blank" rel="noreferrer">
+          <img class="card-logo" src="logos/logo-information.png" alt="The Information" />
+          <div class="card-pub-text">The Information</div>
+          <div class="card-headline">Nine Self-Driving Startups Chasing Waymo's Lead</div>
+          <div class="card-desc">Moove featured among the leading autonomous mobility startups globally.</div>
+          <div class="card-cta">Read article →</div>
+        </a>
+
+        <a class="card" href="https://www.cnbcafrica.com/media/6349319463112/moove-raises-100mn-in-series-b-round/" target="_blank" rel="noreferrer">
+          <img class="card-logo" src="logos/logo-cnbc.png" alt="CNBC" />
+          <div class="card-pub-text">CNBC Africa</div>
+          <div class="card-headline">Moove raises $100M in Series B round</div>
+          <div class="card-desc">Broadcast coverage of Moove's landmark Series B funding announcement.</div>
+          <div class="card-cta">Watch →</div>
+        </a>
+
+        <a class="card" href="https://www.forbes.com/sites/alanohnsman/2025/10/15/waymo-taps-london-as-its-first-overseas-robotaxi-market/" target="_blank" rel="noreferrer">
+          <img class="card-logo" src="logos/logo-forbes.png" alt="Forbes" />
+          <div class="card-pub-text">Forbes</div>
+          <div class="card-headline">Waymo Taps London as Its First Overseas Robotaxi Market</div>
+          <div class="card-desc">Forbes coverage of the autonomous mobility market in which Moove operates.</div>
+          <div class="card-cta">Read article →</div>
+        </a>
+
+      </div>
+    </div>
+
+    <hr class="divider" />
+
+    <!-- PERSONAL -->
+    <div class="section">
+      <div class="section-eyebrow">Personal</div>
+      <div class="section-title">Beyond the day job</div>
+      <div class="section-desc">I've always believed that the best communicators make things outside of work too — not for a client, not for a brief, just because the story was worth telling. Authority is a way of thinking. These are what that looks like in practice.</div>
+
+      <div class="coverage-grid">
+
+        <a class="card" href="https://www.independent.co.uk/life-style/food-and-drink/features/on-your-marks-get-set-cook-one-couple-have-set-themselves-an-olympic-cooking-challenge-7640717.html" target="_blank" rel="noreferrer">
+          <img class="card-logo" src="logos/logo-independent.png" alt="The Independent" />
+          <div class="card-pub-text">The Independent</div>
+          <div class="card-headline">On your marks, get set, cook: one couple have set themselves an Olympic cooking challenge</div>
+          <div class="card-desc">Feature in The Independent generated for a personal project — proof that the principles work at every scale.</div>
+          <div class="card-cta">Read article →</div>
+        </a>
+
+        <a class="card" href="https://open.spotify.com/show/4UyERFec5ZaiBYrXEGHsFD" target="_blank" rel="noreferrer">
+          <img class="card-logo" src="logos/logo-demotapes.png" alt="Demo Tapes" />
+          <div class="card-pub-text">Demo Tapes Podcast</div>
+          <div class="card-headline">The music podcast that hits rewind on the careers of some of the world's biggest bands and artists</div>
+          <div class="card-desc">Co-hosted with Rick Martin (ex NME), featuring interviews with top musicians, their fans, journalists and anyone with a good tale to tell — long before podcasting was a content strategy.</div>
+          <div class="card-cta">Listen on Spotify →</div>
+        </a>
+
+      </div>
+    </div>
+
+    <hr class="divider" />
+
+    <!-- PAGEGROUP -->
+    <div class="section">
+      <div class="section-eyebrow">In-house at PageGroup</div>
+      <div class="section-title">FTSE 250 recruitment leader</div>
+      <div class="section-desc">Working in-house, I partnered with CEO Steve Ingham to develop his personal narrative around disability inclusion and executive leadership — shaping the story that earned coverage in some of the world's most influential titles and broadcast platforms.</div>
+
+      <div class="coverage-grid">
+
+        <a class="card" href="https://www.thetimes.com/business/article/how-ceo-steve-ingham-is-helping-to-break-down-the-disability-barriers-lhc8wwl8c" target="_blank" rel="noreferrer">
+          <img class="card-logo" src="logos/logo-times.png" alt="The Times" />
+          <div class="card-pub-text">The Times</div>
+          <div class="card-headline">How CEO Steve Ingham is helping to break down the disability barriers</div>
+          <div class="card-desc">Feature profile on Steve Ingham's personal story and PageGroup's disability inclusion work.</div>
+          <div class="card-cta">Read article →</div>
+        </a>
+
+        <a class="card" href="https://www.ft.com/content/8338e1aa-2fb4-4376-a322-1725928e3ba4" target="_blank" rel="noreferrer">
+          <img class="card-logo" src="logos/logo-ft.png" alt="Financial Times" />
+          <div class="card-pub-text">Financial Times</div>
+          <div class="card-headline">PageGroup CEO on disability and leadership</div>
+          <div class="card-desc">FT coverage of Steve Ingham's leadership and disability inclusion agenda.</div>
+          <div class="card-cta">Read article →</div>
+        </a>
+
+        <a class="card" href="https://www.forbes.com/sites/gusalexiou/2021/03/31/disabled-pagegroup-ceo-explains-how-top-job-candidates-always-screen-for-inclusivity/" target="_blank" rel="noreferrer">
+          <img class="card-logo" src="logos/logo-forbes.png" alt="Forbes" />
+          <div class="card-pub-text">Forbes</div>
+          <div class="card-headline">Disabled PageGroup CEO Explains How Top Job Candidates Always Screen for Inclusivity</div>
+          <div class="card-desc">Forbes feature on Steve Ingham's perspective on disability and inclusive hiring.</div>
+          <div class="card-cta">Read article →</div>
+        </a>
+
+        <a class="card" href="https://www.cnbc.com/2022/04/14/war-for-talent-embrace-diversity-and-inclusivity-says-pagegroup-ceo.html" target="_blank" rel="noreferrer">
+          <img class="card-logo" src="logos/logo-cnbc.png" alt="CNBC" />
+          <div class="card-pub-text">CNBC</div>
+          <div class="card-headline">War for talent: Embrace diversity and inclusivity, says PageGroup CEO</div>
+          <div class="card-desc">CNBC digital coverage of PageGroup's talent and inclusion strategy.</div>
+          <div class="card-cta">Read article →</div>
+        </a>
+
+        <a class="card" href="https://www.cnbc.com/video/2022/04/14/pagegroup-ceo-on-why-disabled-people-are-underrepresented-in-the-workplace.html" target="_blank" rel="noreferrer">
+          <img class="card-logo" src="logos/logo-cnbc.png" alt="CNBC" />
+          <div class="card-pub-text">CNBC — Broadcast</div>
+          <div class="card-headline">PageGroup CEO on why disabled people are underrepresented in the workplace</div>
+          <div class="card-desc">Live broadcast interview with Steve Ingham on CNBC.</div>
+          <div class="card-cta">Watch →</div>
+        </a>
+
+        <a class="card" href="https://www.telegraph.co.uk/business/2022/07/10/presumptuous-young-worker-judge-boss-how/" target="_blank" rel="noreferrer">
+          <img class="card-logo" src="logos/logo-telegraph.png" alt="The Telegraph" />
+          <div class="card-pub-text">The Telegraph</div>
+          <div class="card-headline">Is it presumptuous for a young worker to judge their boss?</div>
+          <div class="card-desc">Telegraph business feature drawing on PageGroup's workplace culture expertise.</div>
+          <div class="card-cta">Read article →</div>
+        </a>
+
+        <a class="card" href="https://www.raconteur.net/leadership/tackle-ableism-boardroom-ceo" target="_blank" rel="noreferrer">
+          <img class="card-logo" src="logos/logo-raconteur.png" alt="Raconteur" />
+          <div class="card-pub-text">Raconteur</div>
+          <div class="card-headline">Tackle ableism in the boardroom, says CEO</div>
+          <div class="card-desc">Raconteur leadership feature on Steve Ingham's call to action on workplace ableism.</div>
+          <div class="card-cta">Read article →</div>
+        </a>
+
+        <a class="card" href="https://www.bbc.co.uk/news/av/business-48803515" target="_blank" rel="noreferrer">
+          <img class="card-logo" src="logos/logo-bbc.png" alt="BBC" />
+          <div class="card-pub-text">BBC</div>
+          <div class="card-headline">PageGroup CEO on disability in business</div>
+          <div class="card-desc">BBC broadcast interview on disability representation and leadership.</div>
+          <div class="card-cta">Watch →</div>
+        </a>
+
+        <a class="card" href="https://www.dailymail.co.uk/lifestyle/article-4256338/The-perfect-cover-letter.html" target="_blank" rel="noreferrer">
+          <img class="card-logo" src="logos/logo-dailymail.png" alt="Daily Mail" />
+          <div class="card-pub-text">Daily Mail</div>
+          <div class="card-headline">The perfect cover letter</div>
+          <div class="card-desc">PageGroup expertise featured in Daily Mail careers coverage.</div>
+          <div class="card-cta">Read article →</div>
+        </a>
+
+        <a class="card" href="https://www.recruiter.co.uk/news/2021/03/ingham-calls-business-leaders-%E2%80%98own%E2%80%99-disability" target="_blank" rel="noreferrer">
+          <img class="card-logo" src="logos/logo-recruiter.png" alt="Recruiter" />
+          <div class="card-pub-text">Recruiter</div>
+          <div class="card-headline">Ingham calls business leaders to 'own' disability</div>
+          <div class="card-desc">Trade press coverage of Steve Ingham's industry-wide call to action.</div>
+          <div class="card-cta">Read article →</div>
+        </a>
+
+      </div>
+    </div>
+
+  </div>
+</main>
+
+<footer>
+  <div><strong>Sarah Kemp</strong> · SJK Labs · sarah@sjklabs.co</div>
+  <div><a href="index.html">sjklabs.co</a></div>
+</footer>
+
+</body>
+</html>

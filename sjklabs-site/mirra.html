@@ -1,0 +1,511 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-8VR7WN1MJK"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-8VR7WN1MJK');
+  </script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Mirra — Find Your Story</title>
+  <meta name="description" content="Mirra by SJK Labs helps you find, shape and share the story that's already there — for a world where people are forming opinions about you before you've had a chance to speak." />
+
+  <style>
+    :root {
+      --cream: #f6f1e9;
+      --surface: #faf7f3;
+      --ink: #1c1714;
+      --muted: rgba(28,23,20,.6);
+      --line: rgba(28,23,20,.1);
+      --terra: #b85c38;
+      --terra-mid: #9e4f30;
+      --terra-light: #f5e8e2;
+      --max: 1080px;
+      --r: 14px;
+      --r2: 20px;
+      --sans: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Inter, Roboto, Helvetica, Arial;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html, body { min-height: 100%; }
+    body {
+      font-family: var(--sans);
+      background: var(--cream);
+      color: var(--ink);
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+      overflow-x: hidden;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      opacity: .04;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='140' height='140' filter='url(%23n)' opacity='.22'/%3E%3C/svg%3E");
+    }
+
+    .container { max-width: var(--max); margin: 0 auto; padding: 0 32px; }
+
+    /* NAV */
+    header {
+      position: sticky; top: 0; z-index: 50;
+      background: rgba(246,241,233,.95);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--line);
+    }
+    .nav {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 20px 0;
+    }
+    .brand { display: flex; align-items: baseline; gap: 8px; text-decoration: none; }
+    .brand-mirra { font-size: 22px; font-weight: 800; letter-spacing: -.04em; color: var(--ink); }
+    .brand-by { font-size: 11px; font-weight: 400; color: var(--muted); letter-spacing: .05em; }
+    .nav-right { display: flex; align-items: center; gap: 16px; }
+    .nav-cta {
+      display: inline-flex; align-items: center;
+      background: var(--terra); color: #fff;
+      text-decoration: none; font-size: 13px; font-weight: 600;
+      padding: 9px 20px; border-radius: 999px; transition: background .15s;
+    }
+    .nav-cta:hover { background: var(--terra-mid); }
+
+    /* HERO */
+    .hero { padding: 80px 0 72px; border-bottom: 1px solid var(--line); }
+    .hero-inner { display: flex; gap: 64px; align-items: flex-start; }
+    .hero-copy { flex: 1; }
+    .hero-eyebrow {
+      font-size: 12px; font-weight: 700; letter-spacing: .18em;
+      text-transform: uppercase; color: var(--terra); opacity: .8; margin-bottom: 16px;
+    }
+    .hero h1 {
+      font-size: clamp(36px, 4.5vw, 58px); font-weight: 800; color: var(--ink);
+      letter-spacing: -.03em; line-height: 1.05; margin-bottom: 20px;
+    }
+    .hero h1 em { color: var(--terra); font-style: normal; }
+    .hero-lead {
+      font-size: 17px; font-weight: 300; color: var(--muted);
+      line-height: 1.75; max-width: 520px; margin-bottom: 32px;
+    }
+    .hero-payoff {
+      font-size: 15px; font-weight: 500; color: var(--ink);
+      line-height: 1.6; margin-bottom: 32px;
+      padding-left: 16px; border-left: 2px solid var(--terra);
+    }
+    .hero-photo { flex-shrink: 0; width: 300px; }
+    .hero-photo img { width: 100%; border-radius: var(--r2); display: block; }
+
+    /* PROBLEM */
+    .problem-section { padding: 72px 0; border-bottom: 1px solid var(--line); }
+    .problem-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center; }
+    .section-eyebrow {
+      font-size: 12px; font-weight: 700; letter-spacing: .18em;
+      text-transform: uppercase; color: var(--terra); opacity: .7; margin-bottom: 14px;
+    }
+    .problem-left h2 {
+      font-size: clamp(26px, 3vw, 38px); font-weight: 800; color: var(--ink);
+      letter-spacing: -.03em; line-height: 1.15; margin-bottom: 20px;
+    }
+    .problem-left h2 em { color: var(--terra); font-style: normal; }
+    .problem-left p {
+      font-size: 16px; font-weight: 300; color: var(--muted);
+      line-height: 1.75; margin-bottom: 16px;
+    }
+    .problem-right { display: flex; flex-direction: column; gap: 16px; padding-top: 8px; }
+    .truth-card {
+      background: var(--surface); border: 1px solid var(--line);
+      border-radius: var(--r); padding: 20px 24px;
+    }
+    .truth-card-label {
+      font-size: 11px; font-weight: 700; letter-spacing: .15em;
+      text-transform: uppercase; color: var(--terra); opacity: .7; margin-bottom: 8px;
+    }
+    .truth-card p { font-size: 14px; color: var(--muted); line-height: 1.65; }
+    .truth-card p strong { color: var(--ink); font-weight: 600; }
+
+    /* PACKAGES */
+    .packages-section { padding: 72px 0; border-bottom: 1px solid var(--line); }
+    .packages-header { margin-bottom: 40px; }
+    .packages-header h2 {
+      font-size: clamp(26px, 3vw, 38px); font-weight: 800; color: var(--ink);
+      letter-spacing: -.03em; line-height: 1.15; margin-top: 12px; margin-bottom: 12px;
+    }
+    .packages-header h2 em { color: var(--terra); font-style: normal; }
+    .packages-header p { font-size: 15px; color: var(--muted); line-height: 1.65; max-width: 560px; }
+    .packages-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; }
+    .pkg-card {
+      background: var(--surface); border: 1px solid var(--line);
+      border-radius: var(--r2); padding: 28px 24px;
+      display: flex; flex-direction: column;
+      transition: border-color .15s, box-shadow .15s, transform .15s;
+    }
+    .pkg-card:hover {
+      border-color: var(--terra);
+      box-shadow: 0 4px 24px rgba(184,92,56,.1);
+      transform: translateY(-2px);
+    }
+    .pkg-card.featured { background: var(--terra); border-color: var(--terra); }
+    .pkg-number {
+      font-size: 11px; font-weight: 700; letter-spacing: .15em;
+      text-transform: uppercase; color: var(--terra); opacity: .7; margin-bottom: 12px;
+    }
+    .pkg-card.featured .pkg-number { color: rgba(255,255,255,.6); opacity: 1; }
+    .pkg-name {
+      font-size: 19px; font-weight: 800; color: var(--ink);
+      letter-spacing: -.02em; line-height: 1.2; margin-bottom: 8px;
+    }
+    .pkg-card.featured .pkg-name { color: #fff; }
+    .pkg-price {
+      font-size: 28px; font-weight: 800; color: var(--terra);
+      letter-spacing: -.03em; margin-bottom: 16px;
+    }
+    .pkg-card.featured .pkg-price { color: rgba(255,255,255,.9); }
+    .pkg-divider { border: none; border-top: 1px solid var(--line); margin-bottom: 16px; }
+    .pkg-card.featured .pkg-divider { border-color: rgba(255,255,255,.2); }
+    .pkg-desc { font-size: 13px; color: var(--muted); line-height: 1.65; margin-bottom: 16px; flex: 1; }
+    .pkg-card.featured .pkg-desc { color: rgba(255,255,255,.8); }
+    .pkg-includes { list-style: none; display: flex; flex-direction: column; gap: 8px; margin-bottom: 20px; }
+    .pkg-includes li { display: flex; gap: 8px; align-items: baseline; font-size: 13px; color: var(--muted); line-height: 1.4; }
+    .pkg-card.featured .pkg-includes li { color: rgba(255,255,255,.8); }
+    .pkg-includes li span:first-child { color: var(--terra); flex-shrink: 0; font-size: 11px; }
+    .pkg-card.featured .pkg-includes li span:first-child { color: rgba(255,255,255,.5); }
+    .pkg-note { font-size: 11px; font-style: italic; color: var(--muted); opacity: .7; margin-bottom: 20px; }
+    .pkg-card.featured .pkg-note { color: rgba(255,255,255,.5); opacity: 1; }
+    .pkg-cta {
+      display: inline-flex; align-items: center; justify-content: center;
+      padding: 10px 20px; border-radius: 999px; font-size: 13px; font-weight: 600;
+      text-decoration: none; background: var(--terra-light); color: var(--terra);
+      transition: background .15s; margin-top: auto;
+    }
+    .pkg-cta:hover { background: #edd9d0; }
+    .pkg-card.featured .pkg-cta { background: rgba(255,255,255,.2); color: #fff; }
+    .pkg-card.featured .pkg-cta:hover { background: rgba(255,255,255,.3); }
+
+    /* ABOUT */
+    .about-section { padding: 72px 0; border-bottom: 1px solid var(--line); }
+    .about-inner { display: grid; grid-template-columns: 280px 1fr; gap: 64px; align-items: start; }
+    .about-photo { padding-top: 0; margin-top: 0; }
+    .about-photo img { width: 100%; border-radius: var(--r2); display: block; }
+    .about-content h2 {
+      font-size: clamp(26px, 3vw, 38px); font-weight: 800; color: var(--ink);
+      letter-spacing: -.03em; line-height: 1.15; margin-top: 12px; margin-bottom: 20px;
+    }
+    .about-content h2 em { color: var(--terra); font-style: normal; }
+    .about-content p { font-size: 16px; font-weight: 300; color: var(--muted); line-height: 1.75; margin-bottom: 16px; }
+    .about-content p:last-of-type { margin-bottom: 28px; }
+
+    /* PODCASTS */
+    .podcasts-section { padding: 72px 0; border-bottom: 1px solid var(--line); }
+    .podcasts-section h2 {
+      font-size: clamp(22px, 2.5vw, 32px); font-weight: 800; color: var(--ink);
+      letter-spacing: -.03em; line-height: 1.15; margin-top: 12px; margin-bottom: 32px;
+    }
+    .podcasts-section h2 em { color: var(--terra); font-style: normal; }
+    .podcasts-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .podcast-card {
+      background: var(--surface); border: 1px solid var(--line);
+      border-radius: var(--r2); padding: 28px 28px;
+      display: flex; flex-direction: column; gap: 12px;
+    }
+    .podcast-artwork {
+      height: 56px; width: auto; max-width: 180px;
+      object-fit: contain; display: block; border-radius: 6px;
+    }
+    .podcast-card-body {
+      display: flex; flex-direction: column; gap: 10px; flex: 1;
+    }
+    .podcast-label {
+      font-size: 11px; font-weight: 700; letter-spacing: .15em;
+      text-transform: uppercase; color: var(--terra); opacity: .7;
+    }
+    .podcast-name { font-size: 20px; font-weight: 800; color: var(--ink); letter-spacing: -.02em; }
+    .podcast-desc { font-size: 14px; font-weight: 300; color: var(--muted); line-height: 1.65; flex: 1; }
+    .podcast-link {
+      display: inline-flex; align-items: center; gap: 6px;
+      font-size: 13px; font-weight: 600; color: var(--terra);
+      text-decoration: none; margin-top: 4px;
+    }
+    .podcast-link:hover { opacity: .75; }
+    @media(max-width: 600px) { .podcasts-grid { grid-template-columns: 1fr; } }
+
+    /* CTA */
+    .cta-section { padding: 80px 0; text-align: center; }
+    .cta-section h2 {
+      font-size: clamp(28px, 3.5vw, 46px); font-weight: 800; color: var(--ink);
+      letter-spacing: -.03em; line-height: 1.1; margin-bottom: 16px;
+    }
+    .cta-section h2 em { color: var(--terra); font-style: normal; }
+    .cta-section p { font-size: 16px; font-weight: 300; color: var(--muted); line-height: 1.7; max-width: 480px; margin: 0 auto 32px; }
+
+    .btn-terra {
+      display: inline-flex; align-items: center;
+      background: var(--terra); color: #fff; text-decoration: none;
+      font-size: 15px; font-weight: 600; padding: 14px 32px;
+      border-radius: 999px; transition: background .15s;
+    }
+    .btn-terra:hover { background: var(--terra-mid); }
+
+    /* FOOTER */
+    footer {
+      background: #1c1714; padding: 24px 32px;
+      display: flex; justify-content: space-between; align-items: center;
+      font-size: 12px; color: rgba(246,241,233,.4);
+    }
+    footer strong { color: rgba(246,241,233,.75); }
+    footer a { color: rgba(246,241,233,.4); text-decoration: none; }
+    footer a:hover { color: rgba(246,241,233,.8); }
+
+    @media(max-width: 860px) {
+      .hero-inner { flex-direction: column-reverse; gap: 32px; }
+      .hero-photo { width: 100%; max-width: 280px; margin: 0 auto; }
+      .problem-inner { grid-template-columns: 1fr; gap: 40px; }
+      .packages-grid { grid-template-columns: 1fr 1fr; }
+      .about-inner { grid-template-columns: 1fr; gap: 32px; }
+      .about-photo { max-width: 240px; }
+    }
+    @media(max-width: 600px) {
+      .packages-grid { grid-template-columns: 1fr; }
+      .container { padding: 0 20px; }
+      footer { flex-direction: column; gap: 8px; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="container">
+    <div class="nav">
+      <a class="brand" href="index.html">
+        <span class="brand-mirra">mirra</span>
+        <span class="brand-by">by SJK Labs</span>
+      </a>
+      <div class="nav-right">
+<a class="nav-cta" href="https://calendly.com/sarah-sjklabs/fancy-a-chat" target="_blank" rel="noreferrer">Book a Scene-Setting Call →</a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="container">
+    <div class="hero-inner">
+      <div class="hero-copy">
+<h1>Your story is<br/><em>already there.</em></h1>
+        <p class="hero-lead">Most people just can't see it — because you're always too close to your own life to spot what makes it interesting. That's what a trained journalist is for. That's what Mirra is for.</p>
+        <p class="hero-payoff">The difference between being in the room —<br/>and being the person people remember after it.</p>
+        <a class="btn-terra" href="https://calendly.com/sarah-sjklabs/fancy-a-chat" target="_blank" rel="noreferrer">Book a Scene-Setting Call →</a>
+      </div>
+      <div class="hero-photo">
+        <img src="Untitled design-7.png" alt="Sarah Kemp" />
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY I DO THIS -->
+<section class="problem-section" style="background:var(--terra-light); border-top:none;">
+  <div class="container">
+    <div class="problem-inner">
+      <div class="problem-left">
+        <div class="section-eyebrow">Why I do this</div>
+        <h2>I've spent my life in rooms<br/>I had <em>no business being in.</em></h2>
+        <p>My first interview was with Pete Doherty. Completely blagged — unplanned, unprepared, and if I'm honest, in no fit state. I had no pen. No paper. No memory of it in the morning. I had to embellish most of it. He signed the magazine. I kept it framed next to my bed for years.</p>
+        <p>At 17 I hopped on a tour bus with Kings of Leon and ended up stranded in London with no money. What I did have — then and now — was an instinct for finding the moment that makes a story land. The detail that changes how someone sees you. The thing you almost didn't mention because it felt too normal.</p>
+        <p>Twenty years and a lot of rooms later, that's still the job. The story is there. You just need someone who knows how to find it.</p>
+      </div>
+      <div class="problem-right">
+        <div class="truth-card">
+          <div class="truth-card-label">The inciting incident</div>
+          <p><strong>Age 18.</strong> Internship at Dazed & Confused. A published single review. Sent to Brighton to interview a band supporting The Kooks. I had no idea how lucky I was. I just thought this was how things worked when you wanted them badly enough.</p>
+        </div>
+        <div class="truth-card">
+          <div class="truth-card-label">The lesson</div>
+          <p><strong>The moments that shape us</strong> feel unremarkable at the time. That's exactly why you can't see your own story clearly. You're always too close to it.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROBLEM -->
+<section class="problem-section">
+  <div class="container">
+    <div class="problem-inner">
+      <div class="problem-left">
+        <div class="section-eyebrow">The problem</div>
+        <h2>Your story is already there.<br/>You just <em>can't see it yet.</em></h2>
+        <p>You've done things worth talking about. But when someone asks what you do, or what makes you different, or why they should choose you — something happens. The words come out wrong. Too much. Too little. Too corporate. Too vague. Nothing like the person you actually are.</p>
+        <p>It's not a confidence problem. It's a story problem. And nobody's ever sat down with you and actually helped you find it.</p>
+        <p>Meanwhile, before you've even had a chance to speak, someone has already Googled you. Looked at your LinkedIn. Asked an AI to summarise who you are. If your story isn't clear there, it gets filled in — and it won't be the interesting version.</p>
+        <p style="font-weight:600; color:var(--ink); font-size:15px; line-height:1.6; margin-top:4px;">If you don't define your script, AI will write a generic version for you. Mirra ensures you own the Director's Cut of your own life.</p>
+      </div>
+      <div class="problem-right">
+        <div class="truth-card">
+          <div class="truth-card-label">Sound familiar?</div>
+          <p><strong>You know you have something to offer</strong> — but when it comes to talking about yourself, it never quite comes out right.</p>
+        </div>
+        <div class="truth-card">
+          <div class="truth-card-label">The new reality</div>
+          <p><strong>Before anyone meets you</strong>, they've already looked you up. AI is now part of that process — and if your story isn't clear, it'll fill in the gaps for you.</p>
+        </div>
+        <div class="truth-card">
+          <div class="truth-card-label">What changes</div>
+          <p><strong>When your story is right</strong>, the right people find you, understand you, and choose you — without you having to sell yourself.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PACKAGES -->
+<section class="packages-section">
+  <div class="container">
+    <div class="packages-header">
+      <div class="section-eyebrow">What I Offer</div>
+      <h2>Four ways to find<br/>your <em>story.</em></h2>
+      <p>Every package starts with the same foundation — a journalist-led session to find the story that's already there. Choose the level that matches where you want to go.</p>
+    </div>
+    <div class="packages-grid">
+
+      <div class="pkg-card">
+        <div class="pkg-number">01</div>
+        <div class="pkg-name">The Script Polish</div>
+        <div class="pkg-price">£597</div>
+        <hr class="pkg-divider" />
+        <p class="pkg-desc">The foundation. A journalist-led session that finds your story, shapes your narrative, and gives you the words to use anywhere.</p>
+        <ul class="pkg-includes">
+          <li><span>→</span><span>90-minute session with Sarah</span></li>
+          <li><span>→</span><span>Your core narrative, clearly defined</span></li>
+          <li><span>→</span><span>A bio that actually sounds like you</span></li>
+          <li><span>→</span><span>So when someone asks what you do — it lands. And they remember it.</span></li>
+        </ul>
+        <a class="pkg-cta" href="https://buy.stripe.com/4gMbJ3aUb6le5ccbnZcQU08" target="_blank" rel="noreferrer">Get started →</a>
+      </div>
+
+      <div class="pkg-card">
+        <div class="pkg-number">02</div>
+        <div class="pkg-name">The Trailer</div>
+        <div class="pkg-price">£1,197</div>
+        <hr class="pkg-divider" />
+        <p class="pkg-desc">Everything in The Script Polish, plus a journalist-led video interview — the definitive piece of content about who you are and what you stand for.</p>
+        <ul class="pkg-includes">
+          <li><span>→</span><span>Everything in The Script Polish</span></li>
+          <li><span>→</span><span>Professionally edited online video interview</span></li>
+          <li><span>→</span><span>Long-form cut for YouTube</span></li>
+          <li><span>→</span><span>3 social-ready clips</span></li>
+        </ul>
+        <a class="pkg-cta" href="https://buy.stripe.com/14A8wR3rJ5ha3440JlcQU09" target="_blank" rel="noreferrer">Get started →</a>
+      </div>
+
+      <div class="pkg-card featured">
+        <div class="pkg-number">03</div>
+        <div class="pkg-name">The Story Suite</div>
+        <div class="pkg-price">£1,797</div>
+        <hr class="pkg-divider" />
+        <p class="pkg-desc">Everything in The Script Polish, plus a bespoke landing page — written and built by Sarah, designed for a world where AI and search form opinions before you've spoken.</p>
+        <ul class="pkg-includes">
+          <li><span>→</span><span>Everything in The Script Polish</span></li>
+          <li><span>→</span><span>Narrative-led landing page, written by Sarah</span></li>
+          <li><span>→</span><span>Designed, built and ready to share</span></li>
+          <li><span>→</span><span>Optimised for how people find you today</span></li>
+        </ul>
+        <p class="pkg-note">Visual assets (photography) to be supplied by you. Web hosting to be arranged and paid for by you.</p>
+        <a class="pkg-cta" href="https://buy.stripe.com/dRm4gBbYf5hagUU3VxcQU0a" target="_blank" rel="noreferrer">Get started →</a>
+      </div>
+
+      <div class="pkg-card">
+        <div class="pkg-number">04</div>
+        <div class="pkg-name">The Full Feature</div>
+        <div class="pkg-price">£2,397</div>
+        <hr class="pkg-divider" />
+        <p class="pkg-desc">Everything. Your story found, your interview filmed, your landing page built. The complete picture — for people ready to show up fully.</p>
+        <ul class="pkg-includes">
+          <li><span>→</span><span>Everything in The Script Polish</span></li>
+          <li><span>→</span><span>Professionally edited online video interview + 3 social-ready clips</span></li>
+          <li><span>→</span><span>Bespoke narrative-led landing page</span></li>
+          <li><span>→</span><span>Your narrative, on camera, with a home online</span></li>
+        </ul>
+        <p class="pkg-note">Visual assets (photography) to be supplied by you. Web hosting to be arranged and paid for by you.</p>
+        <a class="pkg-cta" href="https://buy.stripe.com/eVq8wR2nFgZSbAA0JlcQU0b" target="_blank" rel="noreferrer">Get started →</a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="about-section">
+  <div class="container">
+    <div class="about-inner">
+      <div class="about-photo">
+        <img src="Untitled design-7.png" alt="Sarah Kemp" />
+        <div style="margin-top:12px;">
+          <div style="font-size:15px;font-weight:700;color:var(--ink);letter-spacing:-.01em;">Sarah Kemp</div>
+          <div style="font-size:13px;font-weight:400;color:var(--muted);margin-top:2px;">Founder, SJK Labs</div>
+        </div>
+      </div>
+      <div class="about-content">
+        <div class="section-eyebrow">Who you're working with</div>
+        <h2>Terrified of every room.<br/>Always found a way <em>in anyway.</em></h2>
+        <p>I've spent a lot of my life in rooms I had no business being in.</p>
+        <p>Age 11. A BBC news desk in Nottingham. I sat down, shuffled the papers, and felt something I'd never felt before. That was the moment I knew.</p>
+        <p>By 18 I had an internship at Dazed & Confused, a published single review, and had been sent to Brighton to interview a band supporting The Kooks. Around the same time I was at Myspace — their first paid intern — interviewing Justice and Erol Alkan. I had absolutely no idea how lucky I was. I had no idea how many people would have given anything for any of it. I just thought this was how things worked when you wanted them badly enough.</p>
+        <p>A year earlier I'd walked into Rock City in Nottingham on the NME tour. Paul Thompson started drumming. Franz Ferdinand played the opening bars of Shopping for Blood. Something shifted. I was always at the same parties as Simon from Klaxons — he was at Nottingham uni, I was at college, our crowds overlapped. Found him so cool I could never quite manage to talk to him — then he told me one evening he was moving to London to start a band. I listened to Silent Alarm on a Discman in Bloc Party's hotel room before it was released. None of it felt remarkable at the time.</p>
+        <p>My first interview was with Pete Doherty. Completely blagged — unplanned, unprepared, and if I'm honest, in no fit state. I had no pen. No paper. No memory of it in the morning. I had to embellish most of it. He signed the magazine. I kept it framed next to my bed for years until I lost it in a house move — which I'm still not entirely over.</p>
+        <p>At 17 I hopped on a tour bus with Kings of Leon and ended up in London with no money. Called my mum. She wired me enough to get the train home. A friend once told me I had the organisational skills of a small Ethiopian gnat. She wasn't wrong.</p>
+        <p>Along the way I've had lunch with members of Blur, given one of them a tour of Melbourne, and somehow ended up in a lot of situations I had absolutely no business being in.</p>
+        <p>Twenty years later I'm interviewing Tim Minchin at Soho House under a disco ball, co-hosting a music podcast called Demo Tapes that hit the Apple Music Top 10, and having somehow, against considerable odds, learned how to actually do this properly.</p>
+        <p>Somewhere along the way, corporate life got louder than the stories. And I stopped seeing my own. That's the thing about your story — you're always the last one to see it. You're too close. It feels normal. You don't notice the moments that would make someone else lean in. Mirra is how I help you find them.</p>
+        <a class="btn-terra" href="https://calendly.com/sarah-sjklabs/fancy-a-chat" target="_blank" rel="noreferrer">Book a Scene-Setting Call →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PODCASTS -->
+<section class="podcasts-section">
+  <div class="container">
+    <div class="section-eyebrow">Other work</div>
+    <h2>Side quests<br/><em>with microphones.</em></h2>
+    <div class="podcasts-grid">
+      <div class="podcast-card">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#b85c38" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="margin-bottom:8px;opacity:.8;"><rect x="9" y="2" width="6" height="11" rx="3"/><path d="M5 10a7 7 0 0 0 14 0"/><line x1="12" y1="19" x2="12" y2="22"/><line x1="8" y1="22" x2="16" y2="22"/></svg>
+        <div class="podcast-label">Business</div>
+        <div class="podcast-name">PRception</div>
+        <p class="podcast-desc">How attention becomes authority — in business, in culture, in real life. Each episode breaks down what it actually takes to build the kind of credibility that makes people trust you, choose you, and talk about you.</p>
+        <a class="podcast-link" href="https://www.youtube.com/@prceptionmedia" target="_blank" rel="noreferrer">Watch on YouTube →</a>
+      </div>
+      <div class="podcast-card">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#b85c38" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="margin-bottom:8px;opacity:.8;"><rect x="9" y="2" width="6" height="11" rx="3"/><path d="M5 10a7 7 0 0 0 14 0"/><line x1="12" y1="19" x2="12" y2="22"/><line x1="8" y1="22" x2="16" y2="22"/></svg>
+        <div class="podcast-label">Music</div>
+        <div class="podcast-name">Demo Tapes</div>
+        <p class="podcast-desc">A music podcast co-hosted with NME journalist Rick Martin. Conversations about the records, moments and decisions that shaped careers. Hit the Apple Music Top 10.</p>
+        <a class="podcast-link" href="https://open.spotify.com/show/4UyERFec5ZaiBYrXEGHsFD" target="_blank" rel="noreferrer">Listen on Spotify →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section">
+  <div class="container">
+    <h2>Your story is already there.<br/><em>Let's find it.</em></h2>
+    <p>Book a call. No pitch, no pressure — just a conversation about where you are and what you're trying to say.</p>
+    <a class="btn-terra" href="https://calendly.com/sarah-sjklabs/fancy-a-chat" target="_blank" rel="noreferrer">Book a Scene-Setting Call →</a>
+  </div>
+</section>
+
+<footer>
+  <div><strong>Sarah Kemp</strong> · Mirra by SJK Labs · sarah@sjklabs.co</div>
+  <div><a href="index.html">sjklabs.co</a></div>
+</footer>
+
+</body>
+</html>

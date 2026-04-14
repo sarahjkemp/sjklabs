@@ -1,0 +1,219 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-8VR7WN1MJK"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-8VR7WN1MJK');
+  </script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Why Being Seen Is Not the Same as Being Chosen | SJK Labs</title>
+  <meta name="description" content="The difference between visibility and authority — and why reach without trust does not create demand, belief, or action." />
+  <style>
+    :root{
+      --paper:#f4efe6;
+      --surface:#fbf7f0;
+      --ink:#0f1115;
+      --muted:rgba(15,17,21,.65);
+      --line:rgba(15,17,21,.12);
+      --accent:#1c3d2e;
+      --accent-mid:#2a5c44;
+      --accent-light:#e8f0eb;
+      --amber:#c4621d;
+      --amber-mid:#a8521a;
+      --amber-light:#f5e6dc;
+      --oxblood:#6b0f2a;
+      --max:1080px;
+      --r:14px;
+      --r2:20px;
+      --sans: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Inter, Roboto, Helvetica, Arial;
+    }
+    *{box-sizing:border-box; margin:0; padding:0;}
+    body{font-family:var(--sans); background:var(--paper); color:var(--ink); -webkit-font-smoothing:antialiased; overflow-x:hidden;}
+    body::before{content:""; position:fixed; inset:0; pointer-events:none; opacity:.04; background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='140' height='140' filter='url(%23n)' opacity='.22'/%3E%3C/svg%3E");}
+    .container{max-width:var(--max); margin:0 auto; padding:0 32px;}
+    .prose{max-width:720px; margin:0 auto;}
+    header{position:sticky; top:0; z-index:50; background:rgba(244,239,230,.95); backdrop-filter:blur(12px); border-bottom:1px solid var(--line);}
+    .nav{display:flex; align-items:center; justify-content:space-between; padding:20px 0; gap:24px;}
+    .brand{font-size:16px; font-weight:800; letter-spacing:-.04em; color:var(--ink); text-decoration:none; flex-shrink:0;}
+    .brand em{color:var(--accent); font-style:normal;}
+    nav{display:flex; gap:2px; align-items:center; flex-wrap:wrap;}
+    nav a{color:var(--muted); text-decoration:none; font-size:14px; padding:7px 11px; border-radius:8px; transition:all .15s; white-space:nowrap;}
+    nav a:hover{color:var(--ink); background:rgba(15,17,21,.05);}
+    .btn{display:inline-flex; align-items:center; border-radius:999px; padding:9px 18px; font-size:13px; font-weight:500; text-decoration:none; white-space:nowrap; transition:all .15s; cursor:pointer; border:none;}
+    .btn-green{background:var(--accent); color:#fff; border:1px solid var(--accent);}
+    .btn-green:hover{background:var(--accent-mid);}
+    .btn-amber{background:var(--amber); color:#fff;}
+    .btn-amber:hover{background:var(--amber-mid);}
+    /* Article layout */
+    .article-hero{padding:64px 0 48px; border-bottom:1px solid var(--line);}
+    .eyebrow{font-size:11px; letter-spacing:.2em; text-transform:uppercase; font-weight:600; color:var(--accent); margin-bottom:20px;}
+    .eyebrow-amber{color:var(--amber);}
+    .article-hero h1{font-size:clamp(32px,5vw,60px); font-weight:800; letter-spacing:-.05em; line-height:1.05; margin-bottom:24px;}
+    .article-hero h1 em{color:var(--accent); font-style:normal;}
+    .article-hero .lead{font-size:clamp(16px,1.8vw,20px); color:var(--muted); line-height:1.75; max-width:56ch;}
+    .article-body{padding:64px 0 96px;}
+    .article-body h2{font-size:clamp(22px,3vw,32px); font-weight:800; letter-spacing:-.04em; line-height:1.15; margin:48px 0 16px; color:var(--ink);}
+    .article-body h2 em{color:var(--accent); font-style:normal;}
+    .article-body h3{font-size:18px; font-weight:700; letter-spacing:-.02em; margin:32px 0 12px; color:var(--ink);}
+    .article-body p{font-size:17px; color:var(--muted); line-height:1.8; margin-bottom:20px;}
+    .article-body p strong{color:var(--ink); font-weight:600;}
+    .pull-quote{border-left:3px solid var(--accent); padding:20px 28px; margin:40px 0; background:var(--surface); border-radius:0 var(--r) var(--r) 0;}
+    .pull-quote p{font-size:20px; font-weight:700; letter-spacing:-.02em; color:var(--ink); line-height:1.4; margin:0; font-style:italic;}
+    .pull-quote p em{color:var(--accent); font-style:normal;}
+    .callout{background:var(--accent); color:#fff; border-radius:var(--r2); padding:40px; margin:40px 0; text-align:center;}
+    .callout h3{font-size:24px; font-weight:800; letter-spacing:-.03em; margin-bottom:12px; color:#fff;}
+    .callout p{font-size:16px; color:rgba(255,255,255,.85); line-height:1.7; margin-bottom:24px;}
+    .callout .btn{background:#fff; color:var(--accent); font-weight:700;}
+    .callout p, .article-body .callout p{color:rgba(255,255,255,.85) !important;}
+    .callout h3, .article-body .callout h3{color:#fff !important;}
+    .card-grid{display:flex; flex-direction:column; gap:0; margin:32px 0; border-top:1px solid var(--line);}
+    .card{padding:28px 0; border-bottom:1px solid var(--line);}
+    .card:hover{}
+    .card-num{font-size:11px; font-weight:700; letter-spacing:.2em; text-transform:uppercase; color:var(--accent); margin-bottom:10px; display:block;}
+    .card h3{font-size:16px; font-weight:700; letter-spacing:-.02em; margin-bottom:6px; color:var(--ink);}
+    .card p{font-size:15px; color:var(--muted); line-height:1.7; margin:0;}
+    .divider{border:none; border-top:1px solid var(--line); margin:48px 0;}
+    .related{background:var(--surface); border:1px solid var(--line); border-radius:var(--r2); padding:36px; margin:48px 0;}
+    .related-label{font-size:11px; letter-spacing:.2em; text-transform:uppercase; font-weight:600; color:var(--muted); margin-bottom:20px;}
+    .related-links{display:flex; flex-direction:column; gap:12px;}
+    .related-links a{color:var(--accent); text-decoration:none; font-size:15px; font-weight:500; display:flex; align-items:center; gap:8px;}
+    .related-links a:hover{text-decoration:underline; text-underline-offset:3px;}
+    footer{padding:32px 0 48px; border-top:1px solid var(--line);}
+    .foot{display:flex; justify-content:space-between; align-items:center; gap:16px; flex-wrap:wrap; font-size:13px; color:var(--muted);}
+    .foot a{color:var(--muted); text-decoration:none;}
+    .foot a:hover{color:var(--ink); text-decoration:underline; text-underline-offset:3px;}
+    .foot-links{display:flex; gap:20px; flex-wrap:wrap;}
+    @media(max-width:640px){
+      .container{padding:0 20px;}
+      .article-hero{padding:40px 0 32px;}
+      .article-body{padding:40px 0 64px;}
+      .card-grid{grid-template-columns:1fr;}
+    }
+
+    .nav-dropdown{position:relative;}
+    .nav-dropdown > a{display:flex; align-items:center; gap:4px;}
+    .nav-dropdown > a::after{content:""; width:0; height:0; border-left:4px solid transparent; border-right:4px solid transparent; border-top:4px solid currentColor; opacity:.5; flex-shrink:0;}
+    .dropdown-menu{display:none; position:absolute; top:calc(100% + 8px); left:0; background:var(--paper); border:1px solid var(--line); border-radius:var(--r); padding:6px; min-width:220px; box-shadow:0 8px 24px rgba(0,0,0,.1); z-index:100;}
+    .dropdown-menu a{display:block; color:var(--ink); font-size:13px; padding:8px 12px; border-radius:8px; white-space:nowrap; text-decoration:none;}
+    .dropdown-menu a:hover{background:rgba(15,17,21,.05);}
+    .nav-dropdown:hover .dropdown-menu{display:block;}
+  </style>
+</head>
+<body>
+<header>
+  <div class="container">
+    <div class="nav">
+      <a class="brand" href="/">SJK <em>Labs</em></a>
+      <nav>
+        <a href="/#about">About</a>
+        <a href="/coverage.html">Coverage</a>
+        <a href="/#individuals">Individuals</a>
+        <a href="/#businesses">Businesses</a>
+        <div class="nav-dropdown">
+          <a href="/authority.html">Authority</a>
+          <div class="dropdown-menu">
+            <a href="/authority.html">What is Authority?</a>
+            <a href="/why-expertise-gets-ignored.html">Why expertise gets ignored</a>
+            <a href="/visibility-vs-chosen.html">Visibility vs being chosen</a>
+            <a href="/scriptwriter-test.html">The Scriptwriter Test™</a>
+            <a href="/human-authority-ai.html">Human authority in the age of AI</a>
+            <a href="/narrative-authority.html">Narrative as authority</a>
+            <a href="/what-gets-people-chosen.html">What gets people chosen?</a>
+          </div>
+        </div>
+      </nav>
+      <a class="btn btn-green" href="https://calendly.com/sarah-sjklabs/fancy-a-chat" target="_blank" rel="noreferrer">Work with us →</a>
+    </div>
+  </div>
+</header>
+
+<main>
+  <section class="article-hero">
+    <div class="container prose">
+      <div class="eyebrow">SJK Labs — Attention vs authority</div>
+      <h1>Why Being Seen Is Not the Same as <em>Being Chosen</em></h1>
+      <p class="lead">Reach is cheap. Trust is not. The businesses and professionals who confuse the two spend enormous energy being visible to people who never convert — while the ones who quietly build authority get chosen without trying.</p>
+    </div>
+  </section>
+
+  <section class="article-body">
+    <div class="container prose">
+
+      <p>The attention economy has convinced us that being seen is the goal. Get more followers. More impressions. More reach. The assumption is that if enough people see you, some of them will buy from you. This is true in a narrow sense. But it misses the mechanism that actually drives choice — and optimising for visibility at the expense of authority is one of the most expensive mistakes a business or professional can make.</p>
+
+      <div class="pull-quote"><p>"<em>Visibility gets you noticed. Authority gets you chosen.</em> These are different things."</p></div>
+
+      <h2>The difference between attention and authority</h2>
+      <p>Attention is a moment. Authority is a state. Attention is what happens when someone encounters your content, your name, or your work. Authority is what they conclude about you after that encounter — and whether that conclusion makes them more likely to choose you.</p>
+      <p>You can get enormous attention with content that undermines your authority. You can build deep authority with very little attention from the wrong audience. The goal is not to maximise attention. <strong>The goal is to earn the right kind of attention from the right people and convert it into trust.</strong></p>
+
+      <h2>Why reach without trust is weak</h2>
+      <p>A large audience of people who do not trust you is commercially fragile. They do not convert. They do not refer. They do not return. The numbers look impressive but the business effect is minimal. Reach without trust is the vanity metric that absorbs marketing budgets and produces confusion about why growth has stalled.</p>
+      <p>Trust, by contrast, compounds. A small audience of people who genuinely trust your expertise will refer, return, convert, and advocate in ways that no advertising budget can replicate. The economics of trust are entirely different from the economics of reach.</p>
+
+      <div class="card-grid">
+        <div class="card">
+          <div class="card-num">01</div>
+          <h3>Visibility alone</h3>
+          <p>Large audience. Low conversion. Constant content pressure. No clear positioning. Easily copied. Fragile to algorithm changes.</p>
+        </div>
+        <div class="card">
+          <div class="card-num">02</div>
+          <h3>Authority alone</h3>
+          <p>Smaller but highly qualified audience. High conversion. Strong referrals. Clear positioning. Hard to copy. Resilient to algorithm changes.</p>
+        </div>
+        <div class="card">
+          <div class="card-num">03</div>
+          <h3>Visibility + authority</h3>
+          <p>The goal. Reach that converts because trust precedes it. The market sees you and already knows why you are the right choice.</p>
+        </div>
+      </div>
+
+      <h2>Why visibility alone does not create demand</h2>
+      <p>Demand is not created by being seen. It is created by being understood and trusted. Someone can see your content every day for a year and still not buy from you — if what they see does not clearly communicate that you understand their problem and are credible enough to solve it.</p>
+      <p>The missing ingredient is not more content. It is a clearer point of view, expressed consistently, that makes the right people conclude that you are the obvious choice. That is authority. And it is what converts visibility into demand.</p>
+
+      <h2>The market chooses what it trusts, not what it sees</h2>
+      <p>When a buyer has to make a choice, they do not conduct an audit of everyone they have ever seen. They recall who they trust. Trust is built through clarity, consistency, and proof — not through volume or reach. <strong>The business that gets chosen is the one that has built the most trust with the right people, not the one with the most impressions.</strong></p>
+
+      <div class="pull-quote"><p>"<em>Being known is not the same as being chosen.</em> Authority is the layer between the two."</p></div>
+
+      <h2>What to build instead</h2>
+      <p>Build for trust, not reach. Publish fewer things that say more. Have a point of view that is specific enough to be distinctive and repeated consistently enough to be associated with you. Let proof do the work that volume cannot. Make your expertise so legible that the right people encounter you and immediately understand why you are the right choice.</p>
+      <p>That is the shift from visibility to authority. And it changes everything downstream — from how you pitch, to how you price, to who comes to you and why.</p>
+
+      <div class="callout">
+        <h3>Stop optimising for visibility. Start building authority.</h3>
+        <p>SJK Labs works with a small number of businesses and individuals at a time to close the gap between being seen and being chosen.</p>
+        <a class="btn" href="https://calendly.com/sarah-sjklabs/fancy-a-chat">Book a Scene-Setting Call →</a>
+      </div>
+
+      <div class="related">
+        <div class="related-label">Continue reading</div>
+        <div class="related-links">
+          <a href="/authority.html">→ What is authority?</a>
+          <a href="/why-expertise-gets-ignored.html">→ Why expertise gets ignored</a>
+          <a href="/scriptwriter-test.html">→ The Scriptwriter Test™</a>
+          <a href="/human-authority-ai.html">→ Human authority in the age of AI</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="container">
+    <div class="foot">
+      <span>© 2026 SJK Labs Ltd. All rights reserved.</span>
+      <div class="foot-links">
+        <a href="/authority.html">What is Authority?</a>
+        <a href="/privacy.html">Privacy</a>
+        <a href="/terms.html">Terms</a>
+        <a href="/cdn-cgi/l/email-protection#c0b3a1b2a1a880b3aaabaca1a2b3eea3af"><span class="__cf_email__" data-cfemail="a2d1c3d0c3cae2d1c8c9cec3c0d18cc1cd">[email&#160;protected]</span></a>
+        <a href=
