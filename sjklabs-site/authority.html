@@ -1,225 +1,304 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-8VR7WN1MJK"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>What Is a Narrative Architect? | SJK Labs</title>
+  <meta name="description" content="A narrative architect helps founders, executives, and businesses become more clearly understood. Learn what a narrative architect does, how it differs from branding and copywriting, and why it matters for authority.">
+  <link rel="canonical" href="https://sjklabs.co/what-is-a-narrative-architect.html">
 
-    gtag('config', 'G-8VR7WN1MJK');
-  </script>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>What is Authority? | SJK Labs</title>
-  <meta name="description" content="Authority is the layer between being seen and being chosen. A clear definition of what authority means in business, and why it matters more than visibility." />
+  <meta property="og:title" content="What Is a Narrative Architect?">
+  <meta property="og:description" content="A narrative architect helps founders, executives, and businesses become more clearly understood.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://sjklabs.co/what-is-a-narrative-architect.html">
+
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
   <style>
-    :root{
-      --paper:#f4efe6;
-      --surface:#fbf7f0;
-      --ink:#0f1115;
-      --muted:rgba(15,17,21,.65);
-      --line:rgba(15,17,21,.12);
-      --accent:#1c3d2e;
-      --accent-mid:#2a5c44;
-      --accent-light:#e8f0eb;
-      --amber:#c4621d;
-      --amber-mid:#a8521a;
-      --amber-light:#f5e6dc;
-      --oxblood:#6b0f2a;
-      --max:1080px;
-      --r:14px;
-      --r2:20px;
-      --sans: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Inter, Roboto, Helvetica, Arial;
-    }
-    *{box-sizing:border-box; margin:0; padding:0;}
-    body{font-family:var(--sans); background:var(--paper); color:var(--ink); -webkit-font-smoothing:antialiased; overflow-x:hidden;}
-    body::before{content:""; position:fixed; inset:0; pointer-events:none; opacity:.04; background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='140' height='140' filter='url(%23n)' opacity='.22'/%3E%3C/svg%3E");}
-    .container{max-width:var(--max); margin:0 auto; padding:0 32px;}
-    .prose{max-width:720px; margin:0 auto;}
-    header{position:sticky; top:0; z-index:50; background:rgba(244,239,230,.95); backdrop-filter:blur(12px); border-bottom:1px solid var(--line);}
-    .nav{display:flex; align-items:center; justify-content:space-between; padding:20px 0; gap:24px;}
-    .brand{font-size:16px; font-weight:800; letter-spacing:-.04em; color:var(--ink); text-decoration:none; flex-shrink:0;}
-    .brand em{color:var(--accent); font-style:normal;}
-    nav{display:flex; gap:2px; align-items:center; flex-wrap:wrap;}
-    nav a{color:var(--muted); text-decoration:none; font-size:14px; padding:7px 11px; border-radius:8px; transition:all .15s; white-space:nowrap;}
-    nav a:hover{color:var(--ink); background:rgba(15,17,21,.05);}
-    .btn{display:inline-flex; align-items:center; border-radius:999px; padding:9px 18px; font-size:13px; font-weight:500; text-decoration:none; white-space:nowrap; transition:all .15s; cursor:pointer; border:none;}
-    .btn-green{background:var(--accent); color:#fff; border:1px solid var(--accent);}
-    .btn-green:hover{background:var(--accent-mid);}
-    .btn-amber{background:var(--amber); color:#fff;}
-    .btn-amber:hover{background:var(--amber-mid);}
-    /* Article layout */
-    .article-hero{padding:64px 0 48px; border-bottom:1px solid var(--line);}
-    .eyebrow{font-size:11px; letter-spacing:.2em; text-transform:uppercase; font-weight:600; color:var(--accent); margin-bottom:20px;}
-    .eyebrow-amber{color:var(--amber);}
-    .article-hero h1{font-size:clamp(32px,5vw,60px); font-weight:800; letter-spacing:-.05em; line-height:1.05; margin-bottom:24px;}
-    .article-hero h1 em{color:var(--accent); font-style:normal;}
-    .article-hero .lead{font-size:clamp(16px,1.8vw,20px); color:var(--muted); line-height:1.75; max-width:56ch;}
-    .article-body{padding:64px 0 96px;}
-    .article-body h2{font-size:clamp(22px,3vw,32px); font-weight:800; letter-spacing:-.04em; line-height:1.15; margin:48px 0 16px; color:var(--ink);}
-    .article-body h2 em{color:var(--accent); font-style:normal;}
-    .article-body h3{font-size:18px; font-weight:700; letter-spacing:-.02em; margin:32px 0 12px; color:var(--ink);}
-    .article-body p{font-size:17px; color:var(--muted); line-height:1.8; margin-bottom:20px;}
-    .article-body p strong{color:var(--ink); font-weight:600;}
-    .pull-quote{border-left:3px solid var(--accent); padding:20px 28px; margin:40px 0; background:var(--surface); border-radius:0 var(--r) var(--r) 0;}
-    .pull-quote p{font-size:20px; font-weight:700; letter-spacing:-.02em; color:var(--ink); line-height:1.4; margin:0; font-style:italic;}
-    .pull-quote p em{color:var(--accent); font-style:normal;}
-    .callout{background:var(--accent); color:#fff; border-radius:var(--r2); padding:40px; margin:40px 0; text-align:center;}
-    .callout h3{font-size:24px; font-weight:800; letter-spacing:-.03em; margin-bottom:12px; color:#fff;}
-    .callout p{font-size:16px; color:rgba(255,255,255,.85); line-height:1.7; margin-bottom:24px;}
-    .callout .btn{background:#fff; color:var(--accent); font-weight:700;}
-    .callout p, .article-body .callout p{color:rgba(255,255,255,.85) !important;}
-    .callout h3, .article-body .callout h3{color:#fff !important;}
-    .card-grid{display:flex; flex-direction:column; gap:0; margin:32px 0; border-top:1px solid var(--line);}
-    .card{padding:28px 0; border-bottom:1px solid var(--line);}
-    .card:hover{}
-    .card-num{font-size:11px; font-weight:700; letter-spacing:.2em; text-transform:uppercase; color:var(--accent); margin-bottom:10px; display:block;}
-    .card h3{font-size:16px; font-weight:700; letter-spacing:-.02em; margin-bottom:6px; color:var(--ink);}
-    .card p{font-size:15px; color:var(--muted); line-height:1.7; margin:0;}
-    .divider{border:none; border-top:1px solid var(--line); margin:48px 0;}
-    .related{background:var(--surface); border:1px solid var(--line); border-radius:var(--r2); padding:36px; margin:48px 0;}
-    .related-label{font-size:11px; letter-spacing:.2em; text-transform:uppercase; font-weight:600; color:var(--muted); margin-bottom:20px;}
-    .related-links{display:flex; flex-direction:column; gap:12px;}
-    .related-links a{color:var(--accent); text-decoration:none; font-size:15px; font-weight:500; display:flex; align-items:center; gap:8px;}
-    .related-links a:hover{text-decoration:underline; text-underline-offset:3px;}
-    footer{padding:32px 0 48px; border-top:1px solid var(--line);}
-    .foot{display:flex; justify-content:space-between; align-items:center; gap:16px; flex-wrap:wrap; font-size:13px; color:var(--muted);}
-    .foot a{color:var(--muted); text-decoration:none;}
-    .foot a:hover{color:var(--ink); text-decoration:underline; text-underline-offset:3px;}
-    .foot-links{display:flex; gap:20px; flex-wrap:wrap;}
-    @media(max-width:640px){
-      .container{padding:0 20px;}
-      .article-hero{padding:40px 0 32px;}
-      .article-body{padding:40px 0 64px;}
-      .card-grid{grid-template-columns:1fr;}
+    :root {
+      --bg: #0f1829;
+      --bg2: #162035;
+      --text: #f0ede6;
+      --muted: rgba(240, 237, 230, 0.72);
+      --orange: #d95520;
+      --border: rgba(255, 255, 255, 0.08);
+      --max: 760px;
     }
 
-    .nav-dropdown{position:relative;}
-    .nav-dropdown > a{display:flex; align-items:center; gap:4px;}
-    .nav-dropdown > a::after{content:""; width:0; height:0; border-left:4px solid transparent; border-right:4px solid transparent; border-top:4px solid currentColor; opacity:.5; flex-shrink:0;}
-    .dropdown-menu{display:none; position:absolute; top:calc(100% + 8px); left:0; background:var(--paper); border:1px solid var(--line); border-radius:var(--r); padding:6px; min-width:220px; box-shadow:0 8px 24px rgba(0,0,0,.1); z-index:100;}
-    .dropdown-menu a{display:block; color:var(--ink); font-size:13px; padding:8px 12px; border-radius:8px; white-space:nowrap; text-decoration:none;}
-    .dropdown-menu a:hover{background:rgba(15,17,21,.05);}
-    .nav-dropdown:hover .dropdown-menu{display:block;}
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background: linear-gradient(135deg, #1a2a4a 0%, #0f1829 40%, #0a1020 70%, #1a1535 100%);
+      color: var(--text);
+      line-height: 1.75;
+      min-height: 100vh;
+    }
+
+    nav {
+      padding: 0 2rem;
+      height: 56px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(15, 24, 41, 0.95);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .logo {
+      font-family: 'Syne', sans-serif;
+      font-size: 1rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      color: var(--text);
+      text-decoration: none;
+    }
+
+    .logo span {
+      color: var(--orange);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 1.5rem;
+      align-items: center;
+    }
+
+    .nav-links a {
+      font-size: 0.82rem;
+      color: var(--muted);
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .nav-links a:hover {
+      color: var(--text);
+    }
+
+    .nav-cta {
+      background: var(--orange);
+      color: #fff !important;
+      padding: 6px 16px;
+      border-radius: 999px;
+    }
+
+    .article {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 4.5rem 1.5rem 5rem;
+    }
+
+    .eyebrow {
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--orange);
+      font-weight: 700;
+      margin-bottom: 1rem;
+    }
+
+    h1, h2 {
+      font-family: 'Syne', sans-serif;
+      letter-spacing: -0.03em;
+      line-height: 1.08;
+    }
+
+    h1 {
+      font-size: clamp(2.2rem, 5vw, 3.4rem);
+      margin-bottom: 1.25rem;
+    }
+
+    h2 {
+      font-size: 1.35rem;
+      margin: 2.5rem 0 0.9rem;
+    }
+
+    .intro {
+      font-size: 1.08rem;
+      color: var(--text);
+      margin-bottom: 1.5rem;
+    }
+
+    p {
+      color: var(--muted);
+      margin-bottom: 1.1rem;
+      font-size: 0.98rem;
+    }
+
+    strong {
+      color: var(--text);
+    }
+
+    ul {
+      margin: 1rem 0 1.5rem 1.2rem;
+      color: var(--muted);
+    }
+
+    li {
+      margin-bottom: 0.7rem;
+    }
+
+    .box {
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 1.25rem 1.25rem;
+      margin: 1.5rem 0;
+    }
+
+    .cta {
+      background: var(--bg2);
+      border: 1px solid rgba(217, 85, 32, 0.35);
+      border-radius: 20px;
+      padding: 1.75rem;
+      margin-top: 2.5rem;
+    }
+
+    .cta a {
+      display: inline-block;
+      margin-top: 0.8rem;
+      background: var(--orange);
+      color: #fff;
+      text-decoration: none;
+      padding: 0.85rem 1.2rem;
+      border-radius: 14px;
+      font-weight: 700;
+    }
+
+    a.inline-link {
+      color: var(--text);
+      text-underline-offset: 0.18em;
+    }
+
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 2rem;
+      text-align: center;
+      color: var(--muted);
+      font-size: 0.8rem;
+    }
+
+    footer a {
+      color: var(--muted);
+      text-decoration: none;
+      margin: 0 0.5rem;
+    }
+
+    footer a:hover {
+      color: var(--text);
+    }
   </style>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "What Is a Narrative Architect?",
+    "description": "A narrative architect helps founders, executives, and businesses become more clearly understood.",
+    "author": {
+      "@type": "Person",
+      "name": "Sarah Kemp",
+      "jobTitle": "Narrative Architect",
+      "url": "https://sjklabs.co"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "SJK Labs",
+      "url": "https://sjklabs.co"
+    },
+    "mainEntityOfPage": "https://sjklabs.co/what-is-a-narrative-architect.html"
+  }
+  </script>
 </head>
 <body>
-<header>
-  <div class="container">
-    <div class="nav">
-      <a class="brand" href="/">SJK <em>Labs</em></a>
-      <nav>
-        <a href="/#about">About</a>
-        <a href="/coverage.html">Coverage</a>
-        <a href="/#individuals">Individuals</a>
-        <a href="/#businesses">Businesses</a>
-        <div class="nav-dropdown">
-          <a href="/authority.html">Authority</a>
-          <div class="dropdown-menu">
-            <a href="/authority.html">What is Authority?</a>
-            <a href="/why-expertise-gets-ignored.html">Why expertise gets ignored</a>
-            <a href="/visibility-vs-chosen.html">Visibility vs being chosen</a>
-            <a href="/scriptwriter-test.html">The Scriptwriter Test™</a>
-            <a href="/human-authority-ai.html">Human authority in the age of AI</a>
-            <a href="/narrative-authority.html">Narrative as authority</a>
-            <a href="/what-gets-people-chosen.html">What gets people chosen?</a>
-          </div>
-        </div>
-      </nav>
-      <a class="btn btn-green" href="https://calendly.com/sarah-sjklabs/fancy-a-chat" target="_blank" rel="noreferrer">Work with us →</a>
+  <nav>
+    <a href="/" class="logo">SJK <span>Labs</span></a>
+    <div class="nav-links">
+      <a href="/about">About</a>
+      <a href="https://www.linkedin.com/in/sarahjkemp/" target="_blank" rel="noopener noreferrer" class="nav-cta">Connect →</a>
     </div>
-  </div>
-</header>
+  </nav>
 
-<main>
-  <section class="article-hero">
-    <div class="container prose">
-      <div class="eyebrow">SJK Labs — Defining the field</div>
-      <h1>What is <em>Authority?</em></h1>
-      <p class="lead">Authority is not fame. It is not follower count. It is not how many people have heard of you. Authority is what happens when the right people encounter you and immediately understand that you are the right choice.</p>
+  <main class="article">
+    <div class="eyebrow">Guide</div>
+    <h1>What Is a Narrative Architect?</h1>
+
+    <p class="intro">A <strong>narrative architect</strong> helps founders, executives, and businesses become more clearly understood. The work is not just writing better copy. It is diagnosing how authority, expertise, and identity are being perceived, then building the narrative structure that helps other people grasp the value properly.</p>
+
+    <p>In simple terms, a narrative architect works out why a person or company is not landing as clearly as they should be, and fixes the story underneath the messaging.</p>
+
+    <h2>What a narrative architect actually does</h2>
+    <p>A narrative architect looks at the gap between what is true and what is understood.</p>
+    <p>That can include:</p>
+    <ul>
+      <li>identifying why a founder, executive, or brand is being underestimated</li>
+      <li>clarifying what they should be known for</li>
+      <li>finding the patterns, proof points, and authority signals already present in their background</li>
+      <li>turning that into positioning, language, and story structure that other people can understand quickly</li>
+      <li>making sure the narrative holds across websites, profiles, interviews, thought leadership, and market-facing materials</li>
+    </ul>
+
+    <div class="box">
+      <p><strong>A narrative architect does not invent a fake story.</strong> The job is to uncover the most accurate, powerful, and legible version of the one that is already there.</p>
     </div>
-  </section>
 
-  <section class="article-body">
-    <div class="container prose">
+    <h2>How a narrative architect is different from a copywriter, brand strategist, or PR consultant</h2>
+    <p>There is overlap, but they are not the same thing.</p>
+    <p><strong>A copywriter</strong> writes the words.</p>
+    <p><strong>A brand strategist</strong> often defines positioning, audience, and market context.</p>
+    <p><strong>A PR consultant</strong> helps shape visibility and third-party validation.</p>
+    <p><strong>A narrative architect</strong> sits underneath all of that. The work is about structure, perception, and coherence: what story is actually being told, whether it matches reality, and whether it helps the right people understand why this person or business matters.</p>
 
-      <p>Most businesses and professionals confuse visibility with authority. They are not the same thing. Visibility means being seen. Authority means being chosen. You can have enormous visibility and no authority. You can have limited visibility and deep authority. The goal is authority — because authority is what converts attention into action.</p>
+    <h2>Why narrative architecture matters</h2>
+    <p>Many smart people and strong businesses do not have an expertise problem. They have a <strong>legibility problem</strong>.</p>
+    <p>They know what they do. Their clients may even know. But the market, media, and now AI systems do not always understand them accurately.</p>
+    <p>That creates practical problems:</p>
+    <ul>
+      <li>founders look generic when they are not</li>
+      <li>executives sound experienced but not distinctive</li>
+      <li>businesses have authority internally but not externally</li>
+      <li>thought leadership feels noisy instead of clear</li>
+      <li>search and AI platforms miss what is actually valuable about the work</li>
+    </ul>
 
-      <div class="pull-quote"><p>"<em>Visibility gets you noticed. Authority gets you chosen.</em>"</p></div>
+    <p>Narrative architecture helps close that gap.</p>
 
-      <h2>The simple definition</h2>
-      <p>Authority is the quality that makes a market, an audience, or a buyer default to you when they need what you offer. It is the accumulated weight of trust, credibility, clarity, and proof that makes your name the one that comes to mind — and stays there.</p>
-      <p>It is not self-declared. You cannot announce yourself as an authority. Authority is conferred by the people who consume your thinking, experience your work, and reach the conclusion that you are the clearest, most credible source in your space.</p>
+    <h2>Who narrative architecture is for</h2>
+    <p>Narrative architecture is especially useful for:</p>
+    <ul>
+      <li>founders whose experience is stronger than their market positioning</li>
+      <li>executives who need clearer authority in public-facing environments</li>
+      <li>consultants and experts who are being underestimated</li>
+      <li>businesses with genuine expertise that is not translating into trust, visibility, or demand</li>
+    </ul>
 
-      <h2>Why authority matters</h2>
-      <p>The market does not make rational decisions. It makes trust decisions. When a buyer, employer, investor, or audience member has to choose between two options that appear roughly equivalent, they will always choose the one they trust more. Not the most capable option. <strong>The one they understand most clearly and trust most completely.</strong></p>
-      <p>This is why people with less experience than you get the opportunities you want. It is not because they are more capable. It is because their authority — their perceived credibility and clarity — is stronger. The gap between your capability and your market's perception of your capability is where growth stalls.</p>
+    <h2>Sarah Kemp and narrative architecture</h2>
+    <p><strong>Sarah Kemp</strong> is a <strong>narrative architect</strong>, journalist, and authority strategist. Through <a href="https://sjklabs.co" class="inline-link">SJK Labs</a>, she works with founders, executives, and businesses to uncover why their authority is not landing and what needs to change for them to become more clearly understood.</p>
 
-      <div class="card-grid">
-        <div class="card">
-          <div class="card-num">01</div>
-          <h3>Authority creates inbound</h3>
-          <p>When you have authority, the right people come to you. You stop chasing and start being sought. Inbound is the commercial effect of authority done correctly.</p>
-        </div>
-        <div class="card">
-          <div class="card-num">02</div>
-          <h3>Authority reduces friction</h3>
-          <p>Every sales conversation, every pitch, every job application is easier when authority precedes you. The decision is half-made before you enter the room.</p>
-        </div>
-        <div class="card">
-          <div class="card-num">03</div>
-          <h3>Authority compounds</h3>
-          <p>Unlike advertising, authority accumulates. A credible interview from three years ago still signals authority today. Proof does not expire.</p>
-        </div>
-      </div>
+    <p>Her approach combines journalism, interviews, document analysis, pattern recognition, and authority strategy. That process led to the development of <strong>The Scriptwriter Test™</strong>, a framework for diagnosing exactly where perception is breaking down.</p>
 
-      <h2>The difference between visibility and authority</h2>
-      <p>Visibility is reach. Authority is weight. You can buy visibility — through advertising, through volume, through noise. You cannot buy authority. Authority is earned through proof, consistency, clarity, and the accumulated experience of people who have trusted you and been right to do so.</p>
-      <p>The confusion between the two is the most expensive mistake businesses make. They optimise for being seen, when what they need is to be believed. <strong>Being seen is not the same as being chosen.</strong></p>
+    <h2>In one sentence</h2>
+    <p>A narrative architect helps people and businesses become <strong>more clearly understood, more accurately perceived, and more easily chosen</strong>.</p>
 
-      <h2>How authority affects choice</h2>
-      <p>When someone needs to make a choice — who to hire, which agency to brief, which consultant to bring in, which product to buy — they are not running a rational analysis. They are running a trust analysis. They are asking: who do I already believe? Who feels credible before I have to check? Whose name comes to mind without effort?</p>
-      <p>That effortless recall is authority. And it is built before the buying decision happens — through the content someone has read, the conversations they have overheard, the recommendations they have received, and the clarity with which a business or person has positioned themselves in the market.</p>
-
-      <div class="pull-quote"><p>"Authority is built <em>before</em> the room. It is the reason you are in the room at all."</p></div>
-
-      <h2>What authority is not</h2>
-      <p>Authority is not confidence. It is not charisma. It is not the number of followers you have or the size of your email list. It is not being the loudest voice in the room. It is not thought leadership for its own sake, or content produced to fill a calendar.</p>
-      <p>Authority is specific. It exists in a particular domain, for a particular audience. The goal is not to be authoritative to everyone — it is to be the clearest, most trusted source for the people whose trust matters to your business.</p>
-
-      <h2>Human authority in the age of AI</h2>
-      <p>Artificial intelligence can generate content at scale. It can produce convincing prose, plausible arguments, and technically accurate information on almost any subject. What it cannot generate is proof. It cannot produce lived experience, earned credibility, or the specific weight of a person who has done the thing they are describing.</p>
-      <p><strong>In a world of AI-generated noise, human authority is the only thing that cannot be automated.</strong> The businesses and individuals who build genuine authority — rooted in real expertise, real proof, and real clarity of thinking — will be the ones the market turns to. Not because they are the loudest. Because they are the most credible.</p>
-
-      <div class="callout">
-        <h3>Is your authority gap costing you?</h3>
-        <p>The gap between what you know and what the market believes is where growth stalls. The Scriptwriter Test™ diagnoses exactly where your authority is breaking down — and what needs to change.</p>
-        <a class="btn" href="https://sjklabs.co/quiz#business">Take the Authority Diagnostic →</a>
-      </div>
-
-      <div class="related">
-        <div class="related-label">Continue reading</div>
-        <div class="related-links">
-          <a href="/why-expertise-gets-ignored.html">→ Why expertise gets ignored</a>
-          <a href="/visibility-vs-chosen.html">→ Why being seen is not the same as being chosen</a>
-          <a href="/scriptwriter-test.html">→ The Scriptwriter Test™</a>
-          <a href="/human-authority-ai.html">→ Human authority in the age of AI</a>
-        </div>
-      </div>
-
+    <div class="cta">
+      <p><strong>Need help clarifying your authority?</strong></p>
+      <p>SJK Labs works with founders, executives, and businesses that know they have more substance than the market currently reflects.</p>
+      <a href="https://sjklabs.co" target="_blank" rel="noopener noreferrer">Work with SJK Labs →</a>
     </div>
-  </section>
-</main>
+  </main>
 
-<footer>
-  <div class="container">
-    <div class="foot">
-      <span>© 2026 SJK Labs Ltd. All rights reserved.</span>
-      <div class="foot-links">
-        <a href="/authority.html">What is Authority?</a>
-        <a href="/privacy.html">Privacy</a>
-        <a href="/terms.html">Terms</a>
-        <a href="/cdn-cgi/l/email-protection#186b796a7970586b727374797a6b367b77"><span class="__cf_email__" data-cfemail="83f0e2f1e2ebc3f0e9e8efe2e1f0ade0ec">[email&#160;protected]</span></a>
-        <a href=
+  <footer>
+    <p>© 2026 SJK Labs · <a href="/about">About</a> · <a href="/">Home</a></p>
+  </footer>
+</body>
+</html>
