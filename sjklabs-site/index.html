@@ -1,3 +1,4 @@
+
 <!doctype html>
 <html lang="en">
 <head>
@@ -155,6 +156,10 @@
     .btn-white-amber:hover{background:rgba(255,255,255,.9);}
     .btn-outline-white{background:transparent; color:#fff; border:1px solid rgba(255,255,255,.4);}
     .btn-outline-white:hover{background:rgba(255,255,255,.1);}
+    .btn-doom{background:#7c6fe0; color:#fff; border:1px solid #7c6fe0;}
+    .btn-doom:hover{background:#6a5ed4;}
+    .btn-light{background:#fff; color:#1a1a2e; border:1px solid rgba(255,255,255,.9); font-weight:700;}
+    .btn-light:hover{background:rgba(255,255,255,.9);}
 
     /* ── HERO ── */
     .hero{
@@ -1069,6 +1074,98 @@
       margin:0 auto;
     }
 
+    /* ── ADHD AT WORK ── */
+    .adhd-section{
+      padding:96px 0;
+      background:#1a1a2e;
+      color:#fff;
+    }
+    .adhd-eyebrow{
+      font-size:11px;
+      font-weight:700;
+      letter-spacing:.2em;
+      text-transform:uppercase;
+      color:rgba(255,255,255,.45);
+      margin-bottom:20px;
+    }
+    .adhd-header{
+      text-align:center;
+      max-width:760px;
+      margin:0 auto 56px;
+    }
+    .adhd-header h2{
+      font-size:clamp(30px,4vw,52px);
+      font-weight:800;
+      letter-spacing:-.05em;
+      line-height:1.08;
+      color:#fff;
+      margin-bottom:24px;
+    }
+    .adhd-header p{
+      font-size:17px;
+      color:rgba(255,255,255,.6);
+      line-height:1.8;
+    }
+    .adhd-grid{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:16px;
+      margin-bottom:48px;
+    }
+    .adhd-card{
+      background:rgba(255,255,255,.05);
+      border:1px solid rgba(255,255,255,.09);
+      border-radius:var(--r);
+      padding:28px 24px;
+      display:flex;
+      flex-direction:column;
+      gap:10px;
+      transition:background .2s, border-color .2s;
+    }
+    .adhd-card:hover{
+      background:rgba(255,255,255,.08);
+      border-color:rgba(255,255,255,.18);
+    }
+    .adhd-card-label{
+      font-size:10px;
+      font-weight:700;
+      letter-spacing:.2em;
+      text-transform:uppercase;
+      color:rgba(255,255,255,.35);
+    }
+    .adhd-card h3{
+      font-size:17px;
+      font-weight:800;
+      letter-spacing:-.03em;
+      color:#fff;
+      line-height:1.25;
+    }
+    .adhd-card p{
+      font-size:14px;
+      color:rgba(255,255,255,.6);
+      line-height:1.65;
+      flex:1;
+    }
+    .adhd-card-cta{
+      font-size:13px;
+      font-weight:600;
+      color:rgba(255,255,255,.6);
+      text-decoration:none;
+      margin-top:8px;
+      transition:color .2s;
+    }
+    .adhd-card-cta:hover{color:#fff;}
+    .adhd-callout{
+      text-align:center;
+      font-size:15px;
+      color:rgba(255,255,255,.4);
+      font-style:italic;
+      line-height:1.6;
+      max-width:56ch;
+      margin:0 auto 40px;
+    }
+    .adhd-cta{text-align:center;}
+
     /* ── RESPONSIVE ── */
     @media(max-width:1000px){
       .packages-grid{grid-template-columns:repeat(3,1fr);}
@@ -1077,6 +1174,7 @@
       .businesses-inner{grid-template-columns:1fr; gap:48px;}
       .podcasts-grid{grid-template-columns:1fr; gap:20px;}
       .nbft-grid{grid-template-columns:1fr;}
+      .adhd-grid{grid-template-columns:1fr;}
       .mirra-inner{grid-template-columns:1fr; gap:36px;}
       .about-inner{grid-template-columns:1fr; gap:40px;}
       .about-left{position:static;}
@@ -1088,7 +1186,7 @@
       .nav{flex-wrap:wrap; gap:10px; padding:16px 0;}
       nav{width:100%; flex-wrap:wrap; gap:2px;}
       .hero{padding:72px 0 56px;}
-      .individuals-section,.businesses-section,.podcasts-section,.nbft-section,.mirra-section,.about-section{padding:64px 0;}
+      .individuals-section,.businesses-section,.podcasts-section,.nbft-section,.adhd-section,.mirra-section,.about-section{padding:64px 0;}
       .podcast-card{padding:36px 28px;}
       .belief{padding:64px 0;}
       .packages-grid{grid-template-columns:1fr;}
@@ -1107,35 +1205,10 @@
     <div class="nav">
       <a class="brand" href="/">SJK <em>Labs</em></a>
       <nav>
+        <a href="#businesses">For Businesses</a>
+        <a href="#individuals">For Individuals</a>
+        <a href="#adhd-at-work">ADHD at Work</a>
         <a href="#about">About</a>
-        <a href="coverage.html">Coverage</a>
-        <a href="#individuals">Individuals</a>
-        <a href="#businesses">Businesses</a>
-        <div class="nav-dropdown">
-          <a href="authority.html">Authority</a>
-          <div class="dropdown-menu">
-            <a href="authority.html">What is Authority?</a>
-            <a href="why-expertise-gets-ignored.html">Why expertise gets ignored</a>
-            <a href="visibility-vs-chosen.html">Visibility vs being chosen</a>
-            <a href="scriptwriter-test.html">The Scriptwriter Test™</a>
-            <a href="human-authority-ai.html">Human authority in the age of AI</a>
-            <a href="narrative-authority.html">Narrative as authority</a>
-            <a href="what-gets-people-chosen.html">What gets people chosen?</a>
-          </div>
-        </div>
-        <div class="nav-dropdown">
-          <a href="#podcasts">Podcasts</a>
-          <div class="dropdown-menu">
-            <a href="https://www.youtube.com/@prceptionmedia" target="_blank" rel="noreferrer">PRception</a>
-            <a href="https://www.youtube.com/@notbuiltforthisco" target="_blank" rel="noreferrer">Not Built For This</a>
-          </div>
-        </div>
-        <div class="nav-dropdown">
-          <a href="#mirra">Courses</a>
-          <div class="dropdown-menu">
-            <a href="#mirra">Mirra — On Demand</a>
-          </div>
-        </div>
       </nav>
       <a class="btn btn-green" href="https://calendly.com/sarah-sjklabs/fancy-a-chat" target="_blank" rel="noreferrer">Work with us →</a>
     </div>
@@ -1240,15 +1313,54 @@
         </div>
 
         <div class="package-card">
-          <div class="package-num" style="color:var(--amber);">FROM £4.99/MONTH</div>
+          <div class="package-num" style="color:#7c6fe0;">£4.99 FOR LIFE — LAUNCH OFFER</div>
           <div class="package-name">Doom Pile</div>
           <div class="package-desc">The subscription tool for clearing your mental backlog. Built for the brain that's been meaning to get to it.</div>
-          <a class="btn btn-amber" href="https://www.doompile.co.uk" target="_blank" rel="noreferrer" style="margin-top:16px; font-size:13px; padding:8px 18px; width:100%; justify-content:center;">Try Doom Pile — £4.99/mo →</a>
+          <a class="btn btn-doom" href="https://www.doompile.co.uk" target="_blank" rel="noreferrer" style="margin-top:16px; font-size:13px; padding:8px 18px; width:100%; justify-content:center;">Get Doom Pile — £4.99 for life →</a>
         </div>
 
       </div>
       <div style="text-align:center; margin-top:48px;">
         <a class="btn btn-amber" href="https://www.notbuiltforthis.co" target="_blank" rel="noreferrer">Explore Not Built For This →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ADHD AT WORK -->
+  <section class="adhd-section" id="adhd-at-work">
+    <div class="container">
+      <div class="adhd-header">
+        <div class="adhd-eyebrow">ADHD at Work</div>
+        <h2>Your ADHD employees aren't the problem.<br/>The systems are.</h2>
+        <p>Most organisations know they have ADHD employees. Few know how to actually support them — or how to talk about it without getting it wrong. SJK Labs works with companies to close that gap: building internal systems that work for ADHD brains, and the communications strategy to tell that story credibly.</p>
+      </div>
+      <div class="adhd-grid">
+
+        <div class="adhd-card">
+          <div class="adhd-card-label">THE AUDIT</div>
+          <h3>The ADHD Workplace Audit</h3>
+          <p>A clear-eyed assessment of how well your organisation actually works for ADHD employees — across systems, management, communication and culture. Includes a written report and recommendations.</p>
+          <a class="adhd-card-cta" href="https://calendly.com/sarah-sjklabs/fancy-a-chat" target="_blank" rel="noreferrer">Book a call →</a>
+        </div>
+
+        <div class="adhd-card">
+          <div class="adhd-card-label">THE WORKSHOP</div>
+          <h3>Leadership Workshop</h3>
+          <p>A practical, one-day workshop for managers and HR teams. What ADHD actually looks like at work, what good support looks like, and how to have the conversations that matter.</p>
+          <a class="adhd-card-cta" href="https://calendly.com/sarah-sjklabs/fancy-a-chat" target="_blank" rel="noreferrer">Book a call →</a>
+        </div>
+
+        <div class="adhd-card">
+          <div class="adhd-card-label">RETAINED</div>
+          <h3>Consultancy</h3>
+          <p>Ongoing ADHD strategy for your organisation — internal culture, employee support frameworks, and the external communications to back it up.</p>
+          <a class="adhd-card-cta" href="https://calendly.com/sarah-sjklabs/fancy-a-chat" target="_blank" rel="noreferrer">Book a call →</a>
+        </div>
+
+      </div>
+      <p class="adhd-callout">Founded and led by someone who's built tools for ADHD brains — not just studied them.</p>
+      <div class="adhd-cta">
+        <a class="btn btn-light" href="https://calendly.com/sarah-sjklabs/fancy-a-chat" target="_blank" rel="noreferrer">Book a Scene-Setting Call →</a>
       </div>
     </div>
   </section>
