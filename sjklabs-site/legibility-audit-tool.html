@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>The Legibility Audit | SJK Labs</title>
+  <meta name="description" content="Get a fast SJK Labs read on how clear, credible and easy to understand your business looks from the outside." />
+  <link rel="canonical" href="https://sjklabs.co/legibility-audit-tool" />
+  <link rel="stylesheet" href="./audit-tools.css?v=20260427b" />
+</head>
+<body>
+<header>
+  <div class="container">
+    <div class="nav">
+      <a class="brand" href="/">SJK <em>Labs</em></a>
+      <nav>
+        <a href="/legibility-audit">The Legibility Audit</a>
+        <a href="/scriptwriter-test">The Scriptwriter Test™</a>
+        <a href="/blog">Blog</a>
+      </nav>
+      <a class="btn btn-green" href="https://calendly.com/sarah-sjklabs/30min" target="_blank" rel="noreferrer">Book a call</a>
+    </div>
+  </div>
+</header>
+
+<main
+  data-audit-tool
+  data-mode="lite"
+  data-endpoint="https://legibility-audit.sarah-14c.workers.dev"
+>
+  <section class="hero hero-public">
+    <div class="container">
+      <div class="hero-panel">
+        <div class="eyebrow">SJK Labs diagnostic</div>
+        <div class="hero-grid">
+          <div>
+            <h1>The Legibility Audit</h1>
+            <p>See how clear, credible and easy to hold your business looks from the outside, before you spend more time and budget on content, PR or visibility.</p>
+            <div class="hero-points">
+              <span>Spot where trust is leaking</span>
+              <span>See what the market can actually hold</span>
+              <span>Get clearer on what needs fixing first</span>
+            </div>
+          </div>
+          <aside class="hero-note hero-proof">
+            <strong>Why this matters</strong>
+            <p>In an AI-first market, the businesses that get remembered, retrieved and chosen are usually the ones that are easiest to understand quickly. If the story is weaker than the substance, weaker businesses can still outrank you in memory.</p>
+          </aside>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container tool-layout">
+      <aside class="panel">
+        <div class="tool-tag">Run the audit</div>
+        <h2>See how legible the business really is</h2>
+        <p>Use the brand name if that is all you have. Add the website if you want the fastest, cleanest read.</p>
+        <form onsubmit="return false;">
+          <div class="field">
+            <label for="email">Email address</label>
+            <input id="email" name="email" type="email" placeholder="you@company.com" required />
+          </div>
+          <div class="field">
+            <label for="brandName">Brand name</label>
+            <input id="brandName" name="brandName" placeholder="e.g. Finix" required />
+          </div>
+          <div class="field">
+            <label for="website">Website (optional)</label>
+            <input id="website" name="website" placeholder="https://example.com" />
+          </div>
+          <div class="field">
+            <label for="sector">Sector (optional)</label>
+            <input id="sector" name="sector" placeholder="e.g. fintech infrastructure" />
+          </div>
+          <div class="field">
+            <label for="extraContext">Anything useful? (optional)</label>
+            <textarea id="extraContext" name="extraContext" placeholder="Examples: founder-led, post-Series A, moving into enterprise, strong press profile, weak website copy."></textarea>
+          </div>
+          <p class="hint">Enter your email to unlock the audit. SJK Labs will use it in connection with this diagnostic and any relevant follow-up.</p>
+          <button class="btn btn-amber btn-primary-tool" type="submit">Generate Legibility Audit</button>
+          <div class="status" aria-live="polite"></div>
+        </form>
+      </aside>
+
+      <div class="results-shell">
+        <div class="panel panel-empty-state">
+          <div class="empty-badge">What this audit looks for</div>
+          <h2>If the market cannot understand you quickly, it is harder to trust you, remember you, or retrieve you when it matters.</h2>
+          <p>This audit is designed to show whether the public story is carrying the strength of the business properly, or whether your authority is still getting lost somewhere between what you know internally and what the market can actually hold onto.</p>
+          <div class="window-panel">
+            <div class="window-shell">
+              <article class="window-card">
+                <strong>The Gap</strong>
+                <p>Where the market still has to work too hard to understand or trust the brand.</p>
+              </article>
+              <article class="window-card">
+                <strong>The Asset</strong>
+                <p>What proof or authority already exists, but is not yet doing enough work publicly.</p>
+              </article>
+              <article class="window-card">
+                <strong>The Window</strong>
+                <p>What narrative territory still looks ownable from the outside.</p>
+              </article>
+            </div>
+          </div>
+          <div class="cta-inline">
+            <div>
+              <strong>Want to go further?</strong>
+              <p>If the audit shows a real signal problem, SJK Labs can take it further and turn the diagnosis into a sharper strategic read on narrative, proof, and what needs to happen next.</p>
+            </div>
+            <a class="btn btn-green" href="https://calendly.com/sarah-sjklabs/30min" target="_blank" rel="noreferrer">Book a call</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="container">
+    <div class="foot">
+      <div>SJK Labs · The Legibility Audit</div>
+      <div class="foot-links">
+        <a href="/legibility-audit">Audit overview</a>
+        <a href="/scriptwriter-test">The Scriptwriter Test™</a>
+        <a href="/privacy">Privacy</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="./audit-tools.js?v=20260427b"></script>
+</body>
+</html>
