@@ -173,8 +173,8 @@
       border:1px solid rgba(28,61,46,.14);
     }
     .ab-band-card.dont{
-      background:linear-gradient(180deg,#f7ecef,#f3e6ea);
-      border:1px solid rgba(107,15,42,.14);
+      background:linear-gradient(180deg,#fbf4f5,#f7eeef);
+      border:1px solid rgba(107,15,42,.10);
     }
     .ab-band-card.dont strong{
       color:var(--oxblood);
@@ -195,23 +195,19 @@
       color:var(--ink);
     }
     .ab-band-card li::before{
-      content:"";
+      display:flex;
+      align-items:center;
+      justify-content:center;
       position:absolute;
       left:0;
-      top:9px;
-      width:8px;
-      height:8px;
-      border-radius:50%;
+      top:5px;
+      width:14px;
+      height:14px;
+      font-size:12px;
+      font-weight:800;
     }
-    .ab-band-card.do li::before{background:var(--accent);}
-    .ab-band-card.dont li::before{background:var(--oxblood);}
-    .ab-strip{
-      background:#fffaf4;
-      border:1px solid var(--line);
-      border-radius:28px;
-      padding:28px;
-    }
-    .ab-strip p:last-child{margin-bottom:0;}
+    .ab-band-card.do li::before{content:"✓"; color:var(--accent);}
+    .ab-band-card.dont li::before{content:"×"; color:var(--oxblood);}
     .ab-steps{
       display:grid;
       grid-template-columns:repeat(4,minmax(0,1fr));
@@ -248,6 +244,11 @@
     }
     .ab-faq .faq-item{
       background:#fffaf4;
+      padding:26px 28px;
+    }
+    .ab-faq .faq-item h3,
+    .ab-faq .faq-item p{
+      margin-left:0;
     }
     @media (max-width:960px){
       .ab-hero-grid,
@@ -418,40 +419,29 @@
   <section>
     <div class="container">
       <div class="section-head">
-        <h2>What I do, and what I <em>do not</em></h2>
-        <p>This is the part that needs to be unmissable. The retainer has a clear boundary, and that is part of why it works.</p>
+        <h2>What we lead, and what sits <em>outside scope</em></h2>
       </div>
       <div class="ab-band">
         <article class="ab-band-card do">
-          <strong>What I do</strong>
+          <strong>What we lead</strong>
           <ul>
-            <li>Lead the authority strategy and the monthly editorial priorities around it.</li>
-            <li>Create and drive the earned opportunities that strengthen public corroboration.</li>
-            <li>Ghostwrite and shape founder- or spokesperson-led authority assets without exposing the full operating model.</li>
-            <li>Keep the narrative, proof hierarchy and public voice consistent enough to compound over time.</li>
-            <li>Turn the strategy into repeated public signal, not just a plan on paper.</li>
+            <li>We lead the authority strategy and the monthly editorial priorities around it.</li>
+            <li>We create and drive the earned opportunities that strengthen public corroboration.</li>
+            <li>We develop written content aligned to narrative.</li>
+            <li>We keep the narrative, proof hierarchy and public voice consistent enough to compound over time.</li>
+            <li>We turn the strategy into repeated public signal, not just a plan on paper.</li>
           </ul>
         </article>
         <article class="ab-band-card dont">
-          <strong>What I do not do</strong>
+          <strong>What sits outside scope</strong>
           <ul>
-            <li>I do not build or code websites.</li>
-            <li>I do not implement schema, llms.txt, structured data or other technical GEO work.</li>
-            <li>I do not act as a general social media manager across every channel.</li>
-            <li>I do not guarantee tier-one press or other outcomes no credible operator can promise.</li>
-            <li>I do not replace the founder or spokesperson. They still need to be the voice.</li>
+            <li>Website builds and code implementation sit with the client team or a specialist partner.</li>
+            <li>Schema, llms.txt, structured data and other technical GEO work are handled separately.</li>
+            <li>This is not a broad channel-management retainer across every platform.</li>
+            <li>We do not position this as guaranteed press or guaranteed placement work.</li>
+            <li>The founder or named spokesperson still needs to be the public voice.</li>
           </ul>
         </article>
-      </div>
-    </div>
-  </section>
-
-  <section>
-    <div class="container">
-      <div class="ab-strip prose">
-        <h2>Where the boundary <em>sits</em></h2>
-        <p><strong>SJK Labs leads the authority signal itself:</strong> the narrative guardrails, the editorial line, the spokesperson shaping, the earned opportunities and the repeated public proof.</p>
-        <p><strong>The client team or a technical partner owns implementation underneath the site:</strong> website changes, structured data, technical publishing infrastructure and site-wide GEO setup. I can brief that work and review it, but I do not do it.</p>
       </div>
     </div>
   </section>
@@ -509,7 +499,7 @@
         </article>
         <article class="faq-item">
           <h3>What is included month to month?</h3>
-          <p>Authority strategy, earned opportunity development, ghostwritten thought leadership, spokesperson shaping, and monthly execution around the same strategic story.</p>
+          <p>Authority strategy, earned opportunity development, written thought leadership, spokesperson shaping, and monthly execution around the same strategic story.</p>
         </article>
         <article class="faq-item">
           <h3>What is not included?</h3>
