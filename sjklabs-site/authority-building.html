@@ -11,18 +11,256 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Authority Building | SJK Labs</title>
-  <meta name="description" content="A retained execution layer for businesses that need external corroboration to build month after month." />
+  <meta name="description" content="A six-month minimum retained execution layer for businesses that need repeated public corroboration around a clear narrative." />
   <link rel="canonical" href="https://sjklabs.co/authority-building" />
   <meta property="og:title" content="Authority Building | SJK Labs" />
-  <meta property="og:description" content="A retained execution layer for businesses that need external corroboration to build month after month." />
+  <meta property="og:description" content="A premium retained execution layer for businesses that need stronger public authority, cleaner repetition and external corroboration around the right story." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://sjklabs.co/authority-building" />
   <meta property="og:image" content="https://sjklabs.co/Untitled%20design-7.png" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Authority Building | SJK Labs" />
-  <meta name="twitter:description" content="A retained execution layer for businesses that need external corroboration to build month after month." />
+  <meta name="twitter:description" content="Retained authority execution for businesses that need the market to hear, trust and repeat the same clear story." />
   <meta name="twitter:image" content="https://sjklabs.co/Untitled%20design-7.png" />
   <link rel="stylesheet" href="/thinking.css" />
+  <style>
+    .ab-hero{
+      background:
+        radial-gradient(circle at 12% 10%, rgba(107,15,42,.10), transparent 28%),
+        radial-gradient(circle at 88% 18%, rgba(28,61,46,.12), transparent 26%),
+        linear-gradient(180deg, #fbf7f0 0%, #f4efe6 100%);
+      border-bottom:1px solid var(--line);
+      padding:84px 0 52px;
+    }
+    .ab-hero-grid{
+      display:grid;
+      grid-template-columns:minmax(0,1.05fr) minmax(320px,.95fr);
+      gap:24px;
+      align-items:start;
+    }
+    .ab-kicker{
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      padding:10px 16px;
+      border-radius:999px;
+      background:rgba(107,15,42,.08);
+      color:var(--oxblood);
+      font-size:11px;
+      letter-spacing:.18em;
+      text-transform:uppercase;
+      font-weight:800;
+      margin-bottom:18px;
+    }
+    .ab-kicker::before{
+      content:"";
+      width:9px;
+      height:9px;
+      border-radius:50%;
+      background:var(--amber);
+      flex-shrink:0;
+    }
+    .ab-title{
+      max-width:9ch;
+      margin-bottom:18px;
+    }
+    .ab-title span{
+      display:block;
+      color:var(--oxblood);
+    }
+    .ab-lead{
+      font-size:clamp(18px,2vw,22px);
+      line-height:1.76;
+      color:rgba(15,17,21,.76);
+      max-width:35ch;
+      margin-bottom:24px;
+    }
+    .ab-proofline{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      margin-bottom:26px;
+    }
+    .ab-chip{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      padding:10px 14px;
+      border-radius:999px;
+      background:#fffaf3;
+      border:1px solid var(--line);
+      color:var(--ink);
+      font-size:12px;
+      font-weight:700;
+    }
+    .ab-chip strong{color:var(--oxblood);}
+    .ab-actions{
+      display:flex;
+      flex-wrap:wrap;
+      gap:12px;
+    }
+    .ab-panel{
+      background:linear-gradient(160deg,#10261d 0%, #1f3d2e 100%);
+      color:#f7f1e7;
+      border-radius:30px;
+      padding:28px;
+      box-shadow:0 22px 50px rgba(16,38,29,.18);
+    }
+    .ab-panel .card-label,
+    .ab-panel p,
+    .ab-panel li{
+      color:rgba(247,241,231,.84);
+    }
+    .ab-panel h2,
+    .ab-panel h3{
+      color:#fffaf3;
+    }
+    .ab-panel-stat{
+      display:grid;
+      grid-template-columns:repeat(2,minmax(0,1fr));
+      gap:14px;
+      margin:18px 0 20px;
+    }
+    .ab-stat{
+      background:rgba(255,255,255,.07);
+      border:1px solid rgba(255,255,255,.10);
+      border-radius:22px;
+      padding:16px;
+    }
+    .ab-stat-num{
+      font-size:24px;
+      font-weight:800;
+      letter-spacing:-.04em;
+      margin-bottom:6px;
+      color:#fffaf3;
+    }
+    .ab-stat-copy{
+      font-size:13px;
+      line-height:1.62;
+      color:rgba(247,241,231,.76);
+    }
+    .ab-grid{
+      display:grid;
+      grid-template-columns:repeat(3,minmax(0,1fr));
+      gap:18px;
+    }
+    .ab-card{
+      background:linear-gradient(180deg,var(--surface),#fffdf9);
+      border:1px solid var(--line);
+      border-radius:24px;
+      padding:24px;
+    }
+    .ab-card strong,
+    .ab-band strong{
+      display:block;
+      font-size:11px;
+      letter-spacing:.18em;
+      text-transform:uppercase;
+      color:var(--oxblood);
+      margin-bottom:12px;
+    }
+    .ab-band{
+      display:grid;
+      grid-template-columns:minmax(0,1fr) minmax(0,1fr);
+      gap:18px;
+    }
+    .ab-band-card{
+      border-radius:28px;
+      padding:26px;
+    }
+    .ab-band-card.do{
+      background:linear-gradient(180deg,#fffaf4,#f8f0e6);
+      border:1px solid rgba(28,61,46,.14);
+    }
+    .ab-band-card.dont{
+      background:linear-gradient(180deg,#f7ecef,#f3e6ea);
+      border:1px solid rgba(107,15,42,.14);
+    }
+    .ab-band-card.dont strong{
+      color:var(--oxblood);
+    }
+    .ab-band-card.do strong{
+      color:var(--accent);
+    }
+    .ab-band-card ul{
+      list-style:none;
+      display:grid;
+      gap:12px;
+    }
+    .ab-band-card li{
+      position:relative;
+      padding-left:18px;
+      font-size:15px;
+      line-height:1.65;
+      color:var(--ink);
+    }
+    .ab-band-card li::before{
+      content:"";
+      position:absolute;
+      left:0;
+      top:9px;
+      width:8px;
+      height:8px;
+      border-radius:50%;
+    }
+    .ab-band-card.do li::before{background:var(--accent);}
+    .ab-band-card.dont li::before{background:var(--oxblood);}
+    .ab-strip{
+      background:#fffaf4;
+      border:1px solid var(--line);
+      border-radius:28px;
+      padding:28px;
+    }
+    .ab-strip p:last-child{margin-bottom:0;}
+    .ab-steps{
+      display:grid;
+      grid-template-columns:repeat(4,minmax(0,1fr));
+      gap:14px;
+    }
+    .ab-step{
+      background:#fffaf4;
+      border:1px solid var(--line);
+      border-radius:24px;
+      padding:54px 20px 22px;
+      position:relative;
+    }
+    .ab-step-num{
+      position:absolute;
+      top:18px;
+      left:20px;
+      font-size:11px;
+      letter-spacing:.18em;
+      text-transform:uppercase;
+      color:var(--amber);
+      font-weight:800;
+    }
+    .ab-warning{
+      background:linear-gradient(180deg,rgba(107,15,42,.09),rgba(107,15,42,.04));
+      border:1px solid rgba(107,15,42,.16);
+      border-radius:28px;
+      padding:28px;
+    }
+    .ab-warning h3{margin-bottom:10px;}
+    .ab-warning p:last-child{margin-bottom:0;}
+    .ab-faq{
+      display:grid;
+      gap:14px;
+    }
+    .ab-faq .faq-item{
+      background:#fffaf4;
+    }
+    @media (max-width:960px){
+      .ab-hero-grid,
+      .ab-grid,
+      .ab-band,
+      .ab-steps,
+      .ab-panel-stat{
+        grid-template-columns:1fr;
+      }
+      .ab-hero{padding:60px 0 38px;}
+      .ab-title{max-width:none;}
+    }
+  </style>
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -31,7 +269,7 @@
         "@type": "Service",
         "name": "Authority Building",
         "provider": { "@type": "Organization", "name": "SJK Labs Ltd" },
-        "description": "A retained execution layer for businesses that need external corroboration to build month after month.",
+        "description": "A six-month minimum retained execution layer for businesses that need repeated public corroboration around a clear narrative.",
         "offers": {
           "@type": "Offer",
           "priceCurrency": "GBP"
@@ -45,7 +283,7 @@
             "name": "What is Authority Building?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "It is the retained execution layer where the narrative is reinforced publicly through editorial, earned-media and founder visibility work."
+              "text": "Authority Building is the retained execution layer where a clear narrative gets reinforced publicly through editorial, spokesperson and earned authority work month after month."
             }
           },
           {
@@ -53,7 +291,15 @@
             "name": "What is included month to month?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "The work can include PR, podcast pitching and bookings, journalist-led video interviews, ghostwritten long-form articles, and founder visibility on LinkedIn and Substack."
+              "text": "The work includes authority planning, earned opportunity development, ghostwritten thought leadership, spokesperson shaping, and monthly editorial execution around the same strategic story."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What is not included?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Authority Building does not include website builds, technical GEO implementation, schema work, or broad channel-management retainers. Those sit with the client team or a specialist technical partner."
             }
           },
           {
@@ -61,15 +307,7 @@
             "name": "Why is there a six-month minimum?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Because corroboration compounds. One month creates activity. Repetition across months creates recall and trust."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "Does this include website development or schema markup?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "No. Authority Building covers the editorial and earned-media work. Website development, schema markup and other technical implementation sit with a specialist technical partner, contracted separately."
+              "text": "Because authority compounds. One month creates activity. Repetition across multiple months creates recall, corroboration and stronger public memory."
             }
           },
           {
@@ -77,7 +315,7 @@
             "name": "How is it priced?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Authority Building is scoped to the brief. It is not sold as a fixed-fee package."
+              "text": "Authority Building starts from £6,500 per month with a six-month minimum, then scales with scope."
             }
           }
         ]
@@ -99,7 +337,7 @@
           <a href="/the-scriptwriter-test">Services</a>
           <div class="dropdown-menu">
             <a href="/the-scriptwriter-test">The Scriptwriter Test™</a>
-            <a href="/the-legibility-audit">AI Visibility & Narrative Audit</a>
+            <a href="/the-legibility-audit">AI Visibility &amp; Narrative Audit</a>
             <a href="/narrative-development">Narrative Development</a>
             <a href="/authority-building" aria-current="page">Authority Building</a>
           </div>
@@ -111,23 +349,42 @@
 </header>
 
 <main>
-  <section class="hero">
-    <div class="container hero-grid">
+  <section class="ab-hero">
+    <div class="container ab-hero-grid">
       <div>
-        <div class="eyebrow">Retained execution</div>
-        <h1>Authority <em>Building</em></h1>
-        <div class="hero-meta">
-          <p class="offer-tagline">A retained execution layer for businesses that need corroboration to build.</p>
-          <p class="offer-spec">From £6,500/month. Six-month minimum.</p>
+        <div class="ab-kicker">Retained execution</div>
+        <h1 class="ab-title">Authority <span>Building</span></h1>
+        <p class="ab-lead">A six-month minimum execution layer for businesses that already know what they need to say and now need the market to hear, trust and repeat it.</p>
+        <div class="ab-proofline">
+          <div class="ab-chip"><strong>From £6,500/month</strong> retained</div>
+          <div class="ab-chip"><strong>6 months</strong> minimum</div>
+          <div class="ab-chip"><strong>Signal-building</strong> not vanity activity</div>
         </div>
-        <div class="hero-actions">
+        <div class="ab-actions">
           <a class="btn btn-green" href="https://calendly.com/sarah-sjklabs/30min" target="_blank" rel="noreferrer">Book a 30-minute call</a>
-          <a class="btn btn-ghost" href="/the-scriptwriter-test">See the full offer ladder</a>
+          <a class="btn btn-ghost" href="/narrative-development">See Narrative Development</a>
         </div>
       </div>
-      <aside class="hero-card">
-        <h2>Build repeated public corroboration</h2>
-        <p>This is the layer where the same narrative gets reinforced across articles, interviews, podcasts and founder channels until the market starts carrying it for you.</p>
+
+      <aside class="ab-panel">
+        <div class="card-label">What the client is actually buying</div>
+        <h2>Repeated public corroboration around the right story.</h2>
+        <p>This is not generic PR support and not a broad marketing retainer. It is the execution layer that makes one clear narrative more visible, more credible and more repeatable in public.</p>
+        <div class="ab-panel-stat">
+          <div class="ab-stat">
+            <div class="ab-stat-num">Narrative</div>
+            <div class="ab-stat-copy">The same strategic line gets reinforced instead of fragmenting across different surfaces.</div>
+          </div>
+          <div class="ab-stat">
+            <div class="ab-stat-num">Corroboration</div>
+            <div class="ab-stat-copy">External proof builds around that story until the market starts carrying it for you.</div>
+          </div>
+        </div>
+        <ul class="bullet-list">
+          <li>Strategic authority execution, not random visibility activity.</li>
+          <li>Founder or spokesperson as the public voice, with SJK Labs running the system behind them.</li>
+          <li>A deliberately clean boundary between editorial work and technical implementation.</li>
+        </ul>
       </aside>
     </div>
   </section>
@@ -135,14 +392,25 @@
   <section>
     <div class="container">
       <div class="section-head">
-        <h2>Who this is <em>for</em></h2>
+        <h2>What this is <em>for</em></h2>
+        <p>Use this when the narrative is already strong enough to defend, but the public signal around it is still too light, too inconsistent, or too easy for the market to overlook.</p>
       </div>
-      <div class="offer-callout">
-        <ul class="bullet-list">
-          <li>A founder-led business with the strategy in place but not enough external corroboration around it.</li>
-          <li>A team that needs repeated earned signal, not one burst of activity.</li>
-          <li>A company ready to keep the same narrative moving across media, founder presence and long-form proof.</li>
-        </ul>
+      <div class="ab-grid">
+        <article class="ab-card">
+          <strong>Best fit</strong>
+          <h3>You are strong internally, but externally under-corroborated.</h3>
+          <p>The substance is there. The market just is not seeing enough repeated proof around it yet.</p>
+        </article>
+        <article class="ab-card">
+          <strong>What it solves</strong>
+          <h3>Weak external memory.</h3>
+          <p>The market might have seen you once, but not enough cleanly repeated signal exists for that impression to stick.</p>
+        </article>
+        <article class="ab-card">
+          <strong>What it requires</strong>
+          <h3>A clear story before we start.</h3>
+          <p>This is not where we invent the narrative. It is where we reinforce the right one publicly and consistently.</p>
+        </article>
       </div>
     </div>
   </section>
@@ -150,50 +418,40 @@
   <section>
     <div class="container">
       <div class="section-head">
-        <h2>What you <em>get</em></h2>
+        <h2>What I do, and what I <em>do not</em></h2>
+        <p>This is the part that needs to be unmissable. The retainer has a clear boundary, and that is part of why it works.</p>
       </div>
-      <div class="offer-grid">
-        <article class="offer-card">
-          <div class="offer-card-label">Month-on-month scope</div>
-          <h3>Editorial planning</h3>
-          <p>The monthly narrative priorities, angles and proof choices that keep the work coherent rather than scattered.</p>
+      <div class="ab-band">
+        <article class="ab-band-card do">
+          <strong>What I do</strong>
+          <ul>
+            <li>Lead the authority strategy and the monthly editorial priorities around it.</li>
+            <li>Create and drive the earned opportunities that strengthen public corroboration.</li>
+            <li>Ghostwrite and shape founder- or spokesperson-led authority assets without exposing the full operating model.</li>
+            <li>Keep the narrative, proof hierarchy and public voice consistent enough to compound over time.</li>
+            <li>Turn the strategy into repeated public signal, not just a plan on paper.</li>
+          </ul>
         </article>
-        <article class="offer-card">
-          <div class="offer-card-label">Month-on-month scope</div>
-          <h3>Earned-media execution</h3>
-          <p>PR, podcast pitching and bookings, and journalist-led interview formats that create third-party signal.</p>
+        <article class="ab-band-card dont">
+          <strong>What I do not do</strong>
+          <ul>
+            <li>I do not build or code websites.</li>
+            <li>I do not implement schema, llms.txt, structured data or other technical GEO work.</li>
+            <li>I do not act as a general social media manager across every channel.</li>
+            <li>I do not guarantee tier-one press or other outcomes no credible operator can promise.</li>
+            <li>I do not replace the founder or spokesperson. They still need to be the voice.</li>
+          </ul>
         </article>
-        <article class="offer-card">
-          <div class="offer-card-label">Month-on-month scope</div>
-          <h3>Founder visibility</h3>
-          <p>Ghostwritten long-form articles plus founder visibility on LinkedIn and Substack, tied back to the same central story.</p>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <section>
-    <div class="container prose">
-      <h2>What's in scope, and what isn't</h2>
-      <div class="scope-box">
-        <p>Authority Building covers the editorial and earned-media work that builds external corroboration: PR, podcast pitching and bookings, journalist-led video interviews, ghostwritten long-form articles, founder visibility on LinkedIn and Substack.</p>
-        <p>It does not include website development, schema markup or other technical GEO implementation. That work sits with a specialist technical partner — recommended on request, contracted separately. This separation is deliberate. Editorial and technical are different crafts. Bundling them produces worse work in both.</p>
       </div>
     </div>
   </section>
 
   <section>
     <div class="container">
-      <div class="section-head">
-        <h2>What this is <em>not</em></h2>
-      </div>
-      <div class="offer-callout">
-        <ul class="bullet-list">
-          <li>Not website development.</li>
-          <li>Not schema markup or technical GEO implementation.</li>
-          <li>Not a one-month publicity burst.</li>
-          <li>Not generalist marketing support for every channel.</li>
-        </ul>
+      <div class="ab-strip prose">
+        <h2>Where the boundary <em>sits</em></h2>
+        <p><strong>SJK Labs leads the authority signal itself:</strong> the narrative guardrails, the editorial line, the spokesperson shaping, the earned opportunities and the repeated public proof.</p>
+        <p><strong>The client team or a technical partner owns implementation underneath the site:</strong> website changes, structured data, technical publishing infrastructure and site-wide GEO setup. I can brief that work and review it, but I do not do it.</p>
       </div>
     </div>
   </section>
@@ -202,29 +460,39 @@
     <div class="container">
       <div class="section-head">
         <h2>How it <em>runs</em></h2>
+        <p>The six-month minimum is there because authority does not compound in one burst. The first months build the rhythm. The later months build recall.</p>
       </div>
-      <p class="prose">The work runs in three-month operating blocks inside a six-month minimum.</p>
-      <div class="offer-steps">
-        <article class="offer-step">
-          <div class="offer-step-num">Month 01</div>
+      <div class="ab-steps">
+        <article class="ab-step">
+          <div class="ab-step-num">Month 01</div>
           <h3>Set the line</h3>
-          <p>We fix the narrative priorities, the proof choices and the right editorial surfaces.</p>
+          <p>We lock the public narrative priorities, proof choices, spokesperson angle and what the market needs to hear first.</p>
         </article>
-        <article class="offer-step">
-          <div class="offer-step-num">Months 02-03</div>
-          <h3>Build signal</h3>
-          <p>We pitch, place, write and reinforce the same story across earned and founder-led formats.</p>
+        <article class="ab-step">
+          <div class="ab-step-num">Months 02–03</div>
+          <h3>Build the pipeline</h3>
+          <p>The opportunity flow gets built, the founder or spokesperson rhythm is established, and the first visible signal starts moving.</p>
         </article>
-        <article class="offer-step">
-          <div class="offer-step-num">Months 04-05</div>
-          <h3>Compound</h3>
-          <p>The repeated signal starts creating recall, cleaner shorthand and stronger external corroboration.</p>
+        <article class="ab-step">
+          <div class="ab-step-num">Months 04–05</div>
+          <h3>Compound the signal</h3>
+          <p>The market starts encountering the same story through multiple credible surfaces instead of one-off moments.</p>
         </article>
-        <article class="offer-step">
-          <div class="offer-step-num">Month 06</div>
-          <h3>Review</h3>
-          <p>We review what is compounding, where to press harder, and what the next retained block should focus on.</p>
+        <article class="ab-step">
+          <div class="ab-step-num">Month 06</div>
+          <h3>Review and press harder</h3>
+          <p>We review what is compounding, where response is strongest, and what the next retained block should double down on.</p>
         </article>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <div class="ab-warning prose">
+        <h2>What has to be true <em>before</em> this starts</h2>
+        <p>The narrative needs to be defined. One decision-maker needs to own approvals. The founder or named spokesperson needs to show up. And if the site needs technical work, the client needs a dev resource or specialist partner ready to implement it separately.</p>
+        <p>If those conditions are missing, the right move is usually earlier-stage strategy work first, not forcing the retainer to carry the wrong job.</p>
       </div>
     </div>
   </section>
@@ -234,22 +502,22 @@
       <div class="section-head">
         <h2>FAQ</h2>
       </div>
-      <div class="faq-list">
+      <div class="ab-faq">
         <article class="faq-item">
           <h3>What is Authority Building?</h3>
-          <p>It is the retained execution layer where the narrative is reinforced publicly through editorial, earned-media and founder visibility work.</p>
+          <p>It is the retained execution layer where a clear narrative gets reinforced publicly through editorial, spokesperson and earned authority work month after month.</p>
         </article>
         <article class="faq-item">
           <h3>What is included month to month?</h3>
-          <p>PR, podcast pitching and bookings, journalist-led video interviews, ghostwritten long-form articles, and founder visibility on LinkedIn and Substack.</p>
+          <p>Authority strategy, earned opportunity development, ghostwritten thought leadership, spokesperson shaping, and monthly execution around the same strategic story.</p>
+        </article>
+        <article class="faq-item">
+          <h3>What is not included?</h3>
+          <p>Website builds, technical GEO implementation, schema work, or broad channel-management retainers. Those sit with the client team or a specialist technical partner.</p>
         </article>
         <article class="faq-item">
           <h3>Why is there a six-month minimum?</h3>
-          <p>Because corroboration compounds. One month creates activity. Repetition across months creates recall and trust.</p>
-        </article>
-        <article class="faq-item">
-          <h3>Does this include website development or schema markup?</h3>
-          <p>No. That sits with a specialist technical partner and is contracted separately.</p>
+          <p>Because authority compounds. One month creates activity. Repetition across multiple months creates recall, corroboration and stronger public memory.</p>
         </article>
         <article class="faq-item">
           <h3>How is it priced?</h3>
@@ -263,10 +531,10 @@
     <div class="container">
       <div class="cta-panel">
         <h2>If the strategy is clear, the next job is repetition.</h2>
-        <p>The same narrative needs to show up often enough, and cleanly enough, to become the version the market repeats back.</p>
+        <p>The market needs to encounter the same credible story often enough, and cleanly enough, that it starts carrying it back to you.</p>
         <div class="cta-actions">
           <a class="btn btn-green" href="https://calendly.com/sarah-sjklabs/30min" target="_blank" rel="noreferrer">Book a 30-minute call</a>
-          <a class="btn btn-ghost" href="/the-scriptwriter-test">See the full offer ladder</a>
+          <a class="btn btn-ghost" href="/the-legibility-audit">See the audit first</a>
         </div>
       </div>
     </div>
