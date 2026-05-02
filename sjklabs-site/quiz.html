@@ -14,6 +14,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Take the Quiz — SJK Labs</title>
   <meta name="description" content="Find out which Personal Authority Package is right for you — or get your Business Charisma Score." />
+  <link rel="canonical" href="https://sjklabs.co/quiz" />
 
   <style>
     :root{
@@ -58,8 +59,10 @@
     .quiz-eyebrow{font-size:11px; letter-spacing:.2em; text-transform:uppercase; font-weight:700; margin-bottom:12px;}
     .eyebrow-amber{color:var(--amber);}
     .eyebrow-green{color:var(--accent);}
-    .quiz-intro h1{font-size:clamp(28px,4vw,40px); font-weight:800; letter-spacing:-.04em; line-height:1.1; margin-bottom:16px;}
+    .quiz-intro h1,
+    .quiz-intro h2{font-size:clamp(28px,4vw,40px); font-weight:800; letter-spacing:-.04em; line-height:1.1; margin-bottom:16px;}
     .quiz-intro p{font-size:16px; color:var(--muted); line-height:1.7; max-width:46ch; margin:0 auto;}
+    .quiz-intro .intro-detail{margin-top:14px; max-width:56ch;}
 
     /* PROGRESS */
     .progress-wrap{margin-bottom:36px;}
@@ -153,6 +156,45 @@
     .score-denom{font-size:24px; color:rgba(255,255,255,.4); font-weight:400;}
     .score-verdict{font-size:18px; font-weight:700; color:#fff; letter-spacing:-.02em;}
 
+    .quiz-meta{
+      max-width:var(--max);
+      margin:0 auto 80px;
+      padding:32px;
+      background:var(--surface);
+      border:1px solid var(--line);
+      border-radius:var(--r2);
+    }
+    .quiz-meta h2{
+      font-size:24px;
+      font-weight:800;
+      letter-spacing:-.03em;
+      margin-bottom:14px;
+    }
+    .quiz-meta p{
+      font-size:15px;
+      color:var(--muted);
+      line-height:1.75;
+      margin-bottom:14px;
+    }
+    .quiz-links{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      margin-top:18px;
+    }
+    .quiz-links a{
+      display:inline-flex;
+      align-items:center;
+      padding:10px 16px;
+      border-radius:999px;
+      border:1px solid var(--line);
+      color:var(--ink);
+      text-decoration:none;
+      background:#fff;
+      font-size:14px;
+      font-weight:600;
+    }
+
     @media(max-width:600px){
       .container{padding:0 20px;}
       .toggle-btn{padding:9px 16px; font-size:13px;}
@@ -187,6 +229,7 @@
       <div class="quiz-eyebrow eyebrow-amber">Personal Authority</div>
       <h1>Which package is right for you?</h1>
       <p>Five questions. Two minutes. A clear recommendation for where to start.</p>
+      <p class="intro-detail">This version is for consultants, operators, founders and experts whose experience is real, but whose public signal still is not doing enough work. It helps you spot whether your next authority move should be your profile, podcast guesting, speaking or press.</p>
       <div class="btn-row" style="justify-content:center; margin-top:28px;">
         <button class="btn-quiz btn-amber" onclick="startQuiz('personal')">Let's go →</button>
       </div>
@@ -230,8 +273,9 @@
 
     <div class="quiz-intro" id="business-intro">
       <div class="quiz-eyebrow eyebrow-green">For Businesses</div>
-      <h1>What's your Business Charisma Score?</h1>
+      <h2>What's your Business Charisma Score?</h2>
       <p>Six questions to find out how much authority your business actually has in the market — and where the gap is costing you.</p>
+      <p class="intro-detail">This score is designed for businesses that suspect the market still does not understand them clearly enough. It looks at visibility, trust, leadership signal, positioning and how likely people are to choose you when alternatives feel easier to hold.</p>
       <div class="btn-row" style="justify-content:center; margin-top:28px;">
         <button class="btn-quiz btn-green" onclick="startQuiz('business')">Find out →</button>
       </div>
@@ -268,6 +312,18 @@
 
   </div>
 </div>
+
+<section class="quiz-meta">
+  <h2>What this quiz is actually measuring</h2>
+  <p>SJK Labs works on the gap between real expertise and market understanding. For individuals, that usually shows up as under-positioned experience, weak public proof or the wrong authority channel. For businesses, it shows up as fuzzy positioning, inconsistent proof, low retrieval and a trust signal that is weaker than the work itself.</p>
+  <p>This page exists to give visitors a clearer first step, not just a score. If the result points to a bigger problem with narrative clarity, retrieval or authority structure, the next move is usually The Scriptwriter Test™ or AI Visibility & Narrative Audit rather than more random content output.</p>
+  <div class="quiz-links">
+    <a href="/for-you">See the individual offers</a>
+    <a href="/the-scriptwriter-test">Explore The Scriptwriter Test</a>
+    <a href="/the-legibility-audit">Explore AI Visibility & Narrative Audit</a>
+    <a href="/what-does-ai-say-about-your-business">Read the AI visibility article</a>
+  </div>
+</section>
 
 <script>
 
@@ -532,7 +588,7 @@ function submitPersonal() {
     <p style="font-size:15px; color:var(--muted); line-height:1.7; margin-bottom:24px;">Ready to get started? Book a quick conversation and we'll take it from there.</p>
     <div class="btn-row">
       <a class="btn-quiz btn-amber" href="https://calendly.com/sarah-sjklabs/fancy-a-chat" target="_blank">Book a conversation →</a>
-      <a class="btn-quiz btn-ghost" href="index.html#individuals">See all packages</a>
+      <a class="btn-quiz btn-ghost" href="/for-you">See all packages</a>
     </div>`;
   el.style.display = 'block';
 }
@@ -588,7 +644,7 @@ function submitBusiness() {
     <p style="font-size:15px; color:var(--muted); line-height:1.7; margin-bottom:24px;">Book a free 30-minute conversation and we'll walk through your score together.</p>
     <div class="btn-row">
       <a class="btn-quiz btn-green" href="https://calendly.com/sarah-sjklabs/fancy-a-chat" target="_blank">Book a conversation →</a>
-      <a class="btn-quiz btn-ghost" href="/#businesses">See how we work</a>
+      <a class="btn-quiz btn-ghost" href="/">See how we work</a>
     </div>`;
   el.style.display = 'block';
 }

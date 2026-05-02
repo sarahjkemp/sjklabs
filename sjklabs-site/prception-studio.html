@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>SJK Labs Legibility Studio</title>
+  <meta name="robots" content="noindex,nofollow" />
+  <meta name="description" content="Internal SJK Labs studio for generating deeper full-brand legibility audits." />
+  <link rel="stylesheet" href="./audit-tools.css" />
+</head>
+<body>
+<header>
+  <div class="container">
+    <div class="nav">
+      <a class="brand" href="/">SJK <em>Labs</em></a>
+      <nav>
+        <a href="/the-legibility-audit">AI Visibility & Narrative Audit</a>
+        <a href="/legibility-audit-tool">Public tool</a>
+      </nav>
+      <a class="btn btn-outline" href="/legibility-audit-tool">Open public tool</a>
+    </div>
+  </div>
+</header>
+
+<main data-audit-tool data-mode="full" data-endpoint="/.netlify/functions/legibility-full">
+  <section class="hero">
+    <div class="container">
+      <div class="hero-panel">
+        <div class="eyebrow">Internal working tool</div>
+        <div class="hero-grid">
+          <div>
+            <h1>Legibility Studio</h1>
+            <p>The deeper SJK Labs builder. Put in a brand and generate a full audit with six-signal scoring, Scriptwriter Test notes, sharper public shorthand, and commercial consequence.</p>
+          </div>
+          <aside class="hero-note">
+            <strong>Studio output</strong>
+            <p>This is closer to the internal audit workflow and the report language you’ve been building. Use it to create first drafts you can tighten, edit, and send on.</p>
+          </aside>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container tool-layout">
+      <aside class="panel">
+        <div class="tool-tag">SJK Labs only</div>
+        <h2>Generate a full audit</h2>
+        <p>This tool goes further than the public version. It uses the six-signal legibility model, a short Scriptwriter Test™ read, and a more strategic output structure.</p>
+        <form>
+          <div class="field">
+            <label for="brandName">Brand name</label>
+            <input id="brandName" name="brandName" placeholder="e.g. Griffin" required />
+          </div>
+          <div class="field">
+            <label for="website">Website (optional)</label>
+            <input id="website" name="website" placeholder="https://example.com" />
+          </div>
+          <div class="field">
+            <label for="sector">Sector (optional)</label>
+            <input id="sector" name="sector" placeholder="e.g. fintech infrastructure / BaaS" />
+          </div>
+          <div class="field">
+            <label for="extraContext">Extra context (optional)</label>
+            <textarea id="extraContext" name="extraContext" placeholder="Examples: founder-led, want to push enterprise, recently rebranded, strong proof but weak site, likely category confusion."></textarea>
+          </div>
+          <button class="btn btn-green" type="submit">Generate full audit</button>
+          <div class="status" aria-live="polite"></div>
+        </form>
+        <div class="stack">
+          <button class="btn btn-outline copy-markdown hidden" type="button">Copy Markdown</button>
+        </div>
+        <textarea class="markdown-box hidden" readonly></textarea>
+      </aside>
+
+      <div class="results-shell">
+        <div class="panel">
+          <h2>What you’ll get</h2>
+          <p>The output includes the score, pattern named, gap, asset, window, five reasons the gap persists, two shorthand options, the commercial consequence, and a compact Scriptwriter Test™ read.</p>
+          <p>Use this as a first-draft machine, not as a substitute for judgment. The point is to accelerate the thinking you already do well.</p>
+          <p class="footer-note">Once a draft lands, tighten the verdict line, sharpen the commercial consequence, and make sure the final language sounds like you rather than a machine.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="container">
+    <div class="foot">
+      <div>SJK Labs · Legibility Studio</div>
+      <div class="foot-links">
+        <a href="/legibility-audit-tool">Public tool</a>
+        <a href="/the-legibility-audit">Audit overview</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="./audit-tools.js"></script>
+</body>
+</html>

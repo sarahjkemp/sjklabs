@@ -1,0 +1,582 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-8VR7WN1MJK"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-8VR7WN1MJK');
+  </script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>AI Visibility & Narrative Audit | SJK Labs</title>
+  <meta name="description" content="A ten-day strategic audit showing how visible your business is in AI search, how coherent your owned-channel narrative is, and what to fix before authority-building." />
+  <link rel="canonical" href="https://sjklabs.co/the-legibility-audit" />
+  <meta property="og:title" content="AI Visibility & Narrative Audit | SJK Labs" />
+  <meta property="og:description" content="See how your business currently surfaces across AI search and owned channels, then get a clear diagnosis of what to fix first." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://sjklabs.co/the-legibility-audit" />
+  <meta property="og:image" content="https://sjklabs.co/Untitled%20design-7.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="AI Visibility & Narrative Audit | SJK Labs" />
+  <meta name="twitter:description" content="A ten-day strategic audit of AI visibility, narrative coherence, and what needs fixing before authority-building can work." />
+  <meta name="twitter:image" content="https://sjklabs.co/Untitled%20design-7.png" />
+  <link rel="stylesheet" href="/thinking.css" />
+  <style>
+    .avn-hero{
+      background:
+        radial-gradient(circle at top left, rgba(28,61,46,.10), transparent 34%),
+        radial-gradient(circle at 84% 18%, rgba(196,98,29,.12), transparent 26%),
+        linear-gradient(180deg, #fbf7f0 0%, #f4efe6 100%);
+      border-bottom:1px solid var(--line);
+      padding:84px 0 48px;
+    }
+    .avn-hero-grid{
+      display:grid;
+      grid-template-columns:minmax(0,1.08fr) minmax(320px,.92fr);
+      gap:22px;
+      align-items:start;
+    }
+    .avn-kicker{
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      padding:10px 16px;
+      border-radius:999px;
+      background:rgba(28,61,46,.08);
+      color:var(--accent);
+      font-size:11px;
+      letter-spacing:.18em;
+      text-transform:uppercase;
+      font-weight:800;
+      margin-bottom:18px;
+    }
+    .avn-kicker::before{
+      content:"";
+      width:9px;
+      height:9px;
+      border-radius:50%;
+      background:var(--amber);
+      flex-shrink:0;
+    }
+    .avn-title{
+      max-width:10ch;
+      margin-bottom:20px;
+    }
+    .avn-title span{
+      display:block;
+      color:var(--accent);
+    }
+    .avn-lead{
+      font-size:clamp(18px,2vw,22px);
+      line-height:1.75;
+      color:rgba(15,17,21,.76);
+      max-width:35ch;
+      margin-bottom:24px;
+    }
+    .avn-proofline{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      margin-bottom:28px;
+    }
+    .avn-chip{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      padding:10px 14px;
+      border-radius:999px;
+      background:#fffaf3;
+      border:1px solid var(--line);
+      color:var(--ink);
+      font-size:12px;
+      font-weight:700;
+    }
+    .avn-chip strong{
+      color:var(--accent);
+    }
+    .avn-actions{
+      display:flex;
+      flex-wrap:wrap;
+      gap:12px;
+    }
+    .avn-panel{
+      background:#10261d;
+      color:#f7f1e7;
+      border-radius:28px;
+      padding:26px;
+      box-shadow:0 20px 50px rgba(16,38,29,.18);
+    }
+    .avn-panel .card-label,
+    .avn-panel p,
+    .avn-panel li{
+      color:rgba(247,241,231,.84);
+    }
+    .avn-panel h2,
+    .avn-panel h3{
+      color:#fffaf3;
+    }
+    .avn-panel-stat{
+      display:grid;
+      grid-template-columns:repeat(2,minmax(0,1fr));
+      gap:14px;
+      margin:18px 0 20px;
+    }
+    .avn-stat{
+      background:rgba(255,255,255,.06);
+      border:1px solid rgba(255,255,255,.09);
+      border-radius:20px;
+      padding:16px;
+    }
+    .avn-stat-num{
+      font-size:28px;
+      font-weight:800;
+      letter-spacing:-.05em;
+      margin-bottom:6px;
+      color:#fffaf3;
+    }
+    .avn-stat-copy{
+      font-size:13px;
+      line-height:1.6;
+      color:rgba(247,241,231,.76);
+    }
+    .avn-outcomes{
+      display:grid;
+      grid-template-columns:repeat(3,minmax(0,1fr));
+      gap:16px;
+    }
+    .avn-outcome{
+      background:linear-gradient(180deg,var(--surface),#fffdf8);
+      border:1px solid var(--line);
+      border-radius:24px;
+      padding:24px;
+    }
+    .avn-outcome strong,
+    .avn-layer strong{
+      display:block;
+      font-size:12px;
+      letter-spacing:.18em;
+      text-transform:uppercase;
+      color:var(--accent);
+      margin-bottom:12px;
+    }
+    .avn-outcome h3,
+    .avn-layer h3{
+      margin-bottom:12px;
+    }
+    .avn-split{
+      display:grid;
+      grid-template-columns:minmax(0,1fr) minmax(300px,.92fr);
+      gap:20px;
+      align-items:start;
+    }
+    .avn-note{
+      background:linear-gradient(180deg,rgba(196,98,29,.10),rgba(196,98,29,.04));
+      border:1px solid rgba(196,98,29,.16);
+      border-radius:26px;
+      padding:24px 26px;
+    }
+    .avn-layer-grid{
+      display:grid;
+      grid-template-columns:repeat(2,minmax(0,1fr));
+      gap:16px;
+    }
+    .avn-layer{
+      background:linear-gradient(180deg,var(--surface),#fffdf9);
+      border:1px solid var(--line);
+      border-radius:24px;
+      padding:24px;
+    }
+    .avn-timeline{
+      display:grid;
+      grid-template-columns:repeat(4,minmax(0,1fr));
+      gap:14px;
+    }
+    .avn-step{
+      position:relative;
+      background:#fffaf4;
+      border:1px solid var(--line);
+      border-radius:22px;
+      padding:52px 20px 22px;
+    }
+    .avn-step-num{
+      position:absolute;
+      top:18px;
+      left:20px;
+      font-size:11px;
+      letter-spacing:.18em;
+      text-transform:uppercase;
+      color:var(--amber);
+      font-weight:800;
+    }
+    .avn-upsell{
+      background:linear-gradient(135deg,#18392f 0%, #2a5c44 100%);
+      border-radius:30px;
+      padding:28px;
+      color:#f7f1e7;
+    }
+    .avn-upsell h2,
+    .avn-upsell p,
+    .avn-upsell li{
+      color:#f7f1e7;
+    }
+    .avn-upsell-grid{
+      display:grid;
+      grid-template-columns:repeat(3,minmax(0,1fr));
+      gap:14px;
+      margin-top:20px;
+    }
+    .avn-upsell-card{
+      background:rgba(255,255,255,.08);
+      border:1px solid rgba(255,255,255,.10);
+      border-radius:22px;
+      padding:18px;
+    }
+    .avn-upsell-card .card-label{
+      color:#f8d8c4;
+    }
+    .avn-faq{
+      display:grid;
+      gap:14px;
+    }
+    .avn-faq .faq-item{
+      background:#fffaf4;
+    }
+    @media (max-width: 960px){
+      .avn-hero-grid,
+      .avn-split,
+      .avn-outcomes,
+      .avn-layer-grid,
+      .avn-timeline,
+      .avn-upsell-grid,
+      .avn-panel-stat{
+        grid-template-columns:1fr;
+      }
+      .avn-hero{
+        padding:60px 0 36px;
+      }
+      .avn-title{
+        max-width:none;
+      }
+    }
+  </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Service",
+        "name": "AI Visibility & Narrative Audit",
+        "provider": { "@type": "Organization", "name": "SJK Labs Ltd" },
+        "description": "A ten-day strategic audit of AI visibility, owned-channel narrative coherence, and what to fix before authority-building.",
+        "offers": {
+          "@type": "Offer",
+          "price": "5000",
+          "priceCurrency": "GBP"
+        }
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "What does the AI Visibility & Narrative Audit look at?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "It combines two layers: how visible your brand currently is across AI-led search surfaces, and how clearly your website and owned channels are repeating one coherent story."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How is this different from The Scriptwriter Test™?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "The Scriptwriter Test™ diagnoses the story itself. The AI Visibility & Narrative Audit shows how that story is or is not compounding across your website, AI visibility picture, and owned channels."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What do we receive at the end?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "You receive a strategic PDF report and walkthrough showing current AI visibility, channel-by-channel narrative coherence, a simple GEO scorecard, and a prioritized action plan for what to fix first."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Is this implementation?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "No. This is the diagnostic and strategic prioritization layer. Narrative alignment and authority-building execution sit in follow-on engagements."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Is the fee fixed?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. The AI Visibility & Narrative Audit is a fixed-fee engagement at £5,000."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+<header>
+  <div class="container">
+    <div class="nav">
+      <a class="brand" href="/">SJK <em>Labs</em></a>
+      <nav>
+        <a href="/ecosystem">Ecosystem</a>
+        <a href="/legibility-gap">The Legibility Gap</a>
+        <a href="/blog">Thinking / Insights</a>
+        <div class="nav-dropdown">
+          <a href="/the-scriptwriter-test">Services</a>
+          <div class="dropdown-menu">
+            <a href="/the-scriptwriter-test">The Scriptwriter Test™</a>
+            <a href="/the-legibility-audit" aria-current="page">AI Visibility &amp; Narrative Audit</a>
+            <a href="/narrative-development">Narrative Development</a>
+            <a href="/authority-building">Authority Building</a>
+          </div>
+        </div>
+      </nav>
+      <a class="btn btn-green" href="https://calendly.com/sarah-sjklabs/30min" target="_blank" rel="noreferrer">Book a 20-minute fit call</a>
+    </div>
+  </div>
+</header>
+
+<main>
+  <section class="avn-hero">
+    <div class="container avn-hero-grid">
+      <div>
+        <div class="avn-kicker">Strategic diagnostic</div>
+        <h1 class="avn-title">AI Visibility <span>&amp; Narrative Audit</span></h1>
+        <p class="avn-lead">A ten-day strategic audit showing how visible your business currently is in AI search, how coherent your website and owned channels are, and what to fix before authority-building can work.</p>
+        <div class="avn-proofline">
+          <div class="avn-chip"><strong>£5,000</strong> fixed fee</div>
+          <div class="avn-chip"><strong>10 days</strong> from kick-off to delivery</div>
+          <div class="avn-chip"><strong>PDF + call</strong> strategic readout</div>
+        </div>
+        <div class="avn-actions">
+          <a class="btn btn-green" href="https://calendly.com/sarah-sjklabs/30min" target="_blank" rel="noreferrer">Book a 20-minute fit call</a>
+          <a class="btn btn-ghost" href="/narrative-development">See Narrative Development</a>
+        </div>
+      </div>
+
+      <aside class="avn-panel">
+        <div class="card-label">What this actually gives you</div>
+        <h2>The explanation behind weak AI visibility.</h2>
+        <p>This is not a screenshot report and not a generic GEO score. It is a strategic diagnosis of whether your business is currently understandable enough to be surfaced, summarised, and repeated by AI systems.</p>
+        <div class="avn-panel-stat">
+          <div class="avn-stat">
+            <div class="avn-stat-num">Visibility</div>
+            <div class="avn-stat-copy">How often the brand currently shows up across the AI/search surfaces that matter.</div>
+          </div>
+          <div class="avn-stat">
+            <div class="avn-stat-num">Narrative</div>
+            <div class="avn-stat-copy">Whether the website, spokesperson, and owned content are repeating one clear story.</div>
+          </div>
+        </div>
+        <ul class="bullet-list">
+          <li>Shows what your channels are actually saying.</li>
+          <li>Identifies where the narrative fragments or goes thin.</li>
+          <li>Gives a practical sequence for what to fix first.</li>
+        </ul>
+      </aside>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <div class="section-head">
+        <h2>What this audit is <em>for</em></h2>
+        <p>Use this when the business is stronger than the signal. The expertise is there. The substance is there. But buyers, search, and AI are not forming one clean memory of what makes the business worth choosing.</p>
+      </div>
+      <div class="avn-outcomes">
+        <article class="avn-outcome">
+          <strong>Best fit</strong>
+          <h3>You know the work is strong, but the market signal feels strangely soft.</h3>
+          <p>Competitors with weaker substance are easier to explain, easier to cite, and easier to remember.</p>
+        </article>
+        <article class="avn-outcome">
+          <strong>Why it matters</strong>
+          <h3>AI visibility is now a commercial problem, not just a content problem.</h3>
+          <p>If AI systems cannot form one stable read on your business, they are less likely to retrieve you at the moment your buyer is researching the category.</p>
+        </article>
+        <article class="avn-outcome">
+          <strong>What you need</strong>
+          <h3>A strategic diagnosis before you spend more on PR, GEO, or brand activity.</h3>
+          <p>The point is to fix the narrative and structure first, then build authority on top of something stable.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container avn-split">
+      <div>
+        <div class="section-head" style="margin:0 0 18px;">
+          <h2>What you <em>receive</em></h2>
+          <p>The report combines two diagnostic layers so you can see not just whether the brand is visible, but why it is or is not being retrieved.</p>
+        </div>
+        <div class="avn-layer-grid">
+          <article class="avn-layer">
+            <strong>Layer 01</strong>
+            <h3>AI visibility picture</h3>
+            <p>A structured view of where the brand currently appears across AI search surfaces, where competitors are being surfaced instead, and which topics or pages are currently carrying the signal.</p>
+          </article>
+          <article class="avn-layer">
+            <strong>Layer 02</strong>
+            <h3>Owned-channel narrative audit</h3>
+            <p>A readout of what the website, spokesperson, and supplied channel content are actually saying — and whether the same story is being repeated cleanly enough to compound.</p>
+          </article>
+          <article class="avn-layer">
+            <strong>Layer 03</strong>
+            <h3>Simple GEO scorecard</h3>
+            <p>Executive-friendly scores out of 10 for overall GEO readiness, narrative consistency, website GEO readiness, and spokesperson alignment.</p>
+          </article>
+          <article class="avn-layer">
+            <strong>Layer 04</strong>
+            <h3>What to fix first</h3>
+            <p>A prioritized action plan covering narrative alignment, website structure, proof gaps, and the order of operations before authority-building.</p>
+          </article>
+        </div>
+      </div>
+
+      <aside class="avn-note">
+        <div class="card-label">The commercial point</div>
+        <h3 style="margin-bottom:12px;">This is the audit you use before the bigger authority work.</h3>
+        <p>If the narrative is fragmented, thin, or concentrated in one place, external authority-building will have less to amplify. The audit gives you the diagnosis that makes the next investment make sense.</p>
+        <ul class="bullet-list">
+          <li>Fix the core narrative.</li>
+          <li>Align the website and owned channels.</li>
+          <li>Then build external authority around it.</li>
+        </ul>
+      </aside>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <div class="section-head">
+        <h2>How it <em>runs</em></h2>
+        <p>Delivered over ten working days, from kick-off through to strategic readout.</p>
+      </div>
+      <div class="avn-timeline">
+        <article class="avn-step">
+          <div class="avn-step-num">Days 01–02</div>
+          <h3>Collect</h3>
+          <p>Gather the current AI visibility picture, website surfaces, spokesperson inputs, and representative owned content.</p>
+        </article>
+        <article class="avn-step">
+          <div class="avn-step-num">Days 03–05</div>
+          <h3>Read</h3>
+          <p>Analyze what the brand is actually saying across the site and channels, and how those messages compare.</p>
+        </article>
+        <article class="avn-step">
+          <div class="avn-step-num">Days 06–08</div>
+          <h3>Diagnose</h3>
+          <p>Separate visibility problems from narrative problems, and turn the raw signals into a strategic explanation.</p>
+        </article>
+        <article class="avn-step">
+          <div class="avn-step-num">Days 09–10</div>
+          <h3>Readout</h3>
+          <p>Deliver the report, walk through the findings, and show what should happen next if the business wants to improve visibility and authority.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <div class="avn-upsell">
+        <div class="section-head" style="margin:0 0 8px; max-width:none;">
+          <h2>What happens after the audit</h2>
+          <p>The diagnostic is not the destination. It is the decision-maker. It shows whether the next move is narrative work, website alignment, or authority-building.</p>
+        </div>
+        <div class="avn-upsell-grid">
+          <article class="avn-upsell-card">
+            <div class="card-label">Phase 01</div>
+            <h3>Narrative alignment</h3>
+            <p>Fix the story so the business is described clearly and consistently across its owned ecosystem.</p>
+          </article>
+          <article class="avn-upsell-card">
+            <div class="card-label">Phase 02</div>
+            <h3>Retrieval structure</h3>
+            <p>Strengthen the website and proof architecture so the clearest version of the business is easy for AI systems to retrieve.</p>
+          </article>
+          <article class="avn-upsell-card">
+            <div class="card-label">Phase 03</div>
+            <h3>Authority building</h3>
+            <p>Once the narrative is stable, build corroboration and authority through PR, thought leadership, external placements, and repeatable proof.</p>
+          </article>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <div class="section-head">
+        <h2>FAQ</h2>
+      </div>
+      <div class="avn-faq">
+        <article class="faq-item">
+          <h3>What does the audit look at?</h3>
+          <p>It combines two things: how visible your brand currently is across AI search surfaces, and how clearly your website and owned channels are repeating one coherent story.</p>
+        </article>
+        <article class="faq-item">
+          <h3>How is this different from The Scriptwriter Test™?</h3>
+          <p>The Scriptwriter Test™ diagnoses the story itself. The AI Visibility &amp; Narrative Audit shows how that story is or is not compounding across your website, AI visibility picture, and owned channels.</p>
+        </article>
+        <article class="faq-item">
+          <h3>What do we receive at the end?</h3>
+          <p>A strategic PDF report and walkthrough showing the current visibility picture, the channel-by-channel narrative read, a simple scorecard, and a prioritized action plan.</p>
+        </article>
+        <article class="faq-item">
+          <h3>Is this implementation?</h3>
+          <p>No. This is the diagnosis and prioritization layer. Narrative alignment and authority-building execution sit in follow-on engagements.</p>
+        </article>
+        <article class="faq-item">
+          <h3>Is the fee fixed?</h3>
+          <p>Yes. The AI Visibility &amp; Narrative Audit is a fixed-fee engagement at £5,000.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <div class="cta-panel">
+        <h2>If the business is strong but the signal is weak, start here.</h2>
+        <p>The audit gives you the explanation behind weak visibility, the narrative diagnosis behind weak retrieval, and the strategic path into the work that follows.</p>
+        <div class="cta-actions">
+          <a class="btn btn-green" href="https://calendly.com/sarah-sjklabs/30min" target="_blank" rel="noreferrer">Book a 20-minute fit call</a>
+          <a class="btn btn-ghost" href="/the-scriptwriter-test">See The Scriptwriter Test™</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="container">
+    <div class="foot">
+      <span>© 2026 SJK Labs Ltd. All rights reserved.</span>
+      <div class="foot-links">
+        <a href="/ecosystem">Ecosystem</a>
+        <a href="/legibility-gap">The Legibility Gap</a>
+        <a href="/blog">Thinking / Insights</a>
+        <a href="/privacy">Privacy</a>
+        <a href="/terms">Terms</a>
+      </div>
+    </div>
+  </div>
+</footer>
+<script src="/ecosystem-tracking.js"></script>
+</body>
+</html>

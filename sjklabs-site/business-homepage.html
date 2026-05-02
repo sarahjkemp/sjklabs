@@ -1,0 +1,953 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-8VR7WN1MJK"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-8VR7WN1MJK');
+  </script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>SJK Labs | Business authority, PR and AI visibility</title>
+  <meta name="description" content="A business-first homepage concept for SJK Labs: authority strategy, narrative architecture, PR and AI visibility for companies that need to be surfaced, trusted and chosen." />
+  <link rel="canonical" href="https://sjklabs.co/business-homepage" />
+  <meta property="og:title" content="SJK Labs | Business authority, PR and AI visibility" />
+  <meta property="og:description" content="PR, narrative architecture and AI visibility for businesses that need to be surfaced, trusted and chosen." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://sjklabs.co/business-homepage" />
+  <meta property="og:image" content="https://sjklabs.co/Untitled%20design-7.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="SJK Labs | Business authority, PR and AI visibility" />
+  <meta name="twitter:description" content="PR, narrative architecture and AI visibility for businesses that need to be surfaced, trusted and chosen." />
+  <meta name="twitter:image" content="https://sjklabs.co/Untitled%20design-7.png" />
+  <style>
+    :root{
+      --paper:#f4efe6;
+      --surface:#fbf7f0;
+      --card:#fffaf3;
+      --ink:#0f1115;
+      --muted:rgba(15,17,21,.67);
+      --line:rgba(15,17,21,.12);
+      --accent:#1c3d2e;
+      --accent-mid:#2a5c44;
+      --accent-soft:#e8f0eb;
+      --amber:#c4621d;
+      --amber-mid:#a8521a;
+      --amber-soft:#f5e6dc;
+      --oxblood:#6b0f2a;
+      --oxblood-mid:#580d23;
+      --max:1120px;
+      --prose:760px;
+      --r:14px;
+      --r2:22px;
+      --sans:ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Inter, Roboto, Helvetica, Arial, sans-serif;
+    }
+
+    *{box-sizing:border-box; margin:0; padding:0;}
+    html{scroll-behavior:smooth;}
+    body{
+      font-family:var(--sans);
+      background:var(--paper);
+      color:var(--ink);
+      -webkit-font-smoothing:antialiased;
+      overflow-x:hidden;
+    }
+    body::before{
+      content:"";
+      position:fixed;
+      inset:0;
+      pointer-events:none;
+      opacity:.04;
+      background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='140' height='140' filter='url(%23n)' opacity='.22'/%3E%3C/svg%3E");
+    }
+    .container{max-width:var(--max); margin:0 auto; padding:0 32px;}
+    .prose{max-width:var(--prose);}
+
+    header{
+      position:sticky;
+      top:0;
+      z-index:50;
+      background:rgba(244,239,230,.95);
+      backdrop-filter:blur(12px);
+      border-bottom:1px solid var(--line);
+    }
+    .nav{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:24px;
+      padding:20px 0;
+    }
+    .brand{
+      font-size:16px;
+      font-weight:800;
+      letter-spacing:-.04em;
+      color:var(--ink);
+      text-decoration:none;
+      flex-shrink:0;
+    }
+    .brand em{color:var(--accent); font-style:normal;}
+    nav{display:flex; align-items:center; gap:4px; flex-wrap:wrap;}
+    nav a{
+      color:var(--muted);
+      text-decoration:none;
+      font-size:14px;
+      padding:7px 11px;
+      border-radius:8px;
+      transition:all .15s;
+      white-space:nowrap;
+    }
+    nav a:hover{color:var(--ink); background:rgba(15,17,21,.05);}
+
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:8px;
+      border-radius:999px;
+      padding:11px 18px;
+      font-size:13px;
+      font-weight:700;
+      text-decoration:none;
+      border:1px solid transparent;
+      transition:all .15s;
+      white-space:nowrap;
+    }
+    .btn-green{background:var(--accent); color:#fff; border-color:var(--accent);}
+    .btn-green:hover{background:var(--accent-mid);}
+    .btn-amber{background:var(--amber); color:#fff; border-color:var(--amber);}
+    .btn-amber:hover{background:var(--amber-mid);}
+    .btn-ghost{background:transparent; color:var(--ink); border-color:var(--line);}
+    .btn-ghost:hover{background:rgba(15,17,21,.04);}
+    .btn-outline-light{background:transparent; color:#fff; border-color:rgba(255,255,255,.34);}
+    .btn-outline-light:hover{background:rgba(255,255,255,.08);}
+
+    .press-section{
+      padding:28px 0;
+      border-bottom:1px solid var(--line);
+      background:var(--surface);
+    }
+    .press-inner{
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      gap:18px;
+      text-align:center;
+    }
+    .press-label{
+      font-size:11px;
+      letter-spacing:.2em;
+      text-transform:uppercase;
+      color:var(--muted);
+      font-weight:700;
+    }
+    .press-logos{
+      display:flex;
+      flex-wrap:wrap;
+      justify-content:center;
+      gap:10px 30px;
+      align-items:center;
+    }
+    .press-logo{
+      height:28px;
+      width:auto;
+      max-width:115px;
+      object-fit:contain;
+      filter:grayscale(1) opacity(.46);
+    }
+
+    .hero{
+      padding:72px 0 42px;
+      border-bottom:1px solid var(--line);
+    }
+    .hero-grid{
+      display:grid;
+      grid-template-columns:minmax(0,1.2fr) minmax(300px,.8fr);
+      gap:28px;
+      align-items:start;
+    }
+    .eyebrow{
+      font-size:11px;
+      letter-spacing:.2em;
+      text-transform:uppercase;
+      font-weight:700;
+      color:var(--accent);
+      margin-bottom:18px;
+    }
+    .hero h1{
+      font-size:clamp(40px,6vw,78px);
+      line-height:.98;
+      letter-spacing:-.06em;
+      font-weight:800;
+      max-width:11ch;
+      margin-bottom:20px;
+    }
+    .hero h1 em{font-style:normal; color:var(--accent);}
+    .hero-sub{
+      font-size:clamp(17px,2vw,22px);
+      line-height:1.65;
+      color:var(--muted);
+      max-width:52ch;
+      margin-bottom:18px;
+    }
+    .hero-note{
+      font-size:15px;
+      line-height:1.8;
+      color:var(--muted);
+      max-width:58ch;
+    }
+    .hero-actions{
+      display:flex;
+      flex-wrap:wrap;
+      gap:12px;
+      margin-top:28px;
+    }
+    .hero-card{
+      background:linear-gradient(180deg, #fffaf4, #f5ede3);
+      border:1px solid var(--line);
+      border-radius:28px;
+      padding:28px;
+      position:relative;
+      overflow:hidden;
+    }
+    .hero-card::after{
+      content:"";
+      position:absolute;
+      inset:auto -80px -90px auto;
+      width:220px;
+      height:220px;
+      border-radius:50%;
+      background:radial-gradient(circle, rgba(196,98,29,.18), transparent 68%);
+    }
+    .hero-card-label{
+      font-size:11px;
+      letter-spacing:.18em;
+      text-transform:uppercase;
+      font-weight:700;
+      color:var(--oxblood);
+      margin-bottom:14px;
+    }
+    .hero-card h2{
+      font-size:29px;
+      line-height:1.08;
+      letter-spacing:-.04em;
+      margin-bottom:14px;
+      max-width:11ch;
+    }
+    .hero-card p{
+      font-size:15px;
+      line-height:1.8;
+      color:var(--muted);
+      margin-bottom:20px;
+      position:relative;
+      z-index:1;
+    }
+    .hero-card ul{
+      list-style:none;
+      display:flex;
+      flex-direction:column;
+      gap:10px;
+      margin-bottom:22px;
+      position:relative;
+      z-index:1;
+    }
+    .hero-card li{
+      font-size:14px;
+      line-height:1.6;
+      color:var(--ink);
+      padding-left:18px;
+      position:relative;
+    }
+    .hero-card li::before{
+      content:"•";
+      position:absolute;
+      left:0;
+      color:var(--amber);
+    }
+
+    main section{padding:42px 0;}
+    .section-head{max-width:760px; margin-bottom:28px;}
+    .section-head h2{
+      font-size:clamp(30px,4vw,48px);
+      line-height:1.05;
+      letter-spacing:-.05em;
+      margin-bottom:14px;
+    }
+    .section-head h2 em{font-style:normal; color:var(--accent);}
+    .section-head p{
+      font-size:17px;
+      line-height:1.8;
+      color:var(--muted);
+    }
+
+    .problem-grid,
+    .what-grid,
+    .outcome-grid,
+    .about-grid,
+    .blog-grid{
+      display:grid;
+      gap:20px;
+    }
+    .problem-grid{grid-template-columns:minmax(0,1.1fr) minmax(280px,.9fr);}
+    .what-grid{grid-template-columns:minmax(0,.95fr) minmax(0,1.05fr);}
+    .outcome-grid{grid-template-columns:repeat(3, minmax(0,1fr));}
+    .about-grid{grid-template-columns:minmax(280px,.85fr) minmax(0,1.15fr); align-items:start;}
+    .blog-grid{grid-template-columns:repeat(3, minmax(0,1fr));}
+
+    .panel,
+    .problem-card,
+    .ladder-card,
+    .outcome-card,
+    .blog-card,
+    .about-card{
+      background:rgba(255,255,255,.52);
+      border:1px solid var(--line);
+      border-radius:var(--r2);
+    }
+    .panel,
+    .problem-card,
+    .about-card{padding:28px;}
+
+    .problem-card h3,
+    .panel h3,
+    .about-card h3{
+      font-size:24px;
+      line-height:1.12;
+      letter-spacing:-.04em;
+      margin-bottom:12px;
+    }
+    .problem-card p,
+    .panel p,
+    .about-card p{
+      font-size:15px;
+      line-height:1.85;
+      color:var(--muted);
+    }
+
+    .signal-list,
+    .outcome-list{
+      list-style:none;
+      display:flex;
+      flex-direction:column;
+      gap:12px;
+      margin-top:18px;
+    }
+    .signal-list li,
+    .outcome-list li{
+      font-size:14px;
+      line-height:1.65;
+      color:var(--ink);
+      padding-left:20px;
+      position:relative;
+    }
+    .signal-list li::before,
+    .outcome-list li::before{
+      content:"";
+      position:absolute;
+      left:0;
+      top:.55em;
+      width:8px;
+      height:8px;
+      border-radius:50%;
+      background:var(--amber);
+    }
+
+    .system-note{
+      margin-top:20px;
+      padding:18px 20px;
+      border-radius:18px;
+      background:var(--accent-soft);
+      border:1px solid rgba(28,61,46,.12);
+      font-size:14px;
+      line-height:1.7;
+      color:var(--ink);
+    }
+
+    .ladder{
+      display:grid;
+      grid-template-columns:repeat(4, minmax(0,1fr));
+      gap:18px;
+    }
+    .ladder-card{
+      padding:24px;
+      background:linear-gradient(180deg, rgba(255,255,255,.7), rgba(251,247,240,.9));
+      display:flex;
+      flex-direction:column;
+      min-height:100%;
+    }
+    .ladder-step{
+      font-size:11px;
+      letter-spacing:.16em;
+      text-transform:uppercase;
+      font-weight:700;
+      color:var(--amber);
+      margin-bottom:8px;
+    }
+    .ladder-card h3{
+      font-size:24px;
+      line-height:1.08;
+      letter-spacing:-.04em;
+      margin-bottom:10px;
+    }
+    .ladder-tag{
+      font-size:12px;
+      font-weight:700;
+      color:var(--muted);
+      margin-bottom:14px;
+      text-transform:uppercase;
+      letter-spacing:.08em;
+    }
+    .ladder-card p{
+      font-size:15px;
+      line-height:1.78;
+      color:var(--muted);
+      margin-bottom:16px;
+    }
+    .ladder-card ul{
+      list-style:none;
+      display:flex;
+      flex-direction:column;
+      gap:9px;
+      margin-bottom:20px;
+      flex:1;
+    }
+    .ladder-card li{
+      font-size:14px;
+      line-height:1.58;
+      color:var(--ink);
+      padding-left:16px;
+      position:relative;
+    }
+    .ladder-card li::before{
+      content:"•";
+      position:absolute;
+      left:0;
+      color:var(--accent);
+    }
+    .ladder-card a{
+      color:var(--accent);
+      font-size:14px;
+      font-weight:700;
+      text-decoration:none;
+    }
+    .ladder-card a:hover{text-decoration:underline; text-underline-offset:3px;}
+
+    .outcome-card{
+      padding:24px;
+      background:linear-gradient(180deg, rgba(255,255,255,.62), rgba(245,237,227,.85));
+    }
+    .outcome-card h3{
+      font-size:22px;
+      line-height:1.12;
+      letter-spacing:-.04em;
+      margin-bottom:12px;
+    }
+    .outcome-card p{
+      font-size:15px;
+      line-height:1.8;
+      color:var(--muted);
+    }
+
+    .about-photo{
+      width:100%;
+      display:block;
+      border-radius:26px;
+      margin-bottom:18px;
+    }
+    .about-kicker{
+      font-size:11px;
+      letter-spacing:.18em;
+      text-transform:uppercase;
+      font-weight:700;
+      color:var(--accent);
+      margin-bottom:12px;
+    }
+    .about-card h2{
+      font-size:42px;
+      line-height:1;
+      letter-spacing:-.05em;
+      margin-bottom:12px;
+    }
+    .about-card h2 em{font-style:normal; color:var(--accent);}
+    .about-sub{
+      font-size:16px;
+      line-height:1.7;
+      color:var(--muted);
+      margin-bottom:18px;
+    }
+    .about-sign{
+      margin-top:18px;
+      font-size:18px;
+      font-weight:700;
+      letter-spacing:-.03em;
+      color:var(--oxblood);
+    }
+
+    .blog-card{
+      padding:24px;
+      display:flex;
+      flex-direction:column;
+      justify-content:space-between;
+      gap:16px;
+      min-height:260px;
+    }
+    .blog-label{
+      font-size:11px;
+      letter-spacing:.18em;
+      text-transform:uppercase;
+      font-weight:700;
+      color:var(--accent);
+      margin-bottom:10px;
+    }
+    .blog-card h3{
+      font-size:24px;
+      line-height:1.1;
+      letter-spacing:-.04em;
+      margin-bottom:10px;
+    }
+    .blog-card p{
+      font-size:15px;
+      line-height:1.8;
+      color:var(--muted);
+    }
+    .blog-card a{
+      color:var(--accent);
+      text-decoration:none;
+      font-weight:700;
+    }
+    .blog-card a:hover{text-decoration:underline; text-underline-offset:3px;}
+
+    .cta{
+      padding:56px 0 72px;
+    }
+    .cta-panel{
+      background:linear-gradient(135deg, rgba(28,61,46,.98), rgba(107,15,42,.95));
+      color:#fff;
+      border-radius:30px;
+      padding:34px;
+      border:1px solid rgba(255,255,255,.08);
+      position:relative;
+      overflow:hidden;
+    }
+    .cta-panel::after{
+      content:"";
+      position:absolute;
+      right:-80px;
+      top:-60px;
+      width:240px;
+      height:240px;
+      border-radius:50%;
+      background:radial-gradient(circle, rgba(255,255,255,.18), transparent 70%);
+    }
+    .cta-panel h2{
+      font-size:clamp(32px,4vw,48px);
+      line-height:1.02;
+      letter-spacing:-.05em;
+      max-width:12ch;
+      margin-bottom:14px;
+    }
+    .cta-panel p{
+      max-width:58ch;
+      font-size:16px;
+      line-height:1.82;
+      color:rgba(255,255,255,.82);
+      position:relative;
+      z-index:1;
+    }
+    .cta-actions{
+      display:flex;
+      flex-wrap:wrap;
+      gap:12px;
+      margin-top:24px;
+      position:relative;
+      z-index:1;
+    }
+
+    footer{
+      padding:32px 0 48px;
+      border-top:1px solid var(--line);
+    }
+    .foot{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:16px;
+      flex-wrap:wrap;
+      font-size:13px;
+      color:var(--muted);
+    }
+    .foot-links{display:flex; gap:20px; flex-wrap:wrap;}
+    .foot a{color:var(--muted); text-decoration:none;}
+    .foot a:hover{color:var(--ink); text-decoration:underline; text-underline-offset:3px;}
+
+    @media (max-width:1040px){
+      .ladder{grid-template-columns:repeat(2, minmax(0,1fr));}
+      .blog-grid{grid-template-columns:1fr;}
+      .outcome-grid{grid-template-columns:1fr;}
+    }
+    @media (max-width:900px){
+      .hero-grid,
+      .problem-grid,
+      .what-grid,
+      .about-grid{grid-template-columns:1fr;}
+    }
+    @media (max-width:720px){
+      .container{padding:0 20px;}
+      .nav{align-items:flex-start; flex-direction:column;}
+      .hero{padding:46px 0 28px;}
+      main section{padding:28px 0;}
+      .ladder{grid-template-columns:1fr;}
+      .cta-panel{padding:26px;}
+      .press-logos{gap:8px 20px;}
+    }
+  </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebPage",
+        "@id": "https://sjklabs.co/business-homepage#webpage",
+        "url": "https://sjklabs.co/business-homepage",
+        "name": "SJK Labs business homepage concept",
+        "description": "Business authority, PR and AI visibility for companies that need to be surfaced, trusted and chosen.",
+        "isPartOf": { "@id": "https://sjklabs.co/#website" },
+        "about": { "@id": "https://sjklabs.co/#organisation" }
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://sjklabs.co/#website",
+        "name": "SJK Labs",
+        "url": "https://sjklabs.co/"
+      },
+      {
+        "@type": "Organization",
+        "@id": "https://sjklabs.co/#organisation",
+        "name": "SJK Labs",
+        "url": "https://sjklabs.co/",
+        "founder": { "@id": "https://sjklabs.co/#sarah-kemp" }
+      },
+      {
+        "@type": "Person",
+        "@id": "https://sjklabs.co/#sarah-kemp",
+        "name": "Sarah Kemp",
+        "jobTitle": "Narrative architect and authority strategist",
+        "url": "https://sjklabs.co/",
+        "worksFor": { "@id": "https://sjklabs.co/#organisation" }
+      },
+      {
+        "@type": "Service",
+        "name": "The Scriptwriter Test",
+        "serviceType": "Narrative diagnostic for businesses",
+        "provider": { "@id": "https://sjklabs.co/#organisation" },
+        "url": "https://sjklabs.co/the-scriptwriter-test"
+      },
+      {
+        "@type": "Service",
+        "name": "AI Visibility & Narrative Audit",
+        "serviceType": "Authority and AI visibility audit",
+        "provider": { "@id": "https://sjklabs.co/#organisation" },
+        "url": "https://sjklabs.co/the-legibility-audit"
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+<header>
+  <div class="container">
+    <div class="nav">
+      <a class="brand" href="/">SJK <em>Labs</em></a>
+      <nav>
+        <a href="#what-it-is">What it is</a>
+        <a href="#included">What's included</a>
+        <a href="#outcome">Outcome</a>
+        <a href="/coverage">Coverage</a>
+        <a href="/blog">Blog</a>
+        <a href="/adhd-at-work">ADHD at Work</a>
+        <a href="#about">About</a>
+      </nav>
+      <a class="btn btn-green" href="https://calendly.com/sarah-sjklabs/30min" target="_blank" rel="noreferrer">Book a Scene-Setting Call</a>
+    </div>
+  </div>
+</header>
+
+<main>
+  <section class="press-section">
+    <div class="container">
+      <div class="press-inner">
+        <div class="press-label">Coverage generated in</div>
+        <div class="press-logos">
+          <img class="press-logo" src="logos/logo-times.png" alt="The Times" />
+          <img class="press-logo" src="logos/logo-ft.png" alt="Financial Times" />
+          <img class="press-logo" src="logos/logo-bloomberg.png" alt="Bloomberg" />
+          <img class="press-logo" src="logos/logo-forbes.png" alt="Forbes" />
+          <img class="press-logo" src="logos/logo-techcrunch.png" alt="TechCrunch" />
+          <img class="press-logo" src="logos/logo-independent.png" alt="The Independent" />
+          <img class="press-logo" src="logos/logo-dailymail.png" alt="Daily Mail" />
+          <img class="press-logo" src="logos/logo-nikkei.png" alt="Nikkei" />
+          <img class="press-logo" src="logos/logo-dazed.png" alt="Dazed &amp; Confused" />
+        </div>
+        <a class="btn btn-ghost" href="/coverage">See the authority in practice</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="hero">
+    <div class="container hero-grid">
+      <div>
+        <div class="eyebrow">Business authority, PR and AI visibility</div>
+        <h1>Authority for businesses that need to be <em>surfaced</em> and <em>chosen.</em></h1>
+        <p class="hero-sub">PR is no longer just about coverage. It shapes whether your brand is discovered in search, cited by AI, trusted by buyers, and remembered when pipeline decisions get made.</p>
+        <p class="hero-note">SJK Labs helps businesses turn expertise into narrative infrastructure: clearer positioning, stronger proof signals, and authority assets that travel across media, search, AI answers, sales conversations and category perception.</p>
+        <div class="hero-actions">
+          <a class="btn btn-amber" href="/quiz#business">Take the Business Diagnostic</a>
+          <a class="btn btn-green" href="/the-legibility-audit">Explore the AI Visibility & Narrative Audit</a>
+          <a class="btn btn-ghost" href="#included">See what's included</a>
+        </div>
+      </div>
+      <aside class="hero-card">
+        <div class="hero-card-label">The immediate issue</div>
+        <h2>If AI cannot surface you, someone else will be.</h2>
+        <p>The strongest businesses are still losing attention because their authority signals are too scattered, too generic, or too hard for machines and humans to repeat.</p>
+        <ul>
+          <li>Your expertise exists, but it is not being translated into market signal.</li>
+          <li>Your PR, positioning and proof are not yet working as one system.</li>
+          <li>Your diagnostic is the lead magnet because the gap has to be seen before it can be fixed.</li>
+        </ul>
+        <a class="btn btn-green" href="/quiz#business">Start with the diagnostic</a>
+      </aside>
+    </div>
+  </section>
+
+  <section id="problem">
+    <div class="container">
+      <div class="section-head">
+        <h2>The <em>problem</em> to solve</h2>
+        <p>This page is built to support the bigger commercial truth behind your next programme: PR now feeds pipeline because perception feeds discovery. If your business is not legible to buyers, journalists, search engines and AI systems, it quietly hands demand to brands that are.</p>
+      </div>
+      <div class="problem-grid">
+        <article class="problem-card">
+          <h3>Most businesses do not have a content problem. They have a signal problem.</h3>
+          <p>They have proof, wins, expertise and a real point of view, but the story is trapped. The message is too broad, the stakes are too soft, and the external evidence is not organised in a way that helps the market trust them quickly. That is why strong companies can still feel strangely hard to choose.</p>
+          <div class="system-note">The work here sits underneath the broader PR-to-pipeline thinking without needing to publish the full system yet: first make the business easier to understand, easier to find, and easier to believe.</div>
+        </article>
+        <aside class="panel">
+          <h3>What the market is doing differently now</h3>
+          <p>Prospects no longer discover brands in a straight line. They ask AI tools for recommendations, scan search results for proof, check whether leaders sound credible, and look for external cues they can repeat internally.</p>
+          <ul class="signal-list">
+            <li>AI assistants surface businesses that already look coherent and credible.</li>
+            <li>Earned authority signals now influence discovery as much as reputation.</li>
+            <li>When your narrative is weak, stronger signals from competitors fill the gap.</li>
+          </ul>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <section id="what-it-is">
+    <div class="container">
+      <div class="section-head">
+        <h2>What it <em>is</em></h2>
+        <p>SJK Labs is an authority-building practice for businesses that need to sharpen how they are understood, cited and trusted. The work combines narrative strategy, PR thinking and generative-engine visibility so your story can do commercial work before your team is even in the room.</p>
+      </div>
+      <div class="what-grid">
+        <article class="panel">
+          <h3>Not a press office. Not a content mill.</h3>
+          <p>This is narrative architecture for modern discovery. We define the story, identify the proof, pressure-test the positioning, and build authority assets that can travel across media, search, AI answers, founder visibility and demand generation.</p>
+          <ul class="signal-list">
+            <li>Built for businesses with real expertise but weak external legibility.</li>
+            <li>Designed to create stronger authority signals, not more noise.</li>
+            <li>Structured so each offer can stand alone or connect into a wider system later.</li>
+          </ul>
+        </article>
+        <article class="panel">
+          <h3>The operating idea behind it</h3>
+          <p>Before you ask the market to convert, you need the market to understand you. Before AI tools can recommend you, they need enough consistent signal to recognise what makes you credible. Before PR can drive pipeline, the narrative has to be precise enough to carry proof, stakes and distinctiveness.</p>
+          <p>That is the work: building the narrative and authority layer that makes every downstream channel stronger.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="included">
+    <div class="container">
+      <div class="section-head">
+        <h2>What’s <em>included</em></h2>
+        <p>A business-focused product ladder that can stay together on the homepage or be split into individual landing pages later. The sequence moves from diagnosis to narrative to authority-building execution.</p>
+      </div>
+      <div class="ladder">
+        <article class="ladder-card">
+          <div class="ladder-step">01</div>
+          <h3>The Scriptwriter Test™</h3>
+          <div class="ladder-tag">Diagnostic</div>
+          <p>The first filter for businesses that know something is not landing but cannot yet see where the story is breaking.</p>
+          <ul>
+            <li>Tests the protagonist, stakes and dialogue inside your messaging.</li>
+            <li>Shows whether the problem is positioning, clarity, voice or all three.</li>
+            <li>Creates the narrative diagnosis before anyone reaches for tactics.</li>
+          </ul>
+          <a href="/the-scriptwriter-test">Explore The Scriptwriter Test™</a>
+        </article>
+
+        <article class="ladder-card">
+          <div class="ladder-step">02</div>
+          <h3>AI Visibility & Narrative Audit</h3>
+          <div class="ladder-tag">Authority audit</div>
+          <p>A business-facing audit of how you currently appear across search, AI, media and category conversation.</p>
+          <ul>
+            <li>Maps what your market can actually find, trust and repeat.</li>
+            <li>Identifies unused proof, weak signals and missing authority assets.</li>
+            <li>Highlights the narrative opening you still have time to own.</li>
+          </ul>
+          <a href="/the-legibility-audit">See the AI Visibility & Narrative Audit</a>
+        </article>
+
+        <article class="ladder-card">
+          <div class="ladder-step">03</div>
+          <h3>Narrative Development</h3>
+          <div class="ladder-tag">Positioning system</div>
+          <p>The story architecture that turns your expertise into clear language, stronger stakes and a more defensible category position.</p>
+          <ul>
+            <li>Defines the core narrative, commercial tension and proof hierarchy.</li>
+            <li>Translates insight into messaging your team can actually use.</li>
+            <li>Creates the strategic language that future PR and content can compound.</li>
+          </ul>
+          <a href="https://calendly.com/sarah-sjklabs/30min" target="_blank" rel="noreferrer">Discuss narrative development</a>
+        </article>
+
+        <article class="ladder-card">
+          <div class="ladder-step">04</div>
+          <h3>Authority Building</h3>
+          <div class="ladder-tag">Retained execution</div>
+          <p>The retained layer where strategy becomes execution: building the authority assets, leadership visibility, media signal and digital infrastructure that help your brand compound in public.</p>
+          <ul>
+            <li>Builds the pages, proof and point of view that shape how your brand is understood and remembered.</li>
+            <li>Connects PR, executive visibility and GEO through actual execution.</li>
+            <li>Creates the external credibility and discoverability that support pipeline over time.</li>
+          </ul>
+          <a href="https://calendly.com/sarah-sjklabs/30min" target="_blank" rel="noreferrer">Talk about retained support</a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="outcome">
+    <div class="container">
+      <div class="section-head">
+        <h2>What’s the <em>outcome</em>?</h2>
+        <p>The point is not to look busier. The point is to become easier to understand, easier to trust and easier to surface when real buying moments happen.</p>
+      </div>
+      <div class="outcome-grid">
+        <article class="outcome-card">
+          <h3>A clearer market position</h3>
+          <p>Your business stops sounding interchangeable. Buyers can quickly grasp what makes you different, why it matters, and why now.</p>
+        </article>
+        <article class="outcome-card">
+          <h3>Stronger authority signals</h3>
+          <p>Your proof, founder perspective, media logic and category language begin to work together instead of sitting in separate silos.</p>
+        </article>
+        <article class="outcome-card">
+          <h3>Better AI-era discoverability</h3>
+          <p>You give search engines, journalists, prospects and AI assistants more consistent material to cite, repeat and recommend.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="about">
+    <div class="container">
+      <div class="section-head">
+        <h2>About <em>Sarah</em></h2>
+        <p>The founder story needs to support the company story, especially when you are building authority in a new category. This version foregrounds the exact expertise that makes you credible in the AI-and-PR conversation.</p>
+      </div>
+      <div class="about-grid">
+        <div>
+          <img class="about-photo" src="Untitled design-7.png" alt="Sarah Kemp, founder of SJK Labs" />
+          <a class="btn btn-green" href="https://www.linkedin.com/in/sarahjkemp/" target="_blank" rel="noreferrer" style="width:100%;">Connect on LinkedIn</a>
+        </div>
+        <article class="about-card">
+          <div class="about-kicker">Founded by</div>
+          <h2>Sarah <em>Kemp</em></h2>
+          <p class="about-sub">Narrative architect, journalist and authority strategist helping businesses become more legible to the market and more visible in the age of AI.</p>
+          <p>Sarah founded SJK Labs after seeing the same pattern for years: highly capable businesses were being underestimated because their expertise was not being translated into a story the market could understand quickly enough. That gap now matters even more because search, buyer research and AI systems all reward clear, credible signals.</p>
+          <p>With a background spanning journalism, B2B communications and executive positioning, Sarah brings together story craft, commercial thinking and authority strategy. Her work has appeared in Bloomberg, TechCrunch, Forbes, the Financial Times, The Times, CNBC, BBC, The Information and The Telegraph.</p>
+          <p>SJK Labs is where that experience meets the next era of brand discovery: PR not as vanity, but as narrative infrastructure for trust, visibility and demand.</p>
+          <p class="about-sign">Expertise deserves to be seen clearly. Especially now.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="blog">
+    <div class="container">
+      <div class="section-head">
+        <h2>The <em>blog</em></h2>
+        <p>Use the blog to deepen your authority position around AI visibility, narrative and modern PR. This keeps the homepage commercial while still supporting your go-to-expert strategy.</p>
+      </div>
+      <div class="blog-grid">
+        <article class="blog-card">
+          <div>
+            <div class="blog-label">AI visibility</div>
+            <h3>Human authority in the age of AI</h3>
+            <p>Why AI makes credibility, proof and clear human-led positioning more valuable rather than less.</p>
+          </div>
+          <a href="/human-authority-ai">Read the article</a>
+        </article>
+        <article class="blog-card">
+          <div>
+            <div class="blog-label">Business diagnostic</div>
+            <h3>What does AI say about your business?</h3>
+            <p>A useful bridge article for the exact surfacing problem this homepage is designed to address.</p>
+          </div>
+          <a href="/what-does-ai-say-about-your-business">Read the article</a>
+        </article>
+        <article class="blog-card">
+          <div>
+            <div class="blog-label">PR strategy</div>
+            <h3>Why your PR is not working</h3>
+            <p>A sharper explanation of why media effort underperforms when the underlying narrative and proof system is weak.</p>
+          </div>
+          <a href="/why-is-my-pr-not-working">Read the article</a>
+        </article>
+      </div>
+      <div style="margin-top:22px;">
+        <a class="btn btn-ghost" href="/blog">Browse the blog</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta">
+    <div class="container">
+      <div class="cta-panel">
+        <h2>Start with the audit layer.</h2>
+        <p>If the business is strong but the market signal is weak, the fastest next step is diagnosis. Start with the business diagnostic as your lead magnet, or move straight into AI Visibility & Narrative Audit if you need a sharper strategic read on visibility, authority and AI-era discoverability.</p>
+        <div class="cta-actions">
+          <a class="btn btn-amber" href="/quiz#business">Take the Business Diagnostic</a>
+          <a class="btn btn-green" href="/the-legibility-audit">Explore the AI Visibility & Narrative Audit</a>
+          <a class="btn btn-outline-light" href="https://calendly.com/sarah-sjklabs/30min" target="_blank" rel="noreferrer">Book a Scene-Setting Call</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="container">
+    <div class="foot">
+      <div>© 2026 SJK Labs Ltd. All rights reserved.</div>
+      <div class="foot-links">
+        <a href="/coverage">Coverage</a>
+        <a href="/blog">Blog</a>
+        <a href="/privacy">Privacy</a>
+        <a href="/terms">Terms</a>
+        <a href="https://www.linkedin.com/in/sarahjkemp/" target="_blank" rel="noreferrer">LinkedIn</a>
+      </div>
+    </div>
+  </div>
+</footer>
+</body>
+</html>
