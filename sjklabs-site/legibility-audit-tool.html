@@ -598,9 +598,10 @@ main section{padding:26px 0;}
   max-width:60ch;
 }
 .copy-row{
-  display:flex;
-  gap:10px;
-  flex-wrap:wrap;
+  display:grid;
+  grid-template-columns:repeat(2, minmax(0, max-content));
+  gap:10px 14px;
+  align-items:start;
   margin-top:16px;
 }
 .markdown-box{
@@ -771,6 +772,9 @@ footer{padding:32px 0 48px; border-top:1px solid var(--line); margin-top:18px;}
   .cards-stack .result-card{
     grid-template-columns:1fr;
     gap:8px;
+  }
+  .copy-row{
+    grid-template-columns:1fr;
   }
 }
 @media (max-width:640px){
